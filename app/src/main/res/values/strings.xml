@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">talkon</string>
+    <string name="app_name">TalkOn</string>
+    <string name="str_sign_up">Sign up</string>
+    <string name="str_sign_in">Sign in</string>
 </resources>
