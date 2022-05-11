@@ -5,9 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.WindowManager
+import com.example.sharedpreference.manager.SharedPref
 import com.talkon.talkon.R
 
-class SplashActivity : AppCompatActivity() {
+class SplashActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
@@ -21,10 +22,17 @@ class SplashActivity : AppCompatActivity() {
 
         // we used the postDelayed(Runnable, time) method
         // to send a message with a delayed time.
-        Handler().postDelayed({
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish()
-        }, 2000) // 2000 is the delayed time in milliseconds.
+        val handler = Handler()
+        handler.postDelayed({
+            if (SharedPref(this).isSaved){
+                Intent(this, MainActivity::class.java).also {
+                    startActivity(it)
+                    finish()
+                }
+            }else Intent(this, IntroActivity::class.java).also {
+                startActivity(it)
+                finish()
+            }
+        }, 2000)
     }
 }

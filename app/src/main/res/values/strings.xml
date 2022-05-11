@@ -2,4 +2,10 @@
     <string name="app_name">TalkOn</string>
     <string name="str_sign_up">Sign up</string>
     <string name="str_sign_in">Sign in</string>
+    <string name="str_skip">Skip</string>
+    <string name="str_thousands_of_teachers">Thousands of teachers</string>
+    <string name="str_chat_with_teachers">Chat with teachers</string>
+    <string name="str_live_talk_with_teachers">Live talk with teachers</string>
+    <string name="str_you_can_contact_teachers">You can easily contact with a thousands of teachers and contact for your needs</string>
+    <string name="str_next">Next</string>
 </resources>

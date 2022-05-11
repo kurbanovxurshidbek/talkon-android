@@ -5,7 +5,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 
-class HomeFragment : Fragment(){
+class HomeFragment : BaseFragment(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d("Tag","something")
