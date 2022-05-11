@@ -45,9 +45,6 @@ class IntroActivity : BaseActivity() {
             callMainActivity()
         }
 
-        bt_next.setOnClickListener {
-            viewPager.setCurrentItem(getItem(+1), true)
-        }
         // init slider pager adapter
         adapter = IntroFragmentAdapter(supportFragmentManager,
             FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
@@ -75,6 +72,10 @@ class IntroActivity : BaseActivity() {
                     bt_next.setOnClickListener {
                         SharedPref(context).isSaved = true
                         callMainActivity()
+                    }
+                } else {
+                    bt_next.setOnClickListener {
+                        viewPager.setCurrentItem(getItem(+1), true)
                     }
                 }
             }
