@@ -8,4 +8,20 @@
     <string name="str_live_talk_with_teachers">Live talk with teachers</string>
     <string name="str_you_can_contact_teachers">You can easily contact with a thousands of teachers and contact for your needs</string>
     <string name="str_next">Next</string>
+    <string name="str_notification">Notification</string>
+    <string name="str_balance">Balance</string>
+    <string name="str_message">Message</string>
+    <string name="str_help">Help</string>
+    <string name="str_invite_friends">Invite Friends</string>
+    <string name="str_logout">Log out</string>
+    <string name="str_teacher">Teacher</string>
+    <string name="str_student">Student</string>
+    <string name="str_please_choose_your_status">Please choose your status</string>
+    <string name="str_name">Name</string>
+    <string name="str_family">Family</string>
+    <string name="str_age">Age</string>
+    <string name="str_experience">Experience</string>
+    <string name="str_welcome_to">Welcome to</string>
+    <string name="str_welcome_to_talk_on">Welcome to Talk On</string>
+
 </resources>

@@ -2,7 +2,6 @@ package com.talkon.talkon.activity
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -10,7 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
-import com.example.sharedpreference.manager.SharedPref
+import com.talkon.talkon.manager.SharedPref
 import com.talkon.talkon.R
 import com.talkon.talkon.adapter.IntroFragmentAdapter
 import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
@@ -83,7 +82,7 @@ class IntroActivity : BaseActivity() {
     }
 
     private fun getItem(i: Int): Int {
-        return viewPager.getCurrentItem() + i
+        return viewPager.currentItem + i
     }
 
     private fun callMainActivity() {

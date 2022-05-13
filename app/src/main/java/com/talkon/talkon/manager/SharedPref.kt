@@ -1,4 +1,4 @@
-package com.example.sharedpreference.manager
+package com.talkon.talkon.manager
 
 import android.content.Context
 import androidx.core.content.edit
