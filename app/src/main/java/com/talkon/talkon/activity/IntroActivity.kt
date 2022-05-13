@@ -17,7 +17,7 @@ import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
 
 class IntroActivity : BaseActivity() {
     private lateinit var viewPager: ViewPager
-    private var context: Context = this
+    override var context: Context = this
     private var adapter: IntroFragmentAdapter? = null
     var dotsIndicator: WormDotsIndicator? = null
     lateinit var tv_skip: TextView
@@ -42,7 +42,7 @@ class IntroActivity : BaseActivity() {
 
         tv_skip.setOnClickListener {
             SharedPref(this).isSaved = true
-            callMainActivity()
+            callSignInOrSignUpActivity()
         }
 
         // init slider pager adapter
@@ -62,16 +62,16 @@ class IntroActivity : BaseActivity() {
                 positionOffsetPixels: Int
             ) {
                 super.onPageScrolled(position, positionOffset, positionOffsetPixels)
-//                if (position == adapter!!.count - 2) {
-//                    iv_img.setVisibility(View.INVISIBLE)
-//                    iv_img_1.setVisibility(View.VISIBLE)
-//                }
+                if (position == adapter!!.count - 2) {
+                    iv_img.setVisibility(View.INVISIBLE)
+                    iv_img_1.setVisibility(View.VISIBLE)
+                }
                 if (position == adapter!!.count - 1) {
-//                    iv_img_1.setVisibility(View.INVISIBLE)
-//                    iv_img_2.setVisibility(View.VISIBLE)
+                    iv_img_1.setVisibility(View.INVISIBLE)
+                    iv_img_2.setVisibility(View.VISIBLE)
                     bt_next.setOnClickListener {
                         SharedPref(context).isSaved = true
-                        callMainActivity()
+                        callSignInOrSignUpActivity()
                     }
                 } else {
                     bt_next.setOnClickListener {
@@ -86,8 +86,8 @@ class IntroActivity : BaseActivity() {
         return viewPager.getCurrentItem() + i
     }
 
-    private fun callMainActivity() {
-        val intent = Intent(this, MainActivity::class.java)
+    private fun callSignInOrSignUpActivity() {
+        val intent = Intent(this, SignInOrSignUpActivity::class.java)
         startActivity(intent)
     }
 }
