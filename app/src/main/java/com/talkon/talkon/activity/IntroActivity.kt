@@ -69,7 +69,7 @@ class IntroActivity : BaseActivity() {
                     iv_img_1.setVisibility(View.INVISIBLE)
                     iv_img_2.setVisibility(View.VISIBLE)
                     bt_next.setOnClickListener {
-                        SharedPref(context).isSaved = true
+//                        SharedPref(context).isSaved = true
                         callSignInOrSignUpActivity()
                     }
                 } else {

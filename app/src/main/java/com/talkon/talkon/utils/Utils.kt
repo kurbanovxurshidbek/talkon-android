@@ -10,7 +10,23 @@ import android.view.Window
 import android.view.WindowManager
 import android.widget.TextView
 import android.widget.Toast
+import com.talkon.talkon.R
 
 object Utils {
+    fun getDeviceID(context: Context):String{
+        val device_id: String = Settings.Secure.getString(context.contentResolver, Settings.Secure.ANDROID_ID)
+        return device_id
+    }
 
+    fun datePickerDialog(){
+
+    }
+
+    fun timePickerDialog(){
+
+    }
+}
+
+interface DialogListener {
+    fun onCallback(isChosen: Boolean)
 }

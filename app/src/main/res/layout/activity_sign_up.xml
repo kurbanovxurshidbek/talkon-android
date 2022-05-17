@@ -36,13 +36,16 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/back_rounded_border"
                 android:paddingStart="20dp"
-                android:paddingEnd="20dp">
+                android:paddingEnd="20dp"
+                android:layout_marginTop="3dp"
+                android:paddingBottom="3dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="On"
                     android:textColor="@color/white"
-                    android:textSize="50sp"/>
+                    android:textStyle="bold"
+                    android:textSize="45sp"/>
             </LinearLayout>
 
         </LinearLayout>
@@ -74,26 +77,6 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/str_country"
-                android:textColor="@color/black"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="20dp"
-                android:textSize="16sp"
-                android:textStyle="bold"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_marginTop="6dp"
-                android:layout_height="45dp"
-                android:padding="5dp"
-                android:background="@drawable/background_rounded_grey_green">
-
-
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
                 android:layout_marginTop="15dp"
                 android:layout_height="wrap_content"
                 android:text="@string/str_phone_number"
@@ -104,10 +87,72 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="50dp"
                 android:layout_marginTop="6dp"
                 android:padding="5dp"
-                android:background="@drawable/background_rounded_grey_green">
+                android:gravity="center_vertical"
+                android:background="@drawable/background_rounded_grey_green"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:id="@+id/ll_country_code"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="center_vertical">
+
+
+                    <FrameLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="35dp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/iv_country_flag"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            app:shapeAppearanceOverlay="@style/circle"
+                            android:scaleType="centerCrop"/>
+
+
+                        <ProgressBar
+                            android:id="@+id/pb_country_code"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:visibility="gone"
+                            android:layout_gravity="center"/>
+                    </FrameLayout>
+                    <TextView
+                        android:id="@+id/tv_country_code"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"/>
+
+                    <ImageView
+                        android:id="@+id/iv_country_menu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/grey"/>
+                <EditText
+                    android:id="@+id/et_phone_number"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
+                    android:layout_marginLeft="10dp"/>
 
 
             </LinearLayout>
@@ -115,18 +160,19 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="15dp">
 
                 <CheckBox
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@drawable/checkbox_rounded_empty_green"/>
+                    android:id="@+id/checkbox_remember"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:theme="@style/CheckBoxTheme" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
                     android:text="@string/str_remember_me"
                     android:textColor="@color/black"
                     android:textSize="14sp" />

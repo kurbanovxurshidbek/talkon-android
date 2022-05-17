@@ -36,13 +36,16 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/back_rounded_border"
                 android:paddingStart="20dp"
-                android:paddingEnd="20dp">
+                android:paddingEnd="20dp"
+                android:layout_marginTop="3dp"
+                android:paddingBottom="3dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="On"
                     android:textColor="@color/white"
-                    android:textSize="50sp"/>
+                    android:textStyle="bold"
+                    android:textSize="45sp"/>
             </LinearLayout>
 
         </LinearLayout>

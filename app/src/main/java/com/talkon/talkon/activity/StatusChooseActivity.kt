@@ -16,10 +16,16 @@ class StatusChooseActivity : BaseActivity() {
 
     private fun initViews() {
         ll_student.setOnClickListener {
-            ll_teacher_et.visibility = View.VISIBLE
+            ll_student_et.visibility = View.VISIBLE
+            ll_teacher_et.visibility = View.INVISIBLE
         }
-        ll_teacher_et.setOnClickListener {
+        ll_teacher.setOnClickListener {
             ll_teacher_et.visibility = View.VISIBLE
+            ll_student_et.visibility = View.INVISIBLE
+        }
+
+        bt_next_light.setOnClickListener {
+            callMainActivity(this)
         }
     }
 }

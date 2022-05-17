@@ -105,40 +105,62 @@
             </LinearLayout>
         </LinearLayout>
 
-        <LinearLayout
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:gravity="center">
-
-            <TextView
-                android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/ll_counting"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingEnd="12dp"
-                android:text="@string/str_resend_code_in"
-                android:textStyle="bold"
-                android:textSize="16sp"
-                android:textColor="@color/black"/>
+                android:layout_marginTop="20dp"
+                android:gravity="center">
 
-            <TextView
-                android:id="@+id/tv_seconds"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="5dp"
+                    android:text="@string/str_resend_code_in"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/tv_seconds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="5dp"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="@color/main_green"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_seconds"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_resend"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingEnd="12dp"
-                android:text="45"
-                android:textStyle="bold"
-                android:textSize="16sp"
-                android:textColor="@color/main_green"/>
+                android:layout_marginTop="20dp"
+                android:visibility="gone"
+                android:gravity="center">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/str_seconds"
-                android:textStyle="bold"
-                android:textSize="16sp"
-                android:textColor="@color/black"/>
+                <TextView
+                    android:id="@+id/tv_resend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Resend"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="@color/main_green"/>
 
-        </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
 
 
     </LinearLayout>

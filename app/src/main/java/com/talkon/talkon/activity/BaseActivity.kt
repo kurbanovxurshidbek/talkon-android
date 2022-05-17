@@ -24,6 +24,18 @@ open class BaseActivity : AppCompatActivity() {
         finish()
     }
 
+    fun callNumberVerificationActivity(context: Context) {
+        val intent = Intent(this, NumberVerificationActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+
+    fun callStatusChooseActivity(context: Context) {
+        val intent = Intent(this, StatusChooseActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+
     fun callSignInActivity(context: Context) {
         val intent = Intent(this, SignInActivity::class.java)
         startActivity(intent)
