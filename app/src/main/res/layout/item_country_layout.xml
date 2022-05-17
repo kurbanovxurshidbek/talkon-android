@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="70dp"
+    android:layout_height="60dp"
     android:gravity="center_vertical"
+    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
   <LinearLayout
       android:layout_width="0dp"
-      android:layout_weight="0.3"
-      android:gravity="center"
+      android:layout_weight="0.35"
+      android:gravity="center_vertical"
       android:layout_height="wrap_content">
 
       <com.google.android.material.imageview.ShapeableImageView
           android:id="@+id/iv_country_flag"
-          android:layout_width="40dp"
-          android:layout_height="40dp"
+          android:layout_width="35dp"
+          android:layout_height="35dp"
           android:scaleType="centerCrop"
           android:adjustViewBounds="true"
+          android:layout_marginLeft="6dp"
+          android:src="@drawable/img"
           app:shapeAppearanceOverlay="@style/circle"/>
   </LinearLayout>
 
@@ -26,8 +29,9 @@
         android:layout_weight="0.3"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
-        android:textSize="18sp"
-        android:gravity="center"
+        android:textSize="17sp"
+        android:gravity="center_vertical"
+        android:text="+99999"
         android:singleLine="true"
         android:textStyle="bold"/>
 
@@ -39,7 +43,7 @@
         android:textStyle="bold"
         android:singleLine="true"
         android:layout_marginLeft="5dp"
-        android:textSize="18sp"
+        android:textSize="17sp"
         android:textColor="@color/black"/>
 
 </LinearLayout>

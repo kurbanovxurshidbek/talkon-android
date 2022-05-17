@@ -41,7 +41,7 @@ class IntroActivity : BaseActivity() {
 
         tv_skip.setOnClickListener {
             SharedPref(this).isSaved = true
-            callSignInOrSignUpActivity()
+            callSignUpActivity(this)
         }
 
         // init slider pager adapter
@@ -70,7 +70,7 @@ class IntroActivity : BaseActivity() {
                     iv_img_2.setVisibility(View.VISIBLE)
                     bt_next.setOnClickListener {
 //                        SharedPref(context).isSaved = true
-                        callSignInOrSignUpActivity()
+                        callSignUpActivity(this@IntroActivity)
                     }
                 } else {
                     bt_next.setOnClickListener {
@@ -85,8 +85,4 @@ class IntroActivity : BaseActivity() {
         return viewPager.currentItem + i
     }
 
-    private fun callSignInOrSignUpActivity() {
-        val intent = Intent(this, SignInOrSignUpActivity::class.java)
-        startActivity(intent)
-    }
 }

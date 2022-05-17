@@ -24,6 +24,16 @@ class CountryBottomSheetDialog : BottomSheetDialogFragment() {
         return view
     }
 
+    override fun getTheme(): Int {
+        return R.style.AppBottomSheetDialogTheme
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        getDialog()?.getWindow()
+            ?.getAttributes()?.windowAnimations = R.style.DialogAnimation;
+    }
+
     private fun initViews(view: View) {
         recyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.setLayoutManager(GridLayoutManager(context, 1))
@@ -37,7 +47,11 @@ class CountryBottomSheetDialog : BottomSheetDialogFragment() {
 
     private fun getCountryCode(): ArrayList<Country> {
         var country = ArrayList<Country>()
-            country.add(Country("https://images.unsplash.com/photo-1626836014893-37663794dca7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=846&q=80","+998","Afghansitan"))
+
+        country.add(Country("https://images.unsplash.com/photo-1626836014893-37663794dca7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=846&q=80","+998","Afghansitan"))
+        country.add(Country("https://images.unsplash.com/photo-1626836014893-37663794dca7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=846&q=80","+998","Afghansitan"))
+        country.add(Country("https://images.unsplash.com/photo-1626836014893-37663794dca7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=846&q=80","+9","Afghansitan"))
+        country.add(Country("https://images.unsplash.com/photo-1626836014893-37663794dca7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=846&q=80","+9987","Afghansitan"))
         country.add(Country("https://images.unsplash.com/photo-1626836014893-37663794dca7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=846&q=80","+998","US"))
         country.add(Country("https://images.unsplash.com/photo-1626836014893-37663794dca7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=846&q=80","+998","Uzbekistan"))
 

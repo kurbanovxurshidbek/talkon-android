@@ -5,13 +5,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/dialog_corner_rounded"
     android:orientation="vertical"
-    android:gravity="center_horizontal"
-    android:padding="10dp">
+    android:gravity="center_horizontal">
 
     <LinearLayout
-        android:layout_width="80dp"
+        android:layout_width="70dp"
         android:layout_height="3dp"
-        android:layout_marginTop="5dp"
+        android:clipToOutline="true"
         android:background="@color/grey"/>
 
     <LinearLayout
@@ -22,47 +21,30 @@
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             android:background="@color/white"
             app:elevation="0dp">
 
-            <androidx.appcompat.widget.Toolbar
+            <EditText
+                android:id="@+id/et_search"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:elevation="0dp">
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:hint="Search a country"
+                android:drawableRight="@drawable/ic_search"
+                android:paddingBottom="10dp"
+                android:paddingRight="15dp"
+                android:paddingLeft="10dp"
+                android:outlineSpotShadowColor="@color/grey"
+                android:drawableTint="@color/grey"
+                android:textColorHint="@color/grey"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <EditText
-                        android:id="@+id/et_search"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textColor="@color/black"
-                        android:hint="Search a country"
-                        android:textColorHint="@color/grey"
-                        android:layout_marginLeft="10dp"/>
-
-                    <ImageView
-                        android:id="@+id/iv_search"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="10dp"
-                        android:src="@drawable/ic_search"
-                        app:tint="@color/grey" />
-                </LinearLayout>
-
-            </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="300dp"
             android:visibility="visible"
             app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
 

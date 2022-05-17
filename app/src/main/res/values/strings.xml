@@ -32,4 +32,6 @@
     <string name="str_balance">Balance</string>
     <string name="str_support_center">Support Center</string>
     <string name="str_log_out">Log out</string>
+    <string name="str_lesson_history">Lessons History</string>
+    <string name="str_vocabulary">Vocabulary</string>
 </resources>

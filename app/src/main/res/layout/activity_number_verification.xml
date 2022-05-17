@@ -51,13 +51,18 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="70dp"
-                android:padding="10dp"
+                android:gravity="center"
                 android:background="@drawable/background_rounded_grey_green">
 
                 <EditText
                     android:id="@+id/et_code_1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:gravity="center"
+                    android:imeOptions="actionNext"
+                    android:textSize="30sp"
                     android:textColor="@color/black"/>
             </LinearLayout>
 
@@ -66,41 +71,56 @@
                 android:layout_weight="1"
                 android:layout_height="70dp"
                 android:layout_marginLeft="20dp"
-                android:padding="10dp"
+                android:gravity="center"
                 android:background="@drawable/background_rounded_grey_green">
 
                 <EditText
                     android:id="@+id/et_code_2"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:gravity="center"
+                    android:imeOptions="actionNext"
+                    android:textSize="30sp"
                     android:textColor="@color/black"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="70dp"
-                android:padding="10dp"
+                android:gravity="center"
                 android:layout_marginLeft="20dp"
                 android:background="@drawable/background_rounded_grey_green">
 
                 <EditText
                     android:id="@+id/et_code_3"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:gravity="center"
+                    android:imeOptions="actionNext"
+                    android:textSize="30sp"
                     android:textColor="@color/black"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="70dp"
-                android:padding="10dp"
+                android:gravity="center"
                 android:layout_marginLeft="20dp"
                 android:background="@drawable/background_rounded_grey_green">
 
                 <EditText
                     android:id="@+id/et_code_4"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:gravity="center"
+                    android:imeOptions="actionNext"
+                    android:textSize="30sp"
                     android:textColor="@color/black"/>
             </LinearLayout>
         </LinearLayout>
