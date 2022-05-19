@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
+import com.airbnb.lottie.LottieAnimationView
 import com.talkon.talkon.R
 
 class IntroFragment : BaseFragment() {
@@ -36,10 +37,12 @@ class IntroFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
         val title = view.findViewById<TextView>(R.id.tv_title)
         val text = view.findViewById<TextView>(R.id.tv_text)
+        val anim = view.findViewById<LottieAnimationView>(R.id.lotti_teacher)
         // set page title
         title.setText(PAGE_TITLES[position])
         // set page sub title text
         text.setText(PAGE_TEXT[position])
+        anim.setAnimation(PAGE_ANIMS[position])
     }
 
     companion object {
@@ -48,6 +51,9 @@ class IntroFragment : BaseFragment() {
         // prepare all title ids arrays
         @StringRes
         private val PAGE_TITLES = intArrayOf(R.string.str_thousands_of_teachers, R.string.str_chat_with_teachers, R.string.str_live_talk_with_teachers )
+
+        @StringRes
+        private val PAGE_ANIMS = intArrayOf(R.raw.lottie_teacher, R.raw.lottie_teacher, R.raw.lottie_teacher)
 
         // prepare all subtitle ids arrays
         @StringRes

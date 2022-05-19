@@ -114,7 +114,7 @@
                         android:layout_height="match_parent">
 
                         <LinearLayout
-                            android:id="@+id/ll_student_et"
+                            android:id="@+id/ll_info"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
@@ -127,7 +127,7 @@
                                 android:padding="5dp">
 
                                 <EditText
-                                    android:id="@+id/et_student_name"
+                                    android:id="@+id/et_name"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="15dp"
@@ -138,23 +138,39 @@
                             </LinearLayout>
 
                             <LinearLayout
+                                android:id="@+id/ll_age_date"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"
                                 android:layout_marginTop="10dp"
                                 android:background="@drawable/background_rounded_grey_green"
                                 android:padding="5dp">
 
-                                <EditText
-                                    android:id="@+id/et_student_age"
+                                <FrameLayout
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="15dp"
-                                    android:hint="@string/str_age"
-                                    android:textColor="@color/black"
-                                    android:textColorHint="@color/grey" />
+                                    android:layout_height="match_parent">
+
+                                    <TextView
+                                        android:id="@+id/tv_age_format"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="20dp"
+                                        android:layout_gravity="center_vertical"
+                                        android:visibility="gone"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp"/>
+
+                                    <TextView
+                                        android:id="@+id/tv_age_hint"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/str_age"
+                                        android:textSize="17sp"
+                                        android:textColor="@color/grey"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginLeft="20dp"/>
+                                </FrameLayout>
 
                             </LinearLayout>
-
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"
@@ -163,68 +179,7 @@
                                 android:padding="5dp">
 
                                 <EditText
-                                    android:id="@+id/et_student_level"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="15dp"
-                                    android:hint="@string/str_level"
-                                    android:textColor="@color/black"
-                                    android:textColorHint="@color/grey" />
-
-                            </LinearLayout>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/ll_teacher_et"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:visibility="invisible">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="50dp"
-                                android:background="@drawable/background_rounded_grey_green"
-                                android:padding="5dp">
-
-                                <EditText
-                                    android:id="@+id/et_teacher_name"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="15dp"
-                                    android:hint="@string/str_name"
-                                    android:textColor="@color/black"
-                                    android:textColorHint="@color/grey" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="50dp"
-                                android:layout_marginTop="10dp"
-                                android:background="@drawable/background_rounded_grey_green"
-                                android:padding="5dp">
-
-                                <EditText
-                                    android:id="@+id/et_teacher_age"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="15dp"
-                                    android:hint="@string/str_age"
-                                    android:textColor="@color/black"
-                                    android:textColorHint="@color/grey" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="50dp"
-                                android:layout_marginTop="10dp"
-                                android:background="@drawable/background_rounded_grey_green"
-                                android:padding="5dp">
-
-                                <EditText
-                                    android:id="@+id/et_teacher_level"
+                                    android:id="@+id/et_level"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="15dp"
@@ -235,9 +190,11 @@
                             </LinearLayout>
 
                             <LinearLayout
+                                android:id="@+id/ll_experience"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"
                                 android:layout_marginTop="10dp"
+                                android:visibility="invisible"
                                 android:background="@drawable/background_rounded_grey_green"
                                 android:padding="5dp">
 

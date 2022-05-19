@@ -119,7 +119,7 @@
                     android:inputType="number"
                     android:maxLength="1"
                     android:gravity="center"
-                    android:imeOptions="actionNext"
+                    android:imeOptions="actionGo"
                     android:textSize="30sp"
                     android:textColor="@color/black"/>
             </LinearLayout>

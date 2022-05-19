@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/grey"
     android:orientation="vertical"
     tools:context=".activity.SignInActivity">
 
@@ -12,90 +13,102 @@
         android:layout_height="match_parent">
 
         <FrameLayout
+            android:id="@+id/fl_intro"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/iv_img"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:scaleType="fitStart"
-                android:src="@drawable/img"/>
-            <ImageView
-                android:id="@+id/iv_img_1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:scaleType="fitStart"
-                android:visibility="gone"
-                android:src="@drawable/img_1"/>
-            <ImageView
-                android:id="@+id/iv_img_2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:visibility="gone"
-                android:scaleType="fitStart"
-                android:src="@drawable/img_2"/>
-
-        </FrameLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="bottom">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/dialog_corner_rounded"
+                android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:gravity="center"
-                android:padding="15dp">
+                android:background="@color/grey"
+                android:weightSum="2"
+                android:gravity="bottom">
+
+                <LinearLayout
+                    android:id="@+id/ll_white_corner_rounded"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/dialog_corner_rounded"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal|bottom"
+                    android:padding="15dp">
+
+                    <Button
+                        android:id="@+id/bt_get_started"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/str_get_started"
+                        android:backgroundTint="@null"
+                        android:background="@drawable/button_rounded_full_green"
+                        android:layout_marginBottom="10dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/str_already_have_an_account"
+                            android:textColor="@color/grey"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_sign_in"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/str_sign_in"
+                            android:textColor="@color/main_green"
+                            android:textStyle="bold"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
 
                 <androidx.viewpager.widget.ViewPager
-                    android:id="@+id/viewpager"
+                    android:id="@+id/viewPager"
                     android:layout_width="match_parent"
-                    android:layout_height="160dp"/>
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
 
-                <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
-                    android:id="@+id/dots_indicator"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:dotsColor="@color/main_green"
-                    app:dotsCornerRadius="8dp"
-                    app:dotsSize="8dp"
-                    app:dotsSpacing="2dp"
-                    app:dotsWidthFactor="2.5"
-                    app:dotsStrokeColor="@color/grey"
-                    android:layout_marginBottom="20dp"
-                    app:dotsStrokeWidth="4dp" />
-
-
-                <TextView
-                    android:id="@+id/tv_skip"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="15dp"
-                    android:text="@string/str_skip"
-                    android:textStyle="bold"
-                    android:textColor="@color/main_green"
-                    android:textSize="16sp"/>
-
-                <Button
-                    android:id="@+id/bt_next"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="20dp"
-                    android:text="@string/str_next"
-                    android:backgroundTint="@null"
-                    android:background="@drawable/button_rounded_full_green"
-                    android:layout_marginBottom="10dp"/>
+                    android:layout_height="0dp"
+                    android:layout_weight="0.25"
+                    android:gravity="center">
+                    <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+                        android:id="@+id/dots_indicator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:dotsColor="@color/main_green"
+                        app:dotsCornerRadius="8dp"
+                        android:layout_gravity="center_horizontal"
+                        app:dotsSize="8dp"
+                        app:dotsSpacing="2dp"
+                        app:dotsWidthFactor="2.5"
+                        app:dotsStrokeColor="@color/grey"
+                        android:layout_marginBottom="20dp"
+                        app:dotsStrokeWidth="4dp" />
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
+        </FrameLayout>
+
+
     </FrameLayout>
+
 
 </LinearLayout>

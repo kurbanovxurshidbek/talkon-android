@@ -23,9 +23,6 @@
             android:name=".activity.NumberVerificationActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.SignInOrSignUpActivity"
-            android:exported="false" />
-        <activity
             android:name=".activity.IntroActivity"
             android:exported="false" />
         <activity

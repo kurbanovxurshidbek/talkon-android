@@ -34,4 +34,5 @@
     <string name="str_log_out">Log out</string>
     <string name="str_lesson_history">Lessons History</string>
     <string name="str_vocabulary">Vocabulary</string>
+    <string name="str_get_started">Get Started</string>
 </resources>

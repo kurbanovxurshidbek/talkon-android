@@ -10,5 +10,6 @@
     <color name="main_green">#35C759</color>
     <color name="light_green">#B235C759</color>
     <color name="background_green">#ADF7B6</color>
+    <color name="transparent">#00ADF7B6</color>
     <color name="grey">#BCB3B3</color>
 </resources>

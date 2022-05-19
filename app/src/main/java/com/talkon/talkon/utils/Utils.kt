@@ -12,7 +12,7 @@ import android.widget.TextView
 import android.widget.Toast
 import com.talkon.talkon.R
 
-object Utils {
+object Utils{
     fun getDeviceID(context: Context):String{
         val device_id: String = Settings.Secure.getString(context.contentResolver, Settings.Secure.ANDROID_ID)
         return device_id
@@ -22,9 +22,6 @@ object Utils {
 
     }
 
-    fun timePickerDialog(){
-
-    }
 }
 
 interface DialogListener {
