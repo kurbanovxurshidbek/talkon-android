@@ -1,12 +1,12 @@
-package com.talkon.talkon.activity
+package com.talkon.talkon.activity.profileActivity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.talkon.talkon.R
 
-class SignInActivity : BaseActivity() {
+class LessonHistoryActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sign_in)
+        setContentView(R.layout.activity_lesson_history)
     }
 }

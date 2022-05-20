@@ -12,133 +12,165 @@
         android:orientation="vertical"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
-        <androidx.core.widget.NestedScrollView
-            android:id="@+id/nestedScrollView"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white"
-            tools:ignore="MissingConstraints">
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="top|center_horizontal"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:text="@string/str_please_choose_your_status"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="top|center_horizontal"
-                    android:orientation="vertical"
-                    android:padding="20dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="40dp"
-                        android:text="@string/str_please_choose_your_status"
-                        android:textColor="@color/black"
-                        android:textSize="24sp"
-                        android:textStyle="bold" />
+                    android:layout_marginTop="20dp">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:id="@+id/ll_student"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp">
+                        android:layout_weight="1"
+                        android:background="@drawable/background_rounded_grey_green"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="10dp">
 
-                        <LinearLayout
-                            android:id="@+id/ll_student"
-                            android:layout_width="0dp"
+                        <TextView
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="@drawable/background_rounded_grey_green"
-                            android:gravity="center"
-                            android:orientation="vertical"
-                            android:padding="10dp">
+                            android:text="@string/str_student"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/str_student"
-                                android:textColor="@color/black"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:src="@drawable/iv_student" />
 
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_marginTop="10dp"
-                                android:src="@drawable/iv_student" />
+                    </LinearLayout>
 
-                        </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/ll_teacher"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/background_rounded_grey_green"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="10dp">
 
-                        <LinearLayout
-                            android:id="@+id/ll_teacher"
-                            android:layout_width="0dp"
+                        <TextView
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="20dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/background_rounded_grey_green"
-                            android:gravity="center"
-                            android:orientation="vertical"
-                            android:padding="10dp">
+                            android:text="@string/str_teacher"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/str_teacher"
-                                android:textColor="@color/black"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_marginTop="10dp"
-                                android:src="@drawable/iv_teacher" />
-
-                        </LinearLayout>
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:src="@drawable/iv_teacher" />
 
                     </LinearLayout>
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="top|center_horizontal"
-                    android:orientation="vertical"
-                    android:padding="20dp">
+            </LinearLayout>
 
-                    <FrameLayout
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.8"
+                android:gravity="top|center_horizontal"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/ll_info"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="invisible">
 
                         <LinearLayout
-                            android:id="@+id/ll_info"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:visibility="invisible">
+                            android:layout_height="50dp"
+                            android:background="@drawable/background_rounded_grey_green"
+                            android:padding="5dp">
 
-                            <LinearLayout
+                            <EditText
+                                android:id="@+id/et_name"
                                 android:layout_width="match_parent"
-                                android:layout_height="50dp"
-                                android:background="@drawable/background_rounded_grey_green"
-                                android:padding="5dp">
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:hint="@string/str_name"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/grey" />
 
-                                <EditText
-                                    android:id="@+id/et_name"
-                                    android:layout_width="match_parent"
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_age_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/background_rounded_grey_green"
+                            android:padding="5dp">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/tv_age_format"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginLeft="15dp"
-                                    android:hint="@string/str_name"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:visibility="gone"
                                     android:textColor="@color/black"
-                                    android:textColorHint="@color/grey" />
+                                    android:textSize="16sp"/>
 
-                            </LinearLayout>
+                                <TextView
+                                    android:id="@+id/tv_age_hint"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/str_age"
+                                    android:textSize="17sp"
+                                    android:textColor="@color/grey"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginLeft="20dp"/>
+                            </FrameLayout>
 
+                        </LinearLayout>
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
                             <LinearLayout
-                                android:id="@+id/ll_age_date"
+                                android:id="@+id/ll_level"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"
                                 android:layout_marginTop="10dp"
@@ -150,7 +182,7 @@
                                     android:layout_height="match_parent">
 
                                     <TextView
-                                        android:id="@+id/tv_age_format"
+                                        android:id="@+id/tv_level"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="20dp"
@@ -160,10 +192,10 @@
                                         android:textSize="16sp"/>
 
                                     <TextView
-                                        android:id="@+id/tv_age_hint"
+                                        android:id="@+id/tv_level_hint"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="@string/str_age"
+                                        android:text="@string/str_level"
                                         android:textSize="17sp"
                                         android:textColor="@color/grey"
                                         android:layout_gravity="center_vertical"
@@ -172,86 +204,87 @@
 
                             </LinearLayout>
                             <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="50dp"
-                                android:layout_marginTop="10dp"
-                                android:background="@drawable/background_rounded_grey_green"
-                                android:padding="5dp">
-
-                                <EditText
-                                    android:id="@+id/et_level"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="15dp"
-                                    android:hint="@string/str_level"
-                                    android:textColor="@color/black"
-                                    android:textColorHint="@color/grey" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
                                 android:id="@+id/ll_experience"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"
                                 android:layout_marginTop="10dp"
-                                android:visibility="invisible"
+                                android:visibility="gone"
                                 android:background="@drawable/background_rounded_grey_green"
                                 android:padding="5dp">
 
-                                <EditText
-                                    android:id="@+id/et_teacher_experience"
+                                <FrameLayout
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="15dp"
-                                    android:hint="@string/str_experience"
-                                    android:textColor="@color/black"
-                                    android:textColorHint="@color/grey" />
+                                    android:layout_height="match_parent">
+
+                                    <TextView
+                                        android:id="@+id/tv_experience"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="20dp"
+                                        android:layout_gravity="center_vertical"
+                                        android:visibility="gone"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp"/>
+
+                                    <TextView
+                                        android:id="@+id/tv_experience_hint"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/str_experience"
+                                        android:textSize="17sp"
+                                        android:textColor="@color/grey"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginLeft="20dp"/>
+                                </FrameLayout>
 
                             </LinearLayout>
-                        </LinearLayout>
-                    </FrameLayout>
+                        </FrameLayout>
 
-                </LinearLayout>
+                    </LinearLayout>
+                </FrameLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="top"
-                    android:orientation="vertical"
-                    android:paddingLeft="20dp"
-                    android:paddingTop="5dp"
-                    android:paddingRight="20dp"
-                    android:paddingBottom="10sp">
-
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <Button
-                            android:id="@+id/bt_next_light"
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_marginBottom="10dp"
-                            android:background="@drawable/button_rounded_full_green_light"
-                            android:backgroundTint="@null"
-                            android:text="@string/str_next" />
-
-                        <Button
-                            android:id="@+id/bt_next"
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_marginBottom="10dp"
-                            android:background="@drawable/button_rounded_full_green"
-                            android:backgroundTint="@null"
-                            android:text="@string/str_next"
-                            android:visibility="gone" />
-
-
-                    </FrameLayout>
-
-                </LinearLayout>
             </LinearLayout>
-        </androidx.core.widget.NestedScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.3"
+                android:gravity="top"
+                android:layout_gravity="bottom"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingTop="5dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="10sp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/bt_next_light"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/button_rounded_full_green_light"
+                        android:backgroundTint="@null"
+                        android:text="@string/str_next" />
+
+                    <Button
+                        android:id="@+id/bt_next"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/button_rounded_full_green"
+                        android:backgroundTint="@null"
+                        android:text="@string/str_next"
+                        android:visibility="gone" />
+
+
+                </FrameLayout>
+
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

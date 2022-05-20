@@ -1,10 +1,15 @@
-package com.talkon.talkon.fragment
+package com.talkon.talkon.fragment.mainFragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.talkon.talkon.R
+import com.talkon.talkon.fragment.BaseFragment
+
+/**
+ * ProfileFragment is used for managing users profile, like setting, balance, notifications...
+ */
 
 class ProfileFragment : BaseFragment() {
     override fun onCreateView(

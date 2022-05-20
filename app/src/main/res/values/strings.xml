@@ -32,7 +32,22 @@
     <string name="str_balance">Balance</string>
     <string name="str_support_center">Support Center</string>
     <string name="str_log_out">Log out</string>
-    <string name="str_lesson_history">Lessons History</string>
+    <string name="str_lesson_history">Lesson History</string>
     <string name="str_vocabulary">Vocabulary</string>
     <string name="str_get_started">Get Started</string>
+    <string name="str_invite_friends">Invite Friends</string>
+    <string name="str_rate_talk_on">Rate Talk On</string>
+    <string name="str_favorite_teachers">Favorite Teachers</string>
+    <string name="str_search">Search</string>
+    <string name="str_tutor">Tutor</string>
+
+
+    <string name="text">Let`s speak natural British Englis, TESL, IELTS TOEFL English together ,
+        Let`s speak natural British English together </string>
+
+
+    <string-array name="tutor_student">
+        <item>Tutor</item>
+        <item>Student</item>
+    </string-array>
 </resources>

@@ -12,7 +12,6 @@
         android:background="@color/white"
         android:elevation="4dp"
         android:gravity="center"
-
         app:buttonGravity="center_vertical"
         app:titleTextColor="@color/white">
 
@@ -30,12 +29,12 @@
                 android:textSize="17sp"/>
 
             <ImageView
-                android:id="@+id/iv_logout"
+                android:id="@+id/iv_settings"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
                 android:layout_marginRight="16dp"
-                android:src="@drawable/ic_edit_green"
+                android:src="@drawable/ic_settings"
                 android:background="@drawable/background_light_green_rounded"/>
 
         </LinearLayout>
@@ -129,49 +128,11 @@
 
                     <FrameLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <LinearLayout
-                            android:id="@+id/ll_settings"
-                            android:layout_width="match_parent"
-                            android:layout_height="55dp"
-                            android:layout_marginLeft="40dp"
-                            android:gravity="center_vertical"
-                            android:background="@drawable/background_rounded_grey_green">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_weight="1"
-                                android:layout_height="wrap_content"
-                                android:text="@string/str_settings"
-                                android:textStyle="bold"
-                                android:layout_marginLeft="35dp"
-                                android:textSize="16sp"
-                                android:textColor="@color/black"/>
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginRight="15dp"
-                                android:src="@drawable/ic_vector_green"/>
-                        </LinearLayout>
-                        <ImageView
-                            android:layout_width="56dp"
-                            android:layout_height="56dp"
-                            android:padding="15dp"
-                            android:src="@drawable/ic_help"
-                            android:background="@drawable/ic_background_light_green_settings"/>
-
-
-                    </FrameLayout>
-
-                    <FrameLayout
-                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp">
 
                         <LinearLayout
-                            android:id="@+id/ll_balance"
+                            android:id="@+id/ll_lesson_history"
                             android:layout_width="match_parent"
                             android:layout_height="55dp"
                             android:layout_marginLeft="40dp"
@@ -182,7 +143,7 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:text="@string/str_balance"
+                                android:text="@string/str_lesson_history"
                                 android:textStyle="bold"
                                 android:layout_marginLeft="35dp"
                                 android:textSize="16sp"
@@ -210,7 +171,7 @@
                         android:layout_marginTop="10dp">
 
                         <LinearLayout
-                            android:id="@+id/ll_lesson_history"
+                            android:id="@+id/ll_favourite_teachers"
                             android:layout_width="match_parent"
                             android:layout_height="55dp"
                             android:layout_marginLeft="40dp"
@@ -221,7 +182,7 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:text="@string/str_lesson_history"
+                                android:text="@string/str_favorite_teachers"
                                 android:textStyle="bold"
                                 android:layout_marginLeft="35dp"
                                 android:textSize="16sp"
@@ -281,6 +242,82 @@
 
 
                     </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <LinearLayout
+                            android:id="@+id/ll_invite_friends"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:layout_marginLeft="40dp"
+                            android:gravity="center_vertical"
+                            android:background="@drawable/background_rounded_grey_green">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:text="@string/str_invite_friends"
+                                android:textStyle="bold"
+                                android:layout_marginLeft="35dp"
+                                android:textSize="16sp"
+                                android:textColor="@color/black"/>
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="15dp"
+                                android:src="@drawable/ic_vector_green"/>
+                        </LinearLayout>
+                        <ImageView
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:padding="15dp"
+                            android:src="@drawable/ic_invite_friends"
+                            android:background="@drawable/ic_background_light_green_settings"/>
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/ll_rate_talk_on"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_marginLeft="40dp"
+                        android:gravity="center_vertical"
+                        android:background="@drawable/background_rounded_grey_green">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="@string/str_rate_talk_on"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="35dp"
+                            android:textSize="16sp"
+                            android:textColor="@color/black"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="15dp"
+                            android:src="@drawable/ic_vector_green"/>
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:padding="15dp"
+                        android:src="@drawable/ic_invite_friends"
+                        android:background="@drawable/ic_background_light_green_settings"/>
+
+                </FrameLayout>
 
                     <FrameLayout
                         android:layout_width="match_parent"
@@ -357,44 +394,6 @@
                             android:background="@drawable/ic_background_light_green_settings"/>
 
                     </FrameLayout>
-
-                    <FrameLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp">
-
-                    <LinearLayout
-                        android:id="@+id/ll_invite_friends"
-                        android:layout_width="match_parent"
-                        android:layout_height="55dp"
-                        android:layout_marginLeft="40dp"
-                        android:gravity="center_vertical"
-                        android:background="@drawable/background_rounded_grey_green">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="wrap_content"
-                            android:text="Invite Friends"
-                            android:textStyle="bold"
-                            android:layout_marginLeft="35dp"
-                            android:textSize="16sp"
-                            android:textColor="@color/black"/>
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="15dp"
-                            android:src="@drawable/ic_vector_green"/>
-                    </LinearLayout>
-                    <ImageView
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
-                        android:padding="15dp"
-                        android:src="@drawable/ic_invite_friends"
-                        android:background="@drawable/ic_background_light_green_settings"/>
-
-                </FrameLayout>
 
                     <FrameLayout
                         android:layout_width="match_parent"

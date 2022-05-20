@@ -1,4 +1,4 @@
-package com.talkon.talkon.activity
+package com.talkon.talkon.activity.entryActivity
 
 import android.app.Dialog
 import android.graphics.Color
@@ -7,13 +7,14 @@ import android.os.Bundle
 import android.view.Gravity
 import android.view.ViewGroup
 import android.view.Window
-import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.talkon.talkon.R
-import com.talkon.talkon.fragment.CountryBottomSheetDialog
+import com.talkon.talkon.activity.BaseActivity
+import com.talkon.talkon.fragment.minorFragment.CountryBottomSheetDialog
 import kotlinx.android.synthetic.main.activity_sign_up.*
-import kotlinx.android.synthetic.main.country_bottom_sheet_layout.*
 
-
+/**
+* In SignUpActivity, user can sign up using phone number or Google
+*/
 class SignUpActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

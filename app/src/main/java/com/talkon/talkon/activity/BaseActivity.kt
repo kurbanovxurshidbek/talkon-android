@@ -4,7 +4,10 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.talkon.talkon.R
+import com.talkon.talkon.activity.entryActivity.NumberVerificationActivity
+import com.talkon.talkon.activity.entryActivity.SignInActivity
+import com.talkon.talkon.activity.entryActivity.SignUpActivity
+import com.talkon.talkon.activity.entryActivity.StatusChooseActivity
 
 /**
  * BaseActivity is parent for all Activities

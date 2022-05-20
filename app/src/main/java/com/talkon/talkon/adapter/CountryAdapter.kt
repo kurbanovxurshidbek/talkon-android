@@ -1,6 +1,5 @@
 package com.talkon.talkon.adapter
 
-import android.app.Dialog
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,8 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.android.material.imageview.ShapeableImageView
 import com.talkon.talkon.R
-import com.talkon.talkon.activity.SignUpActivity
-import com.talkon.talkon.fragment.CountryBottomSheetDialog
+import com.talkon.talkon.fragment.minorFragment.CountryBottomSheetDialog
 import com.talkon.talkon.model.Country
 
 class CountryAdapter(var fragment: CountryBottomSheetDialog, var items: ArrayList<Country>) : BaseAdapter(){

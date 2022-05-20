@@ -1,23 +1,19 @@
-package com.talkon.talkon.activity
+package com.talkon.talkon.activity.entryActivity
 
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
 import android.view.View
-import android.view.WindowManager
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
-import com.talkon.talkon.manager.SharedPref
 import com.talkon.talkon.R
+import com.talkon.talkon.activity.BaseActivity
 import com.talkon.talkon.adapter.IntroFragmentAdapter
 import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
 import kotlinx.android.synthetic.main.activity_intro.*
-import kotlinx.android.synthetic.main.activity_splash.view.*
 
+/**
+ * IntroActivity is used to introduce the application for users when they first installed the app
+ */
 class IntroActivity : BaseActivity() {
     private lateinit var viewPager: ViewPager
     override var context: Context = this

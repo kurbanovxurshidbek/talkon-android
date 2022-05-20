@@ -1,15 +1,17 @@
-package com.talkon.talkon.activity
+package com.talkon.talkon.activity.entryActivity
 
 import android.app.DatePickerDialog
-import android.content.DialogInterface
 import android.os.Bundle
 import android.view.View
 import android.widget.DatePicker
 import com.talkon.talkon.R
+import com.talkon.talkon.activity.BaseActivity
 import kotlinx.android.synthetic.main.activity_status_choose.*
 import java.util.*
 
-
+/**
+ * StatusChooseActivity is used for users to choose if they enter as Teacher or Student
+ */
 class StatusChooseActivity : BaseActivity(), DatePickerDialog.OnDateSetListener {
     var day : Int = 0
     var month : Int = 0
@@ -26,10 +28,13 @@ class StatusChooseActivity : BaseActivity(), DatePickerDialog.OnDateSetListener 
 
     private fun initViews() {
         ll_student.setOnClickListener {
-           ll_info.visibility = View.VISIBLE
+            ll_info.visibility = View.VISIBLE
+            ll_experience.visibility = View.INVISIBLE
+            ll_level.visibility = View.VISIBLE
         }
         ll_teacher.setOnClickListener {
             ll_info.visibility = View.VISIBLE
+            ll_level.visibility = View.INVISIBLE
             ll_experience.visibility = View.VISIBLE
         }
 

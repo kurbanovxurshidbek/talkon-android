@@ -1,4 +1,4 @@
-package com.talkon.talkon.fragment
+package com.talkon.talkon.fragment.minorFragment
 
 import android.annotation.SuppressLint
 import android.os.Build
@@ -6,13 +6,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.annotation.StringRes
-import androidx.fragment.app.Fragment
 import com.airbnb.lottie.LottieAnimationView
 import com.talkon.talkon.R
+import com.talkon.talkon.fragment.BaseFragment
+
+/**
+ * IntroFragment is used to switch the viewPager fragment info in IntroActivity,
+ * like introduction title, text and animation
+ */
 
 class IntroFragment : BaseFragment() {
     private var position = 0

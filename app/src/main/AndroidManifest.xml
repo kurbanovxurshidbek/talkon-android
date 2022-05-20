@@ -9,34 +9,58 @@
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Design.NoActionBar">
+        android:theme="@style/Theme.MaterialComponents.NoActionBar.Bridge">
         <activity
-            android:name=".activity.StatusChooseActivity"
+            android:name=".activity.searchActivity.AboutTeacherActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.NumberVerificationActivity"
+            android:name=".activity.profileActivity.FavouriteTeachersActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.IntroActivity"
+            android:name=".activity.profileActivity.LessonHistoryActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.SignUpActivity"
+            android:name=".activity.profileActivity.BalanceActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.SignInActivity"
+            android:name=".activity.profileActivity.SettingsActivity"
             android:exported="false" />
+        <activity
+            android:name=".activity.entryActivity.IntroActivity"
+            android:exported="false"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".activity.entryActivity.SignUpActivity"
+            android:exported="false"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".activity.entryActivity.SignInActivity"
+            android:exported="false"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".activity.entryActivity.NumberVerificationActivity"
+            android:exported="false"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".activity.entryActivity.StatusChooseActivity"
+            android:exported="false"
+            android:launchMode="singleTop" />
         <activity
             android:name=".activity.MainActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:launchMode="singleTop" />
         <activity
-            android:name=".activity.SplashActivity"
-            android:exported="true">
+            android:name=".activity.entryActivity.SplashActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

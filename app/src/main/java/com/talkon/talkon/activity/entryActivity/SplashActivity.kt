@@ -1,4 +1,4 @@
-package com.talkon.talkon.activity
+package com.talkon.talkon.activity.entryActivity
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,12 @@ import android.os.Handler
 import android.view.WindowManager
 import com.talkon.talkon.manager.SharedPref
 import com.talkon.talkon.R
+import com.talkon.talkon.activity.BaseActivity
+import com.talkon.talkon.activity.MainActivity
+
+/**
+ * In SplashActivity, user can visit to IntroActivity or MainActivity
+ */
 
 class SplashActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

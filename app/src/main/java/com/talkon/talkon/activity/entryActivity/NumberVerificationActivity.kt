@@ -1,11 +1,15 @@
-package com.talkon.talkon.activity
+package com.talkon.talkon.activity.entryActivity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
 import com.talkon.talkon.R
+import com.talkon.talkon.activity.BaseActivity
 import kotlinx.android.synthetic.main.activity_number_verification.*
+
+/**
+ * In NumberVerificationActivity, user gets verification code if signed up/in with phone number
+ */
 
 class NumberVerificationActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
