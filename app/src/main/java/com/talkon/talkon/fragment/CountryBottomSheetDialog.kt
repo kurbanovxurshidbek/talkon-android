@@ -1,4 +1,4 @@
-package com.talkon.talkon.fragment.minorFragment
+package com.talkon.talkon.fragment
 
 import android.os.Bundle
 import android.view.*

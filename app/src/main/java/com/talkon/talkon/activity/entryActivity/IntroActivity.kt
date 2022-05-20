@@ -22,7 +22,7 @@ class IntroActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_intro)
-//        overridePendingTransition(  R.anim.main_fade_in, 0 );
+
         initViews()
     }
 

@@ -1,151 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="138dp"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="10dp"
     android:background="@color/white"
     android:orientation="vertical">
 
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="135dp"
+       android:orientation="vertical"
+       android:padding="10dp">
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="70dp"
+           android:orientation="horizontal">
+
+           <FrameLayout
+               android:layout_width="70dp"
+               android:layout_height="match_parent"
+               android:layout_marginLeft="10dp"
+               android:layout_marginTop="5dp">
+
+               <com.google.android.material.imageview.ShapeableImageView
+                   android:id="@+id/iv_profile_picture"
+                   android:layout_width="60dp"
+                   android:layout_height="60dp"
+                   app:shapeAppearance="@style/circle"
+                   android:scaleType="centerCrop"
+                   android:src="@drawable/img"/>
+
+               <ImageView
+                   android:id="@+id/iv_online"
+                   android:layout_width="15dp"
+                   android:layout_height="15dp"
+                   android:src="@drawable/online_circle_green"
+                   android:layout_gravity="bottom|right"
+                   android:visibility="gone"
+                   android:layout_marginBottom="6dp"
+                   android:layout_marginRight="10dp"/>
+           </FrameLayout>
+
+           <LinearLayout
+               android:layout_width="250dp"
+               android:layout_height="match_parent"
+               android:orientation="vertical"
+               android:layout_marginLeft="5dp"
+               android:gravity="top">
+
+               <TextView
+                   android:id="@+id/tv_fullname"
+                   android:layout_width="245dp"
+                   android:layout_height="wrap_content"
+                   android:textSize="24sp"
+                   android:textColor="@color/black"
+                   android:maxWidth="240dp"
+                   android:singleLine="true"
+                   android:text="Rosette L."/>
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:gravity="center_vertical">
+
+                   <FrameLayout
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content">
+
+                       <LinearLayout
+                           android:id="@+id/ll_rated"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:gravity="center_vertical">
+                           <ImageView
+                               android:id="@+id/iv_star"
+                               android:layout_width="15dp"
+                               android:layout_height="15dp"
+                               android:src="@drawable/ic_gold_star_empty"/>
+                           <TextView
+                               android:id="@+id/tv_rating"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:text="4.8"
+                               android:maxWidth="40dp"
+                               android:singleLine="true"
+                               android:textStyle="bold"
+                               android:layout_marginLeft="7dp"
+                               android:textColor="@color/gold"
+                               android:textSize="16sp"/>
+
+                       </LinearLayout>
+
+                       <TextView
+                           android:id="@+id/tv_new"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="New"
+                           android:visibility="gone"
+                           android:maxWidth="40dp"
+                           android:singleLine="true"
+                           android:layout_gravity="center_vertical"
+                           android:textColor="@color/main_green"
+                           android:textStyle="bold"
+                           android:textSize="16sp"/>
+
+                   </FrameLayout>
+
+                   <TextView
+                       android:id="@+id/tv_lessons"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:textSize="16sp"
+                       android:textColor="@color/black"
+                       android:maxWidth="180dp"
+                       android:singleLine="true"
+                       android:layout_marginLeft="12dp"
+                       android:text="12 lessons"/>
+
+               </LinearLayout>
+
+               <TextView
+                   android:id="@+id/tv_busy_free"
+                   android:layout_width="200dp"
+                   android:layout_height="wrap_content"
+                   android:textSize="12sp"
+                   android:textColor="@color/black"
+                   android:maxWidth="240dp"
+                   android:singleLine="true"
+                   android:layout_marginLeft="1dp"
+                   android:text="Busy in 30 minutes"/>
+
+           </LinearLayout>
+
+           <ImageView
+               android:id="@+id/iv_talk_on_verified"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:src="@drawable/ic_talk_on_verified"
+               android:layout_marginLeft="10dp"
+               android:layout_marginTop="10dp"/>
+       </LinearLayout>
+
+       <TextView
+           android:id="@+id/tv_about_teacher"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="7dp"
+           android:layout_marginLeft="10dp"
+           android:textSize="15sp"
+           android:layout_marginRight="40dp"
+           android:maxLines="2"
+           android:text="Let`s speak natural British Englis, TESL, IELTS TOEFLEnglish together , Let`s speak natural BritishEnglish together  "
+           android:textColor="@color/dark_grey" />
+   </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:orientation="horizontal">
-        
-        <FrameLayout
-            android:layout_width="70dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp">
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/iv_profile_picture"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                app:shapeAppearance="@style/circle"
-                android:scaleType="centerCrop"
-                android:src="@drawable/img"/>
-
-            <ImageView
-                android:id="@+id/iv_online"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:src="@drawable/online_circle_green"
-                android:layout_gravity="bottom|right"
-                android:layout_marginBottom="6dp"
-                android:layout_marginRight="10dp"/>
-        </FrameLayout>
-
-        <LinearLayout
-            android:layout_width="250dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_marginLeft="5dp"
-            android:gravity="top">
-
-            <TextView
-                android:id="@+id/tv_fullname"
-                android:layout_width="245dp"
-                android:layout_height="wrap_content"
-                android:textSize="24sp"
-                android:textColor="@color/black"
-                android:maxWidth="240dp"
-                android:singleLine="true"
-                android:text="Rosette L."/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical">
-
-                <FrameLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <LinearLayout
-                        android:id="@+id/ll_rated"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-                        <ImageView
-                            android:id="@+id/iv_star"
-                            android:layout_width="16dp"
-                            android:layout_height="16dp"
-                            android:src="@drawable/ic_gold_star_empty"/>
-                        <TextView
-                            android:id="@+id/tv_rating"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="4.8"
-                            android:maxWidth="40dp"
-                            android:singleLine="true"
-                            android:textStyle="bold"
-                            android:layout_marginLeft="7dp"
-                            android:textColor="@color/gold"
-                            android:textSize="16sp"/>
-
-                    </LinearLayout>
-
-                    <TextView
-                        android:id="@+id/tv_new"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="New"
-                        android:visibility="gone"
-                        android:maxWidth="40dp"
-                        android:singleLine="true"
-                        android:layout_gravity="center_vertical"
-                        android:textColor="@color/main_green"
-                        android:textStyle="bold"
-                        android:textSize="16sp"/>
-
-                </FrameLayout>
-
-                <TextView
-                    android:id="@+id/tv_lessons"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"
-                    android:maxWidth="180dp"
-                    android:singleLine="true"
-                    android:layout_marginLeft="12dp"
-                    android:text="12 lessons"/>
-
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/tv_busy_free"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:textSize="12sp"
-                android:textColor="@color/black"
-                android:maxWidth="240dp"
-                android:singleLine="true"
-                android:layout_marginLeft="1dp"
-                android:text="Busy in 30 minutes"/>
-
-        </LinearLayout>
-
-        <ImageView
-            android:id="@+id/iv_talk_on_certified"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_talk_on_certified"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"/>
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/tv_about_teacher"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:layout_marginLeft="10dp"
-        android:textSize="13sp"
-        android:maxWidth="335dp"
-        android:maxLines="3"
-        android:text="Let`s speak natural British Englis, TESL, IELTS TOEFLEnglish together , Let`s speak natural BritishEnglish together  "
-        android:textColor="@color/dark_grey"
-        />
-
+        android:layout_height="1dp"
+        android:background="@color/grey"
+        android:layout_marginBottom="1dp"/>
 </LinearLayout>

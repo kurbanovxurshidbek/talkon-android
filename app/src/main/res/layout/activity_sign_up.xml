@@ -91,7 +91,7 @@
                 android:layout_marginTop="6dp"
                 android:padding="5dp"
                 android:gravity="center_vertical"
-                android:background="@drawable/background_rounded_grey_green"
+                android:background="@drawable/border_rounded_grey_green"
                 android:orientation="horizontal">
 
 

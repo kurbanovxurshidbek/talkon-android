@@ -18,7 +18,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.NoActionBar.Bridge">
         <activity
-            android:name=".activity.searchActivity.AboutTeacherActivity"
+            android:name=".activity.AboutTeacherActivity"
             android:exported="false" />
         <activity
             android:name=".activity.profileActivity.FavouriteTeachersActivity"

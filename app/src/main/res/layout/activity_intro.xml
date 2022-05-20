@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey"
+    android:background="@color/background_green"
     android:orientation="vertical"
     tools:context=".activity.entryActivity.SignInActivity">
 
@@ -22,7 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:background="@color/grey"
+                android:background="@color/background_green"
                 android:weightSum="2"
                 android:gravity="bottom">
 

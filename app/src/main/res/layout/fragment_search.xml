@@ -10,6 +10,7 @@
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/white"
         app:elevation="0dp">
 
         <LinearLayout
@@ -19,7 +20,7 @@
             android:layout_marginTop="10dp">
 
             <com.google.android.material.tabs.TabLayout
-                android:layout_width="220dp"
+                android:layout_width="265dp"
                 android:layout_height="45dp"
                 android:id="@+id/tabLayout"
                 android:layout_gravity="center_horizontal"
@@ -30,19 +31,31 @@
                 app:tabIndicatorGravity="stretch"
                 app:tabSelectedTextColor="@color/white"
                 app:tabIndicatorAnimationMode="elastic"
-                app:tabMaxWidth="110dp"
-                app:tabIndicatorColor="@color/black"
-                app:tabIndicator="@drawable/border_round_all_dark"/>
+                app:tabMaxWidth="132dp"
+                app:tabIndicatorColor="@color/light_green"
+                app:tabIndicatorAnimationDuration="@integer/material_motion_duration_long_1"
+                app:tabIndicator="@drawable/border_round_default_tutor"/>
 
             <ImageView
-                android:id="@+id/ic_sort"
-                android:layout_width="24sp"
-                android:layout_height="24sp"
-                android:layout_marginLeft="25dp"
+                android:id="@+id/iv_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:visibility="visible"
-                android:layout_marginRight="40dp"
+                android:layout_marginRight="10dp"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_sort"/>
+                android:padding="5dp"
+                android:src="@drawable/ic_search" />
+
+            <ImageView
+                android:id="@+id/iv_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:src="@drawable/ic_filter"
+                android:background="@drawable/background_light_green_rounded"/>
 
         </LinearLayout>
 

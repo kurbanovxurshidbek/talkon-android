@@ -1,4 +1,4 @@
-package com.talkon.talkon.activity.searchActivity
+package com.talkon.talkon.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

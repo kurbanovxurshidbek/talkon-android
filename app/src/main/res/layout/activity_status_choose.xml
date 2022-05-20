@@ -44,7 +44,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:background="@drawable/background_rounded_grey_green"
+                        android:background="@drawable/border_rounded_grey_green"
                         android:gravity="center"
                         android:orientation="vertical"
                         android:padding="10dp">
@@ -71,7 +71,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
                         android:layout_weight="1"
-                        android:background="@drawable/background_rounded_grey_green"
+                        android:background="@drawable/border_rounded_grey_green"
                         android:gravity="center"
                         android:orientation="vertical"
                         android:padding="10dp">
@@ -118,7 +118,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
-                            android:background="@drawable/background_rounded_grey_green"
+                            android:background="@drawable/border_rounded_grey_green"
                             android:padding="5dp">
 
                             <EditText
@@ -137,7 +137,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:layout_marginTop="10dp"
-                            android:background="@drawable/background_rounded_grey_green"
+                            android:background="@drawable/border_rounded_grey_green"
                             android:padding="5dp">
 
                             <FrameLayout
@@ -174,7 +174,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"
                                 android:layout_marginTop="10dp"
-                                android:background="@drawable/background_rounded_grey_green"
+                                android:background="@drawable/border_rounded_grey_green"
                                 android:padding="5dp">
 
                                 <FrameLayout
@@ -209,7 +209,7 @@
                                 android:layout_height="50dp"
                                 android:layout_marginTop="10dp"
                                 android:visibility="gone"
-                                android:background="@drawable/background_rounded_grey_green"
+                                android:background="@drawable/border_rounded_grey_green"
                                 android:padding="5dp">
 
                                 <FrameLayout

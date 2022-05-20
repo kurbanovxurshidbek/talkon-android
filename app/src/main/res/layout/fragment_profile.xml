@@ -137,7 +137,7 @@
                             android:layout_height="55dp"
                             android:layout_marginLeft="40dp"
                             android:gravity="center_vertical"
-                            android:background="@drawable/background_rounded_grey_green">
+                            android:background="@drawable/border_rounded_grey_green">
 
                             <TextView
                                 android:layout_width="0dp"
@@ -176,7 +176,7 @@
                             android:layout_height="55dp"
                             android:layout_marginLeft="40dp"
                             android:gravity="center_vertical"
-                            android:background="@drawable/background_rounded_grey_green">
+                            android:background="@drawable/border_rounded_grey_green">
 
                             <TextView
                                 android:layout_width="0dp"
@@ -215,7 +215,7 @@
                             android:layout_height="55dp"
                             android:layout_marginLeft="40dp"
                             android:gravity="center_vertical"
-                            android:background="@drawable/background_rounded_grey_green">
+                            android:background="@drawable/border_rounded_grey_green">
 
                             <TextView
                                 android:layout_width="0dp"
@@ -254,7 +254,7 @@
                             android:layout_height="55dp"
                             android:layout_marginLeft="40dp"
                             android:gravity="center_vertical"
-                            android:background="@drawable/background_rounded_grey_green">
+                            android:background="@drawable/border_rounded_grey_green">
 
                             <TextView
                                 android:layout_width="0dp"
@@ -292,7 +292,7 @@
                         android:layout_height="55dp"
                         android:layout_marginLeft="40dp"
                         android:gravity="center_vertical"
-                        android:background="@drawable/background_rounded_grey_green">
+                        android:background="@drawable/border_rounded_grey_green">
 
                         <TextView
                             android:layout_width="0dp"
@@ -330,7 +330,7 @@
                             android:layout_height="55dp"
                             android:layout_marginLeft="40dp"
                             android:gravity="center_vertical"
-                            android:background="@drawable/background_rounded_grey_green">
+                            android:background="@drawable/border_rounded_grey_green">
 
                             <TextView
                                 android:layout_width="0dp"
@@ -368,7 +368,7 @@
                             android:layout_height="55dp"
                             android:layout_marginLeft="40dp"
                             android:gravity="center_vertical"
-                            android:background="@drawable/background_rounded_grey_green">
+                            android:background="@drawable/border_rounded_grey_green">
 
                             <TextView
                                 android:layout_width="0dp"
@@ -407,7 +407,7 @@
                             android:layout_height="55dp"
                             android:layout_marginLeft="40dp"
                             android:gravity="center_vertical"
-                            android:background="@drawable/background_rounded_grey_green">
+                            android:background="@drawable/border_rounded_grey_green">
 
                             <TextView
                                 android:layout_width="0dp"

@@ -27,6 +27,7 @@
                 android:theme="@style/BottomNavigationTheme"
                 app:elevation="2dp"
                 app:itemIconSize="20dp"
+
                 app:labelVisibilityMode="unlabeled"
                 app:menu="@menu/bottom_navigation_menu" />
         </LinearLayout>

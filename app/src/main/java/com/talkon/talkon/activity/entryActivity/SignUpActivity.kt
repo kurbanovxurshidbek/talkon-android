@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import android.view.Window
 import com.talkon.talkon.R
 import com.talkon.talkon.activity.BaseActivity
-import com.talkon.talkon.fragment.minorFragment.CountryBottomSheetDialog
+import com.talkon.talkon.fragment.CountryBottomSheetDialog
 import kotlinx.android.synthetic.main.activity_sign_up.*
 
 /**
@@ -34,18 +34,6 @@ class SignUpActivity : BaseActivity() {
             bottomSheet.show(supportFragmentManager,
                 "ModalBottomSheet")
         }
-    }
-
-    private fun showBottomSheetDialog() {
-        val dialog = Dialog(this)
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-        dialog.setContentView(R.layout.country_bottom_sheet_layout)
-
-        dialog.show()
-        dialog.window!!.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-        dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        dialog.window!!.attributes.windowAnimations = R.style.DialogAnimation
-        dialog.window!!.setGravity(Gravity.BOTTOM)
     }
 
 }

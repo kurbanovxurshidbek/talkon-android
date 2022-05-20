@@ -3,7 +3,7 @@ package com.talkon.talkon.adapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.talkon.talkon.fragment.minorFragment.IntroFragment
+import com.talkon.talkon.fragment.IntroFragment
 
 /**
  * IntroFragmentAdapter is used for viewPager in IntroActivity
