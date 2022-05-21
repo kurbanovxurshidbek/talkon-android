@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:gravity="center_vertical">
+
+        <FrameLayout
+            android:layout_width="59dp"
+            android:layout_height="59dp"
+            android:layout_marginLeft="10dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_profile_picture"
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                app:shapeAppearance="@style/circle"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:src="@drawable/img"/>
+
+            <ImageView
+                android:id="@+id/iv_online"
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:src="@drawable/online_circle_green"
+                android:layout_gravity="bottom|right"
+                android:visibility="invisible"
+                android:layout_marginBottom="4dp"
+                android:layout_marginRight="4dp"/>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tv_fullname"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:singleLine="true"
+                    android:text="Rosette L."/>
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="@color/grey"
+                    android:text="00:46"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tv_message"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:textColor="@color/black"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="3dp"
+                    android:singleLine="true"
+                    android:layout_marginLeft="1dp"
+                    android:text="Hello, I see you were trying to book a trial lesson.if you have"/>
+
+                <TextView
+                    android:id="@+id/tv_message_count"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:textSize="10sp"
+                    android:padding="1dp"
+                    android:visibility="invisible"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:background="@drawable/circle_green_background"
+                    android:text="12"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_gravity="bottom"
+        android:background="@color/light_grey" />
+
+</LinearLayout>

@@ -8,8 +8,9 @@
 
    <LinearLayout
        android:layout_width="match_parent"
-       android:layout_height="135dp"
+       android:layout_height="165dp"
        android:orientation="vertical"
+       android:gravity="center_vertical"
        android:padding="10dp">
        <LinearLayout
            android:layout_width="match_parent"
@@ -19,8 +20,7 @@
            <FrameLayout
                android:layout_width="70dp"
                android:layout_height="match_parent"
-               android:layout_marginLeft="10dp"
-               android:layout_marginTop="5dp">
+               android:layout_marginLeft="5dp">
 
                <com.google.android.material.imageview.ShapeableImageView
                    android:id="@+id/iv_profile_picture"
@@ -36,31 +36,31 @@
                    android:layout_height="15dp"
                    android:src="@drawable/online_circle_green"
                    android:layout_gravity="bottom|right"
-                   android:visibility="gone"
-                   android:layout_marginBottom="6dp"
-                   android:layout_marginRight="10dp"/>
+                   android:visibility="invisible"
+                   android:layout_marginBottom="10dp"
+                   android:layout_marginRight="12dp"/>
            </FrameLayout>
 
            <LinearLayout
                android:layout_width="250dp"
                android:layout_height="match_parent"
                android:orientation="vertical"
-               android:layout_marginLeft="5dp"
+               android:layout_marginLeft="10dp"
                android:gravity="top">
 
                <TextView
                    android:id="@+id/tv_fullname"
-                   android:layout_width="245dp"
+                   android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:textSize="24sp"
+                   android:textSize="18sp"
                    android:textColor="@color/black"
-                   android:maxWidth="240dp"
                    android:singleLine="true"
                    android:text="Rosette L."/>
 
                <LinearLayout
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
+                   android:layout_marginTop="4dp"
                    android:gravity="center_vertical">
 
                    <FrameLayout
@@ -87,7 +87,7 @@
                                android:textStyle="bold"
                                android:layout_marginLeft="7dp"
                                android:textColor="@color/gold"
-                               android:textSize="16sp"/>
+                               android:textSize="15sp"/>
 
                        </LinearLayout>
 
@@ -102,7 +102,7 @@
                            android:layout_gravity="center_vertical"
                            android:textColor="@color/main_green"
                            android:textStyle="bold"
-                           android:textSize="16sp"/>
+                           android:textSize="15sp"/>
 
                    </FrameLayout>
 
@@ -110,7 +110,7 @@
                        android:id="@+id/tv_lessons"
                        android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
-                       android:textSize="16sp"
+                       android:textSize="15sp"
                        android:textColor="@color/black"
                        android:maxWidth="180dp"
                        android:singleLine="true"
@@ -121,42 +121,36 @@
 
                <TextView
                    android:id="@+id/tv_busy_free"
-                   android:layout_width="200dp"
+                   android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:textSize="12sp"
+                   android:textSize="11.5sp"
                    android:textColor="@color/black"
                    android:maxWidth="240dp"
+                   android:layout_marginTop="3dp"
                    android:singleLine="true"
                    android:layout_marginLeft="1dp"
                    android:text="Busy in 30 minutes"/>
 
            </LinearLayout>
-
-           <ImageView
-               android:id="@+id/iv_talk_on_verified"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:src="@drawable/ic_talk_on_verified"
-               android:layout_marginLeft="10dp"
-               android:layout_marginTop="10dp"/>
        </LinearLayout>
 
        <TextView
            android:id="@+id/tv_about_teacher"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:layout_marginTop="7dp"
+           android:layout_marginTop="5dp"
            android:layout_marginLeft="10dp"
            android:textSize="15sp"
            android:layout_marginRight="40dp"
-           android:maxLines="2"
+           android:maxLines="3"
+           android:lineSpacingExtra="2.5dp"
            android:text="Let`s speak natural British Englis, TESL, IELTS TOEFLEnglish together , Let`s speak natural BritishEnglish together  "
            android:textColor="@color/dark_grey" />
    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/grey"
+        android:layout_height="0.5dp"
+        android:background="@color/light_grey"
         android:layout_marginBottom="1dp"/>
 </LinearLayout>

@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.talkon.talkon.R
 import com.talkon.talkon.fragment.mainFragment.CoursesFragment
-import com.talkon.talkon.fragment.mainFragment.MessageFragment
+import com.talkon.talkon.fragment.mainFragment.ChatFragment
 import com.talkon.talkon.fragment.mainFragment.ProfileFragment
 import com.talkon.talkon.fragment.mainFragment.SearchFragment
 import kotlinx.android.synthetic.main.activity_main.*
@@ -21,7 +21,7 @@ class MainActivity : BaseActivity() {
     }
 
     private fun initViews() {
-        val homeFragment = MessageFragment()
+        val homeFragment = ChatFragment()
         val searchFragment = SearchFragment()
         val messagesFragment = CoursesFragment()
         val profileFragment = ProfileFragment()

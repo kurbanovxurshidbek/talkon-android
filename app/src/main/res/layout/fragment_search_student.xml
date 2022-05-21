@@ -5,200 +5,217 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/white">
-    <LinearLayout
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="10dp"
-        android:gravity="center_horizontal|bottom">
-
-        <TextView
-            android:id="@+id/tv_partner_found"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="0.6"
-            android:gravity="center_horizontal|bottom"
-            android:text="Partner Found"
-            android:textStyle="bold"
-            android:textColor="@color/main_green"
-            android:textSize="25dp"/>
-
-        <FrameLayout
-            android:layout_width="160dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="30dp"
-            android:layout_weight="1">
-
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/iv_profile_picture"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                app:shapeAppearance="@style/circle"
-                android:layout_gravity="center"
-                android:scaleType="centerCrop"
-                android:padding="5dp"
-                app:strokeWidth="5dp"
-                android:adjustViewBounds="true"
-                app:strokeColor="@color/light_green"
-                android:src="@drawable/img"/>
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/iv_online"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@color/main_green"
-                app:shapeAppearance="@style/circle"
-                android:scaleType="centerCrop"
-                android:padding="3dp"
-                app:strokeWidth="3dp"
-                android:adjustViewBounds="true"
-                app:strokeColor="@color/white"
-                android:layout_gravity="center"
-                android:layout_marginTop="50dp"
-                android:layout_marginLeft="50dp"/>
-
-        </FrameLayout>
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:visibility="gone"
+            android:background="@drawable/backgroud_gradient_call"
+            android:gravity="center_horizontal|bottom">
+
+            <TextView
+                android:id="@+id/tv_partner_found"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="0.6"
+                android:gravity="center_horizontal|bottom"
+                android:text="Partner Found"
+                android:textStyle="bold"
+                android:textColor="@color/main_green"
+                android:textSize="25dp"/>
+
+            <FrameLayout
+                android:layout_width="160dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="30dp"
+                android:layout_weight="1">
+
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_profile_picture"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    app:shapeAppearance="@style/circle"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:padding="5dp"
+                    app:strokeWidth="5dp"
+                    android:adjustViewBounds="true"
+                    app:strokeColor="@color/light_green"
+                    android:src="@drawable/img"/>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_online"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@color/main_green"
+                    app:shapeAppearance="@style/circle"
+                    android:scaleType="centerCrop"
+                    android:padding="3dp"
+                    app:strokeWidth="3dp"
+                    android:adjustViewBounds="true"
+                    app:strokeColor="@color/white"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="50dp"/>
+
+            </FrameLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:gravity="center"
-                android:layout_marginTop="10dp">
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.4"
-                    android:gravity="right">
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/iv_country_flag"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:scaleType="centerCrop"
-                        android:adjustViewBounds="true"
-                        android:layout_marginLeft="6dp"
-                        android:src="@drawable/img"
-                        app:shapeAppearanceOverlay="@style/circle"/>
+                    android:gravity="center"
+                    android:layout_marginTop="10dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:gravity="right">
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/iv_country_flag"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:scaleType="centerCrop"
+                            android:adjustViewBounds="true"
+                            android:layout_marginLeft="6dp"
+                            android:src="@drawable/img"
+                            app:shapeAppearanceOverlay="@style/circle"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_fullname"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.6"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_marginLeft="15dp"
+                        android:textColor="@color/black"
+                        android:text="Jeniffer Aniston"/>
                 </LinearLayout>
 
-                <TextView
-                    android:id="@+id/tv_fullname"
-                    android:layout_width="0dp"
-                    android:layout_weight="0.6"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:layout_marginLeft="15dp"
-                    android:textColor="@color/black"
-                    android:text="Jeniffer Aniston"/>
+                    android:gravity="center"
+                    android:layout_marginTop="10dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:gravity="right">
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/iv_level"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:scaleType="centerCrop"
+                            android:adjustViewBounds="true"
+                            android:layout_marginLeft="6dp"
+                            android:src="@color/gold"
+                            app:shapeAppearanceOverlay="@style/circle"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_level"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.6"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_marginLeft="15dp"
+                        android:textColor="@color/black"
+                        android:text="Advanced"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp">
+
+                    <ImageView
+                        android:id="@+id/iv_star"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="left"
+                        android:layout_marginLeft="6dp"
+                        android:src="@drawable/ic_gold_star_empty" />
+
+                    <TextView
+                        android:id="@+id/tv_rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_marginLeft="15dp"
+                        android:textColor="@color/gold"
+                        android:text="4.7"/>
+
+                    <TextView
+                        android:id="@+id/tv_rating_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_marginLeft="15dp"
+                        android:textColor="@color/grey"
+                        android:text="(88)"/>
+                </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_marginTop="10dp">
+                android:layout_weight="1"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:gravity="center_horizontal">
 
-               <LinearLayout
-                   android:layout_width="0dp"
-                   android:layout_height="wrap_content"
-                   android:layout_weight="0.4"
-                   android:gravity="right">
-                   <com.google.android.material.imageview.ShapeableImageView
-                       android:id="@+id/iv_level"
-                       android:layout_width="25dp"
-                       android:layout_height="25dp"
-                       android:scaleType="centerCrop"
-                       android:adjustViewBounds="true"
-                       android:layout_marginLeft="6dp"
-                       android:src="@color/gold"
-                       app:shapeAppearanceOverlay="@style/circle"/>
-               </LinearLayout>
-
-                <TextView
-                    android:id="@+id/tv_level"
-                    android:layout_width="0dp"
-                    android:layout_weight="0.6"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:layout_marginLeft="15dp"
+                <Button
+                    android:id="@+id/bt_accept"
+                    android:layout_width="110dp"
+                    android:layout_height="37dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/str_accept"
+                    android:backgroundTint="@null"
+                    android:background="@drawable/button_round_full_green"
+                    />
+                <Button
+                    android:id="@+id/bt_skip"
+                    android:layout_width="110dp"
+                    android:layout_height="37dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/str_skip"
                     android:textColor="@color/black"
-                    android:text="Advanced"/>
+                    android:layout_marginLeft="20dp"
+                    android:backgroundTint="@null"
+                    android:background="@drawable/border_round_grey" />
+
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_marginTop="10dp">
-
-                <ImageView
-                    android:id="@+id/iv_star"
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="left"
-                    android:layout_marginLeft="6dp"
-                    android:src="@drawable/ic_gold_star_empty" />
-
-                <TextView
-                    android:id="@+id/tv_rating"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:layout_marginLeft="15dp"
-                    android:textColor="@color/gold"
-                    android:text="4.7"/>
-
-                <TextView
-                    android:id="@+id/tv_rating_count"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:layout_marginLeft="15dp"
-                    android:textColor="@color/grey"
-                    android:text="(88)"/>
-            </LinearLayout>
 
         </LinearLayout>
+    </FrameLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:gravity="center_horizontal">
-
-            <Button
-                android:id="@+id/bt_accept"
-                android:layout_width="110dp"
-                android:layout_height="37dp"
-                android:layout_marginTop="20dp"
-                android:text="@string/str_accept"
-                android:backgroundTint="@null"
-                android:background="@drawable/button_round_full_green"
-                />
-            <Button
-                android:id="@+id/bt_skip"
-                android:layout_width="110dp"
-                android:layout_height="37dp"
-                android:layout_marginTop="20dp"
-                android:text="@string/str_skip"
-                android:textColor="@color/black"
-                android:layout_marginLeft="20dp"
-                android:backgroundTint="@null"
-                android:background="@drawable/border_round_grey" />
-
-        </LinearLayout>
-
-
-    </LinearLayout>
 
 </LinearLayout>

@@ -10,11 +10,10 @@ class Teacher {
     var new: String?= null
     var isOnline: Boolean = false
     var isRated: Boolean = false
-    var isVerified: Boolean = false
     var isBusy: Boolean = false
 
     constructor(profile: String, fullName: String, aboutInfo: String, lessons: String ,stars: Int, rating: String,
-                 isOnline: Boolean, isVerified: Boolean,isBusy: Boolean, isRated: Boolean){
+                 isOnline: Boolean, isBusy: Boolean, isRated: Boolean){
         this.profile = profile
         this.fullName = fullName
         this.stars = stars
@@ -22,12 +21,11 @@ class Teacher {
         this.lessons = lessons
         this.aboutInfo = aboutInfo
         this.isOnline = isOnline
-        this.isVerified = isVerified
         this.isBusy = isBusy
         this.isRated = isRated
     }
     constructor(profile: String, fullName: String, aboutInfo: String, lessons: String ,stars: Int, rating: String,
-                 isOnline: Boolean, isVerified: Boolean, isRated: Boolean){
+                 isOnline: Boolean,  isRated: Boolean){
         this.profile = profile
         this.fullName = fullName
         this.stars = stars
@@ -35,28 +33,27 @@ class Teacher {
         this.lessons = lessons
         this.aboutInfo = aboutInfo
         this.isOnline = isOnline
-        this.isVerified = isVerified
         this.isRated = isRated
     }
-    constructor(profile: String, fullName: String,  aboutInfo: String, new: String,
-                isOnline: Boolean, isVerified: Boolean,isBusy: Boolean = false, isRated: Boolean){
+    constructor(profile: String, fullName: String,  aboutInfo: String, lessons: String ? = null, new: String,
+                isOnline: Boolean,isBusy: Boolean = false, isRated: Boolean){
         this.profile = profile
         this.fullName = fullName
         this.new = new
         this.aboutInfo = aboutInfo
+        this.lessons = lessons
         this.isOnline = isOnline
-        this.isVerified = isVerified
         this.isBusy = isBusy
         this.isRated = isRated
     }
-    constructor(profile: String, fullName: String,  aboutInfo: String, new: String,
-                isOnline: Boolean, isVerified: Boolean, isRated: Boolean){
+    constructor(profile: String, fullName: String,  aboutInfo: String,lessons: String? = null , new: String,
+                isOnline: Boolean,  isRated: Boolean){
         this.profile = profile
         this.fullName = fullName
         this.new = new
         this.aboutInfo = aboutInfo
+        this.lessons = lessons
         this.isOnline = isOnline
-        this.isVerified = isVerified
         this.isBusy = isBusy
         this.isRated = isRated
     }

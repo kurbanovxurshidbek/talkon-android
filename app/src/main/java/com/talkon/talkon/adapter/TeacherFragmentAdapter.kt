@@ -35,7 +35,6 @@ class TeacherFragmentAdapter (var fragment: SearchTeacherFragment, var items: Ar
             var iv_online = holder.iv_online
             var iv_profile_picture = holder.iv_profile_picture
             var iv_star = holder.iv_star
-            var iv_talk_on_verified = holder.iv_talk_on_verified
             var tv_new = holder.tv_new
             var ll_rated = holder.ll_rated
 
@@ -46,7 +45,6 @@ class TeacherFragmentAdapter (var fragment: SearchTeacherFragment, var items: Ar
             tv_new.text = country.new
 
 
-            iv_talk_on_verified.setImageResource(R.drawable.ic_talk_on_verified)
             iv_online.setImageResource(R.drawable.online_circle_green)
             iv_star.setImageResource(R.drawable.ic_gold_star_empty)
             Glide.with(fragment).load(country.profile)
@@ -66,13 +64,6 @@ class TeacherFragmentAdapter (var fragment: SearchTeacherFragment, var items: Ar
                 ll_rated.visibility = View.GONE
             }
 
-            if (country.isVerified){
-                iv_talk_on_verified.visibility = View.VISIBLE
-            } else {
-                iv_talk_on_verified.visibility = View.INVISIBLE
-
-            }
-
             if (country.isOnline){
                 iv_online.visibility = View.VISIBLE
 
@@ -85,7 +76,6 @@ class TeacherFragmentAdapter (var fragment: SearchTeacherFragment, var items: Ar
 
     class TeacherViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var iv_profile_picture: ShapeableImageView = view.findViewById(R.id.iv_profile_picture)
-        var iv_talk_on_verified: ImageView = view.findViewById(R.id.iv_talk_on_verified)
         var iv_online: ImageView = view.findViewById(R.id.iv_online)
         var iv_star: ImageView = view.findViewById(R.id.iv_star)
         var tv_fullname: TextView = view.findViewById(R.id.tv_fullname)
