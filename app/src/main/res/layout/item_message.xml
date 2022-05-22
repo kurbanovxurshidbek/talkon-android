@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:background="@drawable/item_message_corner_rounded"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:layout_marginRight="10dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:elevation="16dp">
+
+                <TextView
+                    android:id="@+id/tv_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_write_a_message"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_time"
+                android:textColor="@color/grey" />
+        </LinearLayout>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_profile"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="16dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img"
+            app:shapeAppearance="@style/circle" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
