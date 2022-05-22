@@ -10,11 +10,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.android.material.imageview.ShapeableImageView
 import com.talkon.talkon.R
-import com.talkon.talkon.fragment.mainFragment.SearchFragment
-import com.talkon.talkon.fragment.mainFragment.SearchTeacherFragment
+import com.talkon.talkon.fragment.SearchTeacherFragment
 import com.talkon.talkon.model.Teacher
 
-class TeacherFragmentAdapter (var fragment: SearchTeacherFragment, var items: ArrayList<Teacher>) : BaseAdapter(){
+class SearchTeacherFragmentAdapter (var fragment: SearchTeacherFragment, var items: ArrayList<Teacher>) : BaseAdapter(){
     override fun getItemCount(): Int {
         return items.size
     }
@@ -25,7 +24,7 @@ class TeacherFragmentAdapter (var fragment: SearchTeacherFragment, var items: Ar
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        val country: Teacher = items[position]
+        val teacher: Teacher = items[position]
         if (holder is TeacherViewHolder) {
             var tv_fullname = holder.tv_fullname
             var tv_about_teacher = holder.tv_about_teacher
@@ -37,44 +36,49 @@ class TeacherFragmentAdapter (var fragment: SearchTeacherFragment, var items: Ar
             var iv_star = holder.iv_star
             var tv_new = holder.tv_new
             var ll_rated = holder.ll_rated
+            var ll_teacher = holder.ll_teacher
 
-            tv_fullname.text = country.fullName
-            tv_about_teacher.text = country.aboutInfo
-            tv_lessons.text = country.lessons
-            tv_rating.text = country.rating
-            tv_new.text = country.new
+            tv_fullname.text = teacher.fullName
+            tv_about_teacher.text = teacher.aboutInfo
+            tv_lessons.text = teacher.lessons
+            tv_rating.text = teacher.rating
+            tv_new.text = teacher.new
 
 
             iv_online.setImageResource(R.drawable.online_circle_green)
             iv_star.setImageResource(R.drawable.ic_gold_star_empty)
-            Glide.with(fragment).load(country.profile)
+            Glide.with(fragment).load(teacher.profile)
                 .placeholder(R.color.light_grey)
                 .into(iv_profile_picture)
 
-            if (country.isBusy){
+            if (teacher.isBusy){
                 tv_busy_free.text = "Busy in 30 minutes"
-            } else if(!country.isOnline){
+            } else if(!teacher.isOnline){
                 tv_busy_free.text = ""
             } else {
                 tv_busy_free.text = "Free! Talk now!"
             }
 
-            if (!country.isRated){
+            if (!teacher.isRated){
                 tv_new.visibility = View.VISIBLE
                 ll_rated.visibility = View.GONE
             }
 
-            if (country.isOnline){
+            if (teacher.isOnline){
                 iv_online.visibility = View.VISIBLE
 
             } else{
                 iv_online.visibility = View.GONE
             }
 
+            ll_teacher.setOnClickListener {
+                fragment.openItemDetails(teacher)
+            }
         }
     }
 
     class TeacherViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        var ll_teacher: LinearLayout = view.findViewById(R.id.ll_teacher)
         var iv_profile_picture: ShapeableImageView = view.findViewById(R.id.iv_profile_picture)
         var iv_online: ImageView = view.findViewById(R.id.iv_online)
         var iv_star: ImageView = view.findViewById(R.id.iv_star)

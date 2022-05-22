@@ -1,4 +1,4 @@
-package com.talkon.talkon.fragment.mainFragment
+package com.talkon.talkon.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater

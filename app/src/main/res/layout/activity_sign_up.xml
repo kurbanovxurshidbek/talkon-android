@@ -102,16 +102,17 @@
                     android:layout_weight="0.5"
                     android:gravity="center_vertical">
 
-
                     <FrameLayout
                         android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="35dp">
+                        android:layout_weight="0.6"
+                        android:layout_height="30dp">
 
                         <com.google.android.material.imageview.ShapeableImageView
                             android:id="@+id/iv_country_flag"
-                            android:layout_width="35dp"
+                            android:layout_width="30dp"
                             android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:src="@drawable/iv_uz_flag"
                             app:shapeAppearanceOverlay="@style/circle"
                             android:scaleType="centerCrop"/>
 
@@ -128,7 +129,8 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="10dp"
+                        android:text="+998"
+                        android:gravity="center"
                         android:textColor="@color/black"
                         android:textSize="16sp"/>
 
@@ -153,6 +155,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:hint="00 000 00 00"
                     android:inputType="number"
                     android:textColorHint="@color/grey"
                     android:layout_marginLeft="10dp"/>
@@ -179,6 +183,39 @@
                     android:text="@string/str_remember_me"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/str_or_continue_with"
+                android:textColor="@color/grey"
+                android:padding="5dp"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:id="@+id/bt_google"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/border_round_grey_blue"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_google"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Google"
+                    android:layout_marginLeft="15dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
