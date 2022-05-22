@@ -61,7 +61,7 @@ class IntroFragment : BaseFragment() {
         private val PAGE_TITLES = intArrayOf(R.string.str_thousands_of_teachers, R.string.str_chat_with_teachers, R.string.str_chat_with_teachers, R.string.str_live_talk_with_teachers )
 
         @StringRes
-        private val PAGE_ANIMS = intArrayOf(R.raw.thousands_of_teachers, R.raw.lottie_students, R.raw.lottie_students, R.raw.lottie_students )
+        private val PAGE_ANIMS = intArrayOf(R.raw.thousands_of_teachers, R.raw.lottie_online_learning, R.raw.lottie_students , R.raw.lottie_distance_learning,)
 
         // prepare all subtitle ids arrays
         @StringRes

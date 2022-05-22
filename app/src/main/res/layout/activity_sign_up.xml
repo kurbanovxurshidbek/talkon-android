@@ -105,7 +105,8 @@
                     <FrameLayout
                         android:layout_width="0dp"
                         android:layout_weight="0.6"
-                        android:layout_height="30dp">
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="5dp">
 
                         <com.google.android.material.imageview.ShapeableImageView
                             android:id="@+id/iv_country_flag"
