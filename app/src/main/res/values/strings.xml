@@ -40,7 +40,9 @@
     <string name="str_favorite_teachers">Favorite Teachers</string>
     <string name="str_search">Search</string>
     <string name="str_tutor">Tutor</string>
-
+    <string name="str_online">Online</string>
+    <string name="str_write_a_message">Write a message</string>
+    <string name="str_time">12:00</string>
 
     <string name="text">Let`s speak natural British Englis, TESL, IELTS TOEFL English together ,
         Let`s speak natural British English together </string>
