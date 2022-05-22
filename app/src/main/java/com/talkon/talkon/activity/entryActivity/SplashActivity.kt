@@ -3,11 +3,15 @@ package com.talkon.talkon.activity.entryActivity
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
-import android.view.WindowManager
-import com.talkon.talkon.manager.SharedPref
+import android.view.View.*
+import android.view.Window
+import android.view.animation.AnimationUtils
 import com.talkon.talkon.R
 import com.talkon.talkon.activity.BaseActivity
 import com.talkon.talkon.activity.MainActivity
+import com.talkon.talkon.manager.SharedPref
+import kotlinx.android.synthetic.main.activity_splash.*
+
 
 /**
  * In SplashActivity, user can visit to IntroActivity or MainActivity
@@ -17,14 +21,12 @@ class SplashActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        overridePendingTransition(R.anim.fade, R.anim.fade)
+        setTransparentStatusBar()
+        initViews()
+    }
 
+    private fun initViews() {
 
-        // This is used to hide the status bar and make
-        // the splash screen as a full screen activity.
-        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
-        // we used the postDelayed(Runnable, time) method
-        // to send a message with a delayed time.
         val handler = Handler()
         handler.postDelayed({
             if (SharedPref(this).isSaved){
@@ -35,10 +37,15 @@ class SplashActivity : BaseActivity() {
             }else Intent(this, IntroActivity::class.java).also {
                 startActivity(it)
                 finish()
-//                overridePendingTransition(R.anim.main_fade_in, R.anim.splash_fade_out);
-                overridePendingTransition( 0, R.anim.splash_fade_out );
+                overridePendingTransition( 0, R.anim.splash_fade_out)
+
             }
 
-        }, 2000)
+        },2000)
+
+        var fadeAnimation = AnimationUtils.loadAnimation(this, R.anim.fade);
+        ll_talk_on.animation = fadeAnimation
     }
+
+
 }

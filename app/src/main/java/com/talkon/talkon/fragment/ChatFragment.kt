@@ -14,9 +14,8 @@ import com.talkon.talkon.fragment.BaseFragment
 import com.talkon.talkon.model.Chat
 
 /**
- * ChatFragment is used for chatting between users, like, student to teacher, or student to student
+ * In ChatFragment, user can see its chat list
  */
-
 class ChatFragment : BaseFragment(){
     lateinit var recyclerView: RecyclerView
     override fun onCreateView(

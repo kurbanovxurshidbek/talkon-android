@@ -53,6 +53,7 @@
     <string name="str_practice_speaking_with_students">Practice speaking English with Students!</string>
     <string name="str_you_will_not_be_charged_any_coins">You will not be charged any coins!</string>
     <string name="str_search_partner">Search partner</string>
+    <string name="str_subscribe">Subscribe</string>
 
 
     <string-array name="tutor_student">

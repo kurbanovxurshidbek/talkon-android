@@ -8,7 +8,7 @@ import com.talkon.talkon.R
 import com.talkon.talkon.fragment.BaseFragment
 
 /**
- * ProfileFragment is used for managing users profile, like setting, balance, notifications...
+ * ProfileFragment is used for managing users profile: setting, balance, notifications...
  */
 
 class ProfileFragment : BaseFragment() {

@@ -3,6 +3,8 @@ package com.talkon.talkon.activity.entryActivity
 import android.content.Context
 import android.os.Bundle
 import android.view.View
+import android.view.WindowManager
+import android.view.animation.AnimationUtils
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.talkon.talkon.R
@@ -22,13 +24,19 @@ class IntroActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_intro)
-
+        setTransparentStatusBar()
         initViews()
     }
 
     private fun initViews() {
         dotsIndicator = findViewById<View>(R.id.dots_indicator) as WormDotsIndicator
         viewPager = findViewById(R.id.viewPager)
+
+        var slideAnimation = AnimationUtils.loadAnimation(this, R.anim.slide);
+        ll_white_corner_rounded.animation = slideAnimation
+        var fadeAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_faster);
+        viewPager.animation = fadeAnimation
+
         bt_get_started.setOnClickListener {
             callSignUpActivity(this)
         }
