@@ -132,6 +132,45 @@
                         android:layout_marginTop="10dp">
 
                         <LinearLayout
+                            android:id="@+id/ll_subscribe"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:layout_marginLeft="40dp"
+                            android:gravity="center_vertical"
+                            android:background="@drawable/border_rounded_grey_green">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:text="Subscribe"
+                                android:textStyle="bold"
+                                android:layout_marginLeft="35dp"
+                                android:textSize="16sp"
+                                android:textColor="@color/black"/>
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="15dp"
+                                android:src="@drawable/ic_vector_green"/>
+                        </LinearLayout>
+                        <ImageView
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:padding="15dp"
+                            android:src="@drawable/ic_balance"
+                            android:background="@drawable/ic_background_light_green_settings"/>
+
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <LinearLayout
                             android:id="@+id/ll_lesson_history"
                             android:layout_width="match_parent"
                             android:layout_height="55dp"

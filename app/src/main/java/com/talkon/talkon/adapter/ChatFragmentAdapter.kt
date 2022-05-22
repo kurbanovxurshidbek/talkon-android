@@ -4,12 +4,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.android.material.imageview.ShapeableImageView
 import com.talkon.talkon.R
-import com.talkon.talkon.fragment.mainFragment.ChatFragment
+import com.talkon.talkon.fragment.ChatFragment
 import com.talkon.talkon.model.Chat
 
 class ChatFragmentAdapter (var fragment: ChatFragment, var items: ArrayList<Chat>) : BaseAdapter() {
@@ -32,6 +33,7 @@ class ChatFragmentAdapter (var fragment: ChatFragment, var items: ArrayList<Chat
             var tv_message_count = holder.tv_message_count
             var iv_online = holder.iv_online
             var iv_profile_picture = holder.iv_profile_picture
+            var ll_chat = holder.ll_chat
 
             tv_fullname.text = chat.fullName
             tv_time.text = chat.time
@@ -54,6 +56,10 @@ class ChatFragmentAdapter (var fragment: ChatFragment, var items: ArrayList<Chat
                 tv_message_count.visibility = View.VISIBLE
             }
 
+            ll_chat.setOnClickListener {
+                fragment.openItemDetails(chat)
+            }
+
         }
     }
 
@@ -64,6 +70,7 @@ class ChatFragmentAdapter (var fragment: ChatFragment, var items: ArrayList<Chat
         var tv_time: TextView = view.findViewById(R.id.tv_time)
         var tv_message: TextView = view.findViewById(R.id.tv_message)
         var tv_message_count: TextView = view.findViewById(R.id.tv_message_count)
+        var ll_chat: LinearLayout = view.findViewById(R.id.ll_chat)
 
     }
 }

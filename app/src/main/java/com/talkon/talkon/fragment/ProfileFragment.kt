@@ -1,4 +1,4 @@
-package com.talkon.talkon.fragment.mainFragment
+package com.talkon.talkon.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,21 +8,21 @@ import com.talkon.talkon.R
 import com.talkon.talkon.fragment.BaseFragment
 
 /**
- * In StudentFragment, student can talk with student, by random match
+ * ProfileFragment is used for managing users profile, like setting, balance, notifications...
  */
-class SearchStudentFragment : BaseFragment() {
+
+class ProfileFragment : BaseFragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_search_student, container, false)
+        val view = inflater.inflate(R.layout.fragment_profile, container, false)
         initViews(view)
         return view
     }
 
-    private fun initViews(view: View) {
-
+    private fun initViews(view: View?) {
 
     }
 }

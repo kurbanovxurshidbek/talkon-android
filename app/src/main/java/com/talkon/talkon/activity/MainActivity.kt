@@ -3,10 +3,10 @@ package com.talkon.talkon.activity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.talkon.talkon.R
-import com.talkon.talkon.fragment.mainFragment.CoursesFragment
-import com.talkon.talkon.fragment.mainFragment.ChatFragment
-import com.talkon.talkon.fragment.mainFragment.ProfileFragment
-import com.talkon.talkon.fragment.mainFragment.SearchFragment
+import com.talkon.talkon.fragment.CoursesFragment
+import com.talkon.talkon.fragment.ChatFragment
+import com.talkon.talkon.fragment.ProfileFragment
+import com.talkon.talkon.fragment.SearchFragment
 import kotlinx.android.synthetic.main.activity_main.*
 /**
  * It contains view pager with 4 fragments in MainActivity

@@ -1,4 +1,4 @@
-package com.talkon.talkon.fragment
+package com.talkon.talkon.utils
 
 import android.os.Bundle
 import android.view.*
@@ -13,7 +13,7 @@ import com.talkon.talkon.model.Country
 import kotlinx.android.synthetic.main.country_bottom_sheet_layout.*
 
 /**
- * CountryBottomSheetDialog is used for choosing a country code for entering telephone number in SignUpActivity
+ * CountryBottomSheetDialog is used for choosing a country code when entering a phone number in SignUpActivity
  */
 
 class CountryBottomSheetDialog : BottomSheetDialogFragment() {

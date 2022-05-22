@@ -1,15 +1,9 @@
 package com.talkon.talkon.activity.entryActivity
 
-import android.app.Dialog
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.view.Gravity
-import android.view.ViewGroup
-import android.view.Window
 import com.talkon.talkon.R
 import com.talkon.talkon.activity.BaseActivity
-import com.talkon.talkon.fragment.CountryBottomSheetDialog
+import com.talkon.talkon.utils.CountryBottomSheetDialog
 import kotlinx.android.synthetic.main.activity_sign_up.*
 
 /**
