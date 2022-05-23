@@ -4,7 +4,7 @@ buildscript {
         // Check that you have the following line (if not, add it):
         google()  // Google's Maven repository
         maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
-
+        maven { url 'https://jitpack.io' }
     }
     dependencies {
         classpath 'com.google.gms:google-services:4.3.10'

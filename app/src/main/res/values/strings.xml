@@ -40,9 +40,7 @@
     <string name="str_favorite_teachers">Favorite Teachers</string>
     <string name="str_search">Search</string>
     <string name="str_tutor">Tutor</string>
-    <string name="str_online">Online</string>
-    <string name="str_write_a_message">Write a message</string>
-    <string name="str_time">12:00</string>
+
 
     <string name="text">Let`s speak natural British Englis, TESL, IELTS TOEFL English together ,
         Let`s speak natural British English together </string>
@@ -54,6 +52,7 @@
     <string name="str_you_will_not_be_charged_any_coins">You will not be charged any coins!</string>
     <string name="str_search_partner">Search partner</string>
     <string name="str_subscribe">Subscribe</string>
+    <string name="for_the_most_part_teachers_are_undervalued_and_underappreciated_this_is_especially_sad_considering_the_tremendous_impact_that_teachers_have_on_a_daily_basis">For the most part, teachers are undervalued and underappreciated. This is especially sad considering the tremendous impact that teachers have on a daily basis.</string>
 
 
     <string-array name="tutor_student">
