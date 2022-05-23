@@ -1,13 +1,17 @@
 package com.talkon.talkon.activity.entryActivity
 
+import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.os.Bundle
 import android.view.View
+import android.widget.AdapterView
 import android.widget.DatePicker
 import com.talkon.talkon.R
 import com.talkon.talkon.activity.BaseActivity
+import com.talkon.talkon.utils.LevelDialog
 import kotlinx.android.synthetic.main.activity_status_choose.*
 import java.util.*
+
 
 /**
  * StatusChooseActivity is used for users to choose if they enter as Teacher or Student
@@ -32,18 +36,32 @@ class StatusChooseActivity : BaseActivity(), DatePickerDialog.OnDateSetListener 
             ll_info.visibility = View.VISIBLE
             ll_level.visibility = View.VISIBLE
             ll_experience.visibility = View.INVISIBLE
+            ll_student.setBackgroundResource(R.drawable.background_onpressed_green)
+            ll_teacher.setBackgroundResource(R.drawable.border_rounded_grey_green)
         }
         ll_teacher.setOnClickListener {
             ll_info.visibility = View.VISIBLE
             ll_level.visibility = View.INVISIBLE
             ll_experience.visibility = View.VISIBLE
+            ll_teacher.setBackgroundResource(R.drawable.background_onpressed_green)
+            ll_student.setBackgroundResource(R.drawable.border_rounded_grey_green)
         }
+
+        ll_level.setOnClickListener {
+            LevelDialog().show(supportFragmentManager, "MyCustomFragment")
+
+        }
+
 
         bt_next_light.setOnClickListener {
             callMainActivity(this)
         }
         pickDate()
 
+    }
+
+    fun getLevel(level: String){
+        tv_experience.text = level
     }
 
     private fun pickDate() {
