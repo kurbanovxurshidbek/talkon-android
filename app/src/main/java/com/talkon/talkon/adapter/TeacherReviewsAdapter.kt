@@ -11,8 +11,6 @@ import com.bumptech.glide.Glide
 import com.google.android.material.imageview.ShapeableImageView
 import com.talkon.talkon.R
 import com.talkon.talkon.activity.AboutTeacherActivity
-import com.talkon.talkon.fragment.mainFragment.SearchFragment
-import com.talkon.talkon.fragment.mainFragment.SearchTeacherFragment
 import com.talkon.talkon.model.Reviews
 import com.talkon.talkon.model.Teacher
 
