@@ -53,6 +53,7 @@
                 android:layout_marginTop="20dp"
                 android:text="@string/str_search_partner"
                 android:textSize="14sp"
+                android:textAllCaps="false"
                 android:backgroundTint="@null"
                 android:background="@drawable/button_rounded_full_green"/>
 
@@ -62,6 +63,7 @@
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="15sp"
+                android:layout_marginBottom="50dp"
                 android:text="@string/str_you_will_not_be_charged_any_coins"
                 android:layout_marginTop="30dp"/>
 
