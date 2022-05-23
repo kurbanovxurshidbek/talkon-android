@@ -9,7 +9,7 @@ import com.talkon.talkon.fragment.ProfileFragment
 import com.talkon.talkon.fragment.SearchFragment
 import kotlinx.android.synthetic.main.activity_main.*
 /**
- * It contains view pager with 4 fragments in MainActivity
+ * MainActivity contains view pager with 4 fragments
  * and pages can be controlled by BottomNavigationView
  */
 class MainActivity : BaseActivity() {

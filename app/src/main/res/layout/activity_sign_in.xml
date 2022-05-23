@@ -163,7 +163,6 @@
                         android:textColor="@color/black"
                         android:inputType="number"
                         android:gravity="center_vertical"
-                        android:hint="00 000 00 00"
                         android:textSize="16sp"
                         android:layout_marginLeft="5dp"
                         android:textColorHint="@color/grey"

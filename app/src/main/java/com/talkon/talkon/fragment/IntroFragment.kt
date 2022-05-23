@@ -6,11 +6,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.annotation.StringRes
 import com.airbnb.lottie.LottieAnimationView
 import com.talkon.talkon.R
+import kotlinx.android.synthetic.main.activity_intro.*
+import kotlinx.android.synthetic.main.activity_splash.*
+import kotlinx.android.synthetic.main.fragment_intro.*
 
 /**
  * IntroFragment is used to switch the viewPager fragment info in IntroActivity,
@@ -24,14 +29,14 @@ class IntroFragment : BaseFragment() {
         if (arguments != null) {
             position = requireArguments().getInt(ARG_POSITION)
         }
-
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_intro, container, false)
+        val view = inflater.inflate(R.layout.fragment_intro, container, false)
+
+        return view
     }
 
     @SuppressLint("UseCompatLoadingForDrawables")
@@ -53,15 +58,15 @@ class IntroFragment : BaseFragment() {
 
         // prepare all title ids arrays
         @StringRes
-        private val PAGE_TITLES = intArrayOf(R.string.str_thousands_of_teachers, R.string.str_chat_with_teachers, R.string.str_live_talk_with_teachers )
+        private val PAGE_TITLES = intArrayOf(R.string.str_thousands_of_teachers, R.string.str_chat_with_teachers, R.string.str_chat_with_teachers, R.string.str_live_talk_with_teachers )
 
         @StringRes
-        private val PAGE_ANIMS = intArrayOf(R.raw.lottie_teacher, R.raw.lottie_teacher, R.raw.lottie_teacher)
+        private val PAGE_ANIMS = intArrayOf(R.raw.thousands_of_teachers, R.raw.lottie_online_learning, R.raw.lottie_students , R.raw.lottie_distance_learning,)
 
         // prepare all subtitle ids arrays
         @StringRes
         private val PAGE_TEXT = intArrayOf(
-            R.string.str_you_can_contact_teachers, R.string.str_you_can_contact_teachers, R.string.str_you_can_contact_teachers
+            R.string.str_you_can_contact_teachers, R.string.str_you_can_contact_teachers, R.string.str_you_can_contact_teachers,R.string.str_you_can_contact_teachers
         )
 
         fun newInstance(position: Int): IntroFragment {

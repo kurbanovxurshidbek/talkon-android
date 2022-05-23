@@ -37,16 +37,13 @@
             android:exported="false" />
         <activity
             android:name=".activity.entryActivity.IntroActivity"
-            android:exported="false"
-            android:launchMode="singleTop" />
+            android:exported="false" />
         <activity
             android:name=".activity.entryActivity.SignUpActivity"
-            android:exported="false"
-            android:launchMode="singleTop" />
+            android:exported="false" />
         <activity
             android:name=".activity.entryActivity.SignInActivity"
-            android:exported="false"
-            android:launchMode="singleTop" />
+            android:exported="false" />
         <activity
             android:name=".activity.entryActivity.NumberVerificationActivity"
             android:exported="false"
@@ -54,15 +51,13 @@
         <activity
             android:name=".activity.entryActivity.StatusChooseActivity"
             android:exported="false"
-            android:launchMode="singleTop" />
+             />
         <activity
             android:name=".activity.MainActivity"
-            android:exported="false"
-            android:launchMode="singleTop" />
+            android:exported="false" />
         <activity
             android:name=".activity.entryActivity.SplashActivity"
             android:exported="true"
-            android:launchMode="singleTop"
             android:theme="@style/AppTheme.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

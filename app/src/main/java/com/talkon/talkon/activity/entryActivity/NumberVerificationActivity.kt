@@ -15,6 +15,7 @@ class NumberVerificationActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_number_verification)
+        setTransparentStatusBar()
 
         initViews()
     }

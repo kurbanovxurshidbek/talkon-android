@@ -22,6 +22,7 @@ class StatusChooseActivity : BaseActivity(), DatePickerDialog.OnDateSetListener 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_status_choose)
+        setTransparentStatusBar()
 
         initViews()
     }
@@ -29,8 +30,8 @@ class StatusChooseActivity : BaseActivity(), DatePickerDialog.OnDateSetListener 
     private fun initViews() {
         ll_student.setOnClickListener {
             ll_info.visibility = View.VISIBLE
-            ll_experience.visibility = View.INVISIBLE
             ll_level.visibility = View.VISIBLE
+            ll_experience.visibility = View.INVISIBLE
         }
         ll_teacher.setOnClickListener {
             ll_info.visibility = View.VISIBLE

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.airbnb.lottie.LottieAnimationView
 import com.talkon.talkon.R
 import com.talkon.talkon.fragment.BaseFragment
 
@@ -11,6 +12,7 @@ import com.talkon.talkon.fragment.BaseFragment
  * In StudentFragment, student can talk with student, by random match
  */
 class SearchStudentFragment : BaseFragment() {
+    lateinit var lottie_students: LottieAnimationView
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -22,7 +24,6 @@ class SearchStudentFragment : BaseFragment() {
     }
 
     private fun initViews(view: View) {
-
 
     }
 }

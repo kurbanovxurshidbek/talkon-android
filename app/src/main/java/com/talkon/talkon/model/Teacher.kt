@@ -10,20 +10,7 @@ class Teacher {
     var new: String?= null
     var isOnline: Boolean = false
     var isRated: Boolean = false
-    var isBusy: Boolean = false
 
-    constructor(profile: String, fullName: String, aboutInfo: String, lessons: String ,stars: Int, rating: String,
-                 isOnline: Boolean, isBusy: Boolean, isRated: Boolean){
-        this.profile = profile
-        this.fullName = fullName
-        this.stars = stars
-        this.rating = rating
-        this.lessons = lessons
-        this.aboutInfo = aboutInfo
-        this.isOnline = isOnline
-        this.isBusy = isBusy
-        this.isRated = isRated
-    }
     constructor(profile: String, fullName: String, aboutInfo: String, lessons: String ,stars: Int, rating: String,
                  isOnline: Boolean,  isRated: Boolean){
         this.profile = profile
@@ -35,17 +22,6 @@ class Teacher {
         this.isOnline = isOnline
         this.isRated = isRated
     }
-    constructor(profile: String, fullName: String,  aboutInfo: String, lessons: String ? = null, new: String,
-                isOnline: Boolean,isBusy: Boolean = false, isRated: Boolean){
-        this.profile = profile
-        this.fullName = fullName
-        this.new = new
-        this.aboutInfo = aboutInfo
-        this.lessons = lessons
-        this.isOnline = isOnline
-        this.isBusy = isBusy
-        this.isRated = isRated
-    }
     constructor(profile: String, fullName: String,  aboutInfo: String,lessons: String? = null , new: String,
                 isOnline: Boolean,  isRated: Boolean){
         this.profile = profile
@@ -54,7 +30,6 @@ class Teacher {
         this.aboutInfo = aboutInfo
         this.lessons = lessons
         this.isOnline = isOnline
-        this.isBusy = isBusy
         this.isRated = isRated
     }
 }

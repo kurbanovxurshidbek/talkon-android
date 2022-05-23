@@ -15,7 +15,7 @@ import com.talkon.talkon.utils.Extensions.toast
 import kotlinx.android.synthetic.main.fragment_search.*
 
 /**
- * SearchFragment is used for talking to Tutors or Students
+ * In SearchFragment, student talks to Tutors or Students, search for tutors
  */
 class SearchFragment : BaseFragment() {
     private var viewPagerAdapter: SearchViewPagerAdapter? = null
