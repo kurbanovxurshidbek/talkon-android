@@ -1,9 +1,11 @@
 package com.talkon.talkon.activity.entryActivity
 
+import android.animation.ArgbEvaluator
+import android.animation.ValueAnimator
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
 import android.view.View
-import android.view.WindowManager
 import android.view.animation.AnimationUtils
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
@@ -13,6 +15,7 @@ import com.talkon.talkon.adapter.IntroFragmentAdapter
 import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
 import kotlinx.android.synthetic.main.activity_intro.*
 
+
 /**
  * IntroActivity is used to introduce the application for users when they first installed the app
  */
@@ -21,6 +24,7 @@ class IntroActivity : BaseActivity() {
     override var context: Context = this
     private var adapter: IntroFragmentAdapter? = null
     var dotsIndicator: WormDotsIndicator? = null
+    lateinit var mColorAnimation: ValueAnimator
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_intro)
@@ -28,6 +32,7 @@ class IntroActivity : BaseActivity() {
         initViews()
     }
 
+    @SuppressLint("ResourceAsColor")
     private fun initViews() {
         dotsIndicator = findViewById<View>(R.id.dots_indicator) as WormDotsIndicator
         viewPager = findViewById(R.id.viewPager)
@@ -45,7 +50,8 @@ class IntroActivity : BaseActivity() {
             callSignInActivity(this)
         }
         // init slider pager adapter
-        adapter = IntroFragmentAdapter(supportFragmentManager,
+        adapter = IntroFragmentAdapter(
+            supportFragmentManager,
             FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
         )
         // set adapter
@@ -70,11 +76,7 @@ class IntroActivity : BaseActivity() {
                 }
             }
         })
-
-        
     }
-
-
     private fun getItem(i: Int): Int {
         return viewPager.currentItem + i
     }
