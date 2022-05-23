@@ -62,4 +62,11 @@ open class BaseActivity : AppCompatActivity() {
         startActivity(intent)
         finish()
     }
+
+    fun callAboutTeacherActivity(context: Context) {
+        val intent = Intent(this, AboutTeacherActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+
 }

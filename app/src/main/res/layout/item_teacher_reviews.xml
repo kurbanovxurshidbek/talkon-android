@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="165dp"
+       android:orientation="vertical"
+       android:gravity="center_vertical"
+       android:padding="10dp">
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="70dp"
+           android:orientation="horizontal">
+
+           <FrameLayout
+               android:layout_width="70dp"
+               android:layout_height="match_parent"
+               android:layout_marginLeft="5dp">
+
+               <com.google.android.material.imageview.ShapeableImageView
+                   android:id="@+id/iv_profile_picture"
+                   android:layout_width="60dp"
+                   android:layout_height="60dp"
+                   app:shapeAppearance="@style/circle"
+                   android:scaleType="centerCrop"
+                   android:src="@drawable/img"/>
+
+           </FrameLayout>
+
+           <LinearLayout
+               android:layout_width="250dp"
+               android:layout_height="match_parent"
+               android:orientation="vertical"
+               android:layout_marginLeft="10dp"
+               android:gravity="top">
+
+               <TextView
+                   android:id="@+id/tv_fullname"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:textSize="18sp"
+                   android:textColor="@color/black"
+                   android:singleLine="true"
+                   android:text="Rosette L."/>
+
+               <TextView
+                   android:id="@+id/tv_date"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:textSize="11.5sp"
+                   android:textColor="@color/grey"
+                   android:maxWidth="240dp"
+                   android:layout_marginTop="3dp"
+                   android:singleLine="true"
+                   android:layout_marginLeft="1dp"
+                   android:text="May 18, 2022"/>
+
+           </LinearLayout>
+       </LinearLayout>
+
+       <TextView
+           android:id="@+id/tv_item_reviews"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="5dp"
+           android:layout_marginLeft="10dp"
+           android:textSize="15sp"
+           android:lines="3"
+           android:layout_marginRight="40dp"
+           android:maxLines="3"
+           android:lineSpacingExtra="2.5dp"
+           android:text="For the most part, teachers are undervalued and
+underappreciated. This is especially sad considering the tremendous impact that teachers have on a daily basis."
+           android:textColor="@color/dark_grey" />
+   </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/light_grey"
+        android:layout_marginBottom="1dp"/>
+</LinearLayout>

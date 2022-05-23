@@ -20,7 +20,7 @@ class SignUpActivity : BaseActivity() {
 
     private fun initViews() {
         tv_sign_in.setOnClickListener {
-            callSignInActivity(this)
+            callAboutTeacherActivity(this)
         }
         bt_sign_up_light.setOnClickListener {
             callNumberVerificationActivity(this)

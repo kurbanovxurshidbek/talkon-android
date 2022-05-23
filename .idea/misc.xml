@@ -93,8 +93,46 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/talkon-android2/app/src/main/res/layout/fragment_home.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/talkon-android2/app/src/main/res/layout/fragment_profile.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/talkon-android2/app/src/main/res/layout/fragment_search.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/drawable-v24/back_green.xml" value="0.143" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/drawable-v24/back_white.xml" value="0.143" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/drawable-v24/border_round_default_tutor.xml" value="0.143" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/drawable-v24/border_rounded_grey_green.xml" value="0.143" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/drawable-v24/button_round_full_green.xml" value="0.143" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/drawable-v24/button_rounded_empty_green.xml" value="0.143" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/drawable-v24/button_rounded_full_green.xml" value="0.143" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/drawable-v24/button_rounded_full_green_light.xml" value="0.143" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/drawable-v24/circle_green_background.xml" value="0.143" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/drawable-v24/dialog_corner_rounded.xml" value="0.143" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/drawable-v24/ic_back_background.xml" value="0.143" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/drawable-v24/ic_back_foreground.xml" value="0.143" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/drawable-v24/ic_play_button3_background.xml" value="0.143" />
         <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/drawable/back_rounded_border.xml" value="0.143" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/drawable/back_rounded_green.xml" value="0.143" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/drawable/back_rounded_green_10.xml" value="0.143" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/drawable/back_rounded_light.xml" value="0.223" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/drawable/background_drop_down_menu.xml" value="0.143" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/drawable/circle_white_backround.xml" value="0.143" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/layout/activity_about_teacher.xml" value="0.25" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/layout/activity_balance.xml" value="0.14628623188405798" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/layout/activity_favourite_teachers.xml" value="0.15307971014492755" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/layout/activity_intro.xml" value="0.14628623188405798" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/layout/activity_number_verification.xml" value="0.14628623188405798" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/layout/activity_sign_up.xml" value="0.14628623188405798" />
         <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/layout/activity_splash.xml" value="0.15307971014492755" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/layout/activity_status_choose.xml" value="0.15307971014492755" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/layout/drop_down_student_tutor.xml" value="0.15307971014492755" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/layout/fragment_intro.xml" value="0.14628623188405798" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/layout/fragment_search.xml" value="0.15307971014492755" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/layout/fragment_search_student.xml" value="0.152" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/layout/fragment_search_teacher.xml" value="0.15307971014492755" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/layout/item_ab_tech_course.xml" value="0.536" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/layout/item_country_layout.xml" value="0.14628623188405798" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/layout/item_make_appointment.xml" value="0.6" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/layout/item_make_appointment_green.xml" value="0.15307971014492755" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/layout/item_make_appointment_light.xml" value="0.536" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/layout/item_search_teacher_layout.xml" value="0.3462132921174652" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/layout/item_teacher_reviews.xml" value="0.4" />
+        <entry key="..\:/Users/aesho/AndroidStudioProjects/talkon-android/app/src/main/res/layout/item_week_day.xml" value="0.6" />
       </map>
     </option>
   </component>

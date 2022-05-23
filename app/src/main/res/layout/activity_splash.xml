@@ -41,7 +41,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/back_rounded_border"
+                    android:background="@drawable/back_rounded_light"
                     android:paddingStart="20dp"
                     android:layout_marginBottom="3dp"
                     android:paddingEnd="20dp">
