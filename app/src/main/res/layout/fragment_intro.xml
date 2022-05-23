@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:textColor="@color/main_green"
-            android:text="@string/str_thousands_of_teachers"
+            android:text="@string/str_live_class_with_teachers"
             android:textStyle="bold"/>
         <TextView
             android:id="@+id/tv_text"
@@ -48,7 +48,7 @@
             android:textSize="14sp"
             android:textColor="@color/grey"
             android:gravity="center"
-            android:text="@string/str_you_can_contact_teachers"
+            android:text="@string/str_talk_on_gives_you"
             android:textStyle="bold"/>
     </LinearLayout>
 
