@@ -57,13 +57,13 @@ class SearchTeacherFragment : BaseFragment() {
         val star = R.drawable.ic_gold_star_empty
 
         teacher.add(Teacher(user3,"Lisa Kudrov",text, "56 Lessons", star, "5", true,  true))
-        teacher.add(Teacher(user,"Jeniffer Aniston", text,"42 Lessons", star, "4.8", true,  true, true))
-        teacher.add(Teacher(user2,"Richard F.",text, "11 Lessons", star,"4.9", true,  true, true))
-        teacher.add(Teacher(user4,"Ross Geller", text, "2 Lessons","New" ,true,  true, false))
-        teacher.add(Teacher(user,"Jeniffer Aniston", text,"12 Lessons", star, "4.8", true,  true, true))
-        teacher.add(Teacher(user2,"Richard F.",text, "11 Lessons", star,"4.9", true,  true, true))
-        teacher.add(Teacher(user4,"Ross Geller", text, "","New" ,false, false))
-        teacher.add(Teacher(user3,"Lisa Kudrov",text, "6 Lessons", star, "4.5", false,  true))
+        teacher.add(Teacher(user,"Jeniffer Aniston", text,"42 Lessons", star, "4.8", true,  true))
+        teacher.add(Teacher(user2,"Richard F.",text, "11 Lessons", star,"4.9", true, true))
+        teacher.add(Teacher(user4,"Ross Geller", text, "2 Lessons","New" ,true, false))
+        teacher.add(Teacher(user,"Jeniffer Aniston", text,"12 Lessons", star, "4.8", true, true))
+        teacher.add(Teacher(user2,"Richard F.",text, "11 Lessons", star,"4.9", true, true))
+        teacher.add(Teacher(user4,"Ross Geller", text, null,"New" ,false, false))
+        teacher.add(Teacher(user3,"Lisa Kudrov",text, "6 Lessons", star, "4.5", false, true))
 
         return teacher
     }

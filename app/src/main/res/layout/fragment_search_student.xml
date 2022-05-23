@@ -73,7 +73,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:padding="10dp"
-            android:visibility="gone"
+            android:visibility="invisible"
             android:background="@drawable/backgroud_gradient_call"
             android:gravity="center_horizontal|bottom">
 

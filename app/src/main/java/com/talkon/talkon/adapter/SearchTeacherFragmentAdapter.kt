@@ -30,7 +30,6 @@ class SearchTeacherFragmentAdapter (var fragment: SearchTeacherFragment, var ite
             var tv_about_teacher = holder.tv_about_teacher
             var tv_lessons = holder.tv_lessons
             var tv_rating = holder.tv_rating
-            var tv_busy_free = holder.tv_busy_free
             var iv_online = holder.iv_online
             var iv_profile_picture = holder.iv_profile_picture
             var iv_star = holder.iv_star
@@ -50,14 +49,6 @@ class SearchTeacherFragmentAdapter (var fragment: SearchTeacherFragment, var ite
             Glide.with(fragment).load(teacher.profile)
                 .placeholder(R.color.light_grey)
                 .into(iv_profile_picture)
-
-            if (teacher.isBusy){
-                tv_busy_free.text = "Busy in 30 minutes"
-            } else if(!teacher.isOnline){
-                tv_busy_free.text = ""
-            } else {
-                tv_busy_free.text = "Free! Talk now!"
-            }
 
             if (!teacher.isRated){
                 tv_new.visibility = View.VISIBLE
@@ -87,7 +78,6 @@ class SearchTeacherFragmentAdapter (var fragment: SearchTeacherFragment, var ite
         var tv_new: TextView = view.findViewById(R.id.tv_new)
         var tv_rating: TextView = view.findViewById(R.id.tv_rating)
         var tv_about_teacher: TextView = view.findViewById(R.id.tv_about_teacher)
-        var tv_busy_free: TextView = view.findViewById(R.id.tv_busy_free)
         var ll_rated: LinearLayout = view.findViewById(R.id.ll_rated)
 
     }

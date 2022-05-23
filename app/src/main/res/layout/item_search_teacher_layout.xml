@@ -56,12 +56,13 @@
                    android:textSize="18sp"
                    android:textColor="@color/black"
                    android:singleLine="true"
+                   android:layout_marginTop="5dp"
                    android:text="Rosette L."/>
 
                <LinearLayout
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
-                   android:layout_marginTop="4dp"
+                   android:layout_marginTop="7dp"
                    android:gravity="center_vertical">
 
                    <FrameLayout
@@ -119,18 +120,6 @@
                        android:text="12 lessons"/>
 
                </LinearLayout>
-
-               <TextView
-                   android:id="@+id/tv_busy_free"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:textSize="11.5sp"
-                   android:textColor="@color/black"
-                   android:maxWidth="240dp"
-                   android:layout_marginTop="3dp"
-                   android:singleLine="true"
-                   android:layout_marginLeft="1dp"
-                   android:text="Busy in 30 minutes"/>
 
            </LinearLayout>
        </LinearLayout>
