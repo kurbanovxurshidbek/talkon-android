@@ -58,16 +58,14 @@ class IntroFragment : BaseFragment() {
 
         // prepare all title ids arrays
         @StringRes
-        private val PAGE_TITLES = intArrayOf(R.string.str_live_class_with_teachers, R.string.str_chat_with_teachers, R.string.str_live_talk_with_teachers_and_audio_with_students )
-
-        @StringRes
-        private val PAGE_ANIMS = intArrayOf( R.raw.online_learning, R.raw.english_teacher , R.raw.chatting,)
+        private val PAGE_TITLES = intArrayOf(R.string.str_talk_online, R.string.str_professional_tutors, R.string.str_flexible_lessons, R.string.str_practice_with_student, R.string.str_record_your_lessons)
 
         // prepare all subtitle ids arrays
         @StringRes
-        private val PAGE_TEXT = intArrayOf(
-            R.string.str_talk_on_gives_you, R.string.str_talk_is_great_way,R.string.str_speak_anywhere
-        )
+        private val PAGE_TEXT = intArrayOf(R.string.str_talk_online_text, R.string.str_professional_tutors_text, R.string.str_flexible_lessons_text, R.string.str_practice_with_student_text, R.string.str_record_your_lessons_text)
+
+        @StringRes
+        private val PAGE_ANIMS = intArrayOf( R.raw.lottie_recorder, R.raw.lottire_professional_tutors , R.raw.lottie_flexible_lessons, R.raw.lottie_practice_student,R.raw.online_learning)
 
         fun newInstance(position: Int): IntroFragment {
             val fragment = IntroFragment()

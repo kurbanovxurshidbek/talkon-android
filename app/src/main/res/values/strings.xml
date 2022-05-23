@@ -3,15 +3,7 @@
     <string name="str_sign_up">Sign up</string>
     <string name="str_sign_in">Sign in</string>
     <string name="str_skip">Skip</string>
-    <string name="str_live_class_with_teachers">Live class with an English Teachers !!!</string>
-    <string name="str_chat_with_teachers">Chat with teachers !!!</string>
-    <string name="str_live_talk_with_teachers_and_audio_with_students">Live video talk with a teacher and audio chat with students !!!</string>
-    <string name="str_talk_on_gives_you">TalkOn gives you instant access to native English speakers over live video chat!</string>
-    <string name="str_talk_is_great_way">TalkOn is a great way to practice English for beginners or experts. Give it a try!</string>
-    <string name="str_speak_anywhere">Speak English anytime, anywhere.</string>
     <string name="str_next">Next</string>
-    <string name="str_welcome_to">Welcome to</string>
-    <string name="str_welcome_to_talkon">Welcome to Talk On !</string>
     <string name="str_country">Country</string>
     <string name="str_phone_number">Phone number</string>
     <string name="str_remember_me">Remember me</string>
@@ -34,19 +26,13 @@
     <string name="str_balance">Balance</string>
     <string name="str_support_center">Support Center</string>
     <string name="str_log_out">Log out</string>
-    <string name="str_lesson_history">Lesson History</string>
-    <string name="str_vocabulary">Vocabulary</string>
     <string name="str_get_started">Get Started</string>
     <string name="str_invite_friends">Invite Friends</string>
     <string name="str_rate_talk_on">Rate Talk On</string>
-    <string name="str_favorite_teachers">Favorite Teachers</string>
     <string name="str_search">Search</string>
-    <string name="str_tutor">Tutor</string>
     <string name="str_online">Online</string>
     <string name="str_write_a_message">Write a message</string>
     <string name="str_time">12:55</string>
-
-
     <string name="text">Let`s speak natural British English, TESL, IELTS TOEFL English together ,
         Let`s speak natural British English together </string>
     <string name="str_accept">Accept</string>
@@ -59,9 +45,17 @@
     <string name="str_subscribe">Subscribe</string>
     <string name="for_the_most_part_teachers_are_undervalued_and_underappreciated_this_is_especially_sad_considering_the_tremendous_impact_that_teachers_have_on_a_daily_basis">For the most part, teachers are undervalued and underappreciated. This is especially sad considering the tremendous impact that teachers have on a daily basis.</string>
 
+    <string name="str_talk_online">Talk Online</string>
+    <string name="str_professional_tutors">Professional Tutors!</string>
+    <string name="str_flexible_lessons">Flexible lessons!</string>
+    <string name="str_practice_with_student">Practice with students!</string>
+    <string name="str_record_your_lessons">Record your lessons!</string>
 
-    <string-array name="tutor_student">
-        <item>Tutor</item>
-        <item>Student</item>
-    </string-array>
+    <string name="str_talk_online_text">TalkOn gives you instant access to native English speakers over live video chat!</string>
+    <string name="str_professional_tutors_text">Speak English Fluently! Improve your speaking with professional tutors!</string>
+    <string name="str_flexible_lessons_text">Personal lesson plans, schedule lessons anytime of the day! Speak English anytime, anywhere!</string>
+    <string name="str_practice_with_student_text">Practice your english with students. TalkOn is a great way to practice English for beginners or experts. Give it a try!</string>
+    <string name="str_record_your_lessons_text">Imitate tutors, learn new words and analise your english by recording your lessons!</string>
+
+
 </resources>
