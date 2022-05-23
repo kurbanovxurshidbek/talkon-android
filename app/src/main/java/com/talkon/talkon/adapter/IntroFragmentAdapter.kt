@@ -17,6 +17,6 @@ class IntroFragmentAdapter(fm: FragmentManager, behavior: Int) :
 
     // size is hardcoded
     override fun getCount(): Int {
-        return 4
+        return 3
     }
 }
