@@ -3,6 +3,7 @@ package com.talkon.talkon.activity.entryActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
+import com.mukesh.OnOtpCompletionListener
 import com.talkon.talkon.R
 import com.talkon.talkon.activity.BaseActivity
 import kotlinx.android.synthetic.main.activity_number_verification.*
@@ -31,6 +32,7 @@ class NumberVerificationActivity : BaseActivity() {
                 ll_resend.visibility = View.VISIBLE
 
             }
+
         }
         timer.start()
 
