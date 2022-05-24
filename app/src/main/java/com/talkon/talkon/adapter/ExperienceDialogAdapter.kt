@@ -11,35 +11,36 @@ import com.google.android.material.imageview.ShapeableImageView
 import com.talkon.talkon.R
 import com.talkon.talkon.utils.CountryBottomSheetDialog
 import com.talkon.talkon.model.Country
+import com.talkon.talkon.utils.ExperienceDialog
 import com.talkon.talkon.utils.LevelDialog
 
-class LevelAdapter(var fragment: LevelDialog, var items: ArrayList<String>) : BaseAdapter(){
+class ExperienceDialogAdapter(var fragment: ExperienceDialog, var items: ArrayList<String>) : BaseAdapter(){
     override fun getItemCount(): Int {
         return items.size
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_level_dialog_layout, parent, false)
-        return LevelViewHolder(view)
+        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_experience_dialog_layout, parent, false)
+        return ExperienceViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val level: String = items[position]
-        if (holder is LevelViewHolder) {
-            var tv_level = holder.tv_level
-            var ll_level = holder.ll_level
-            tv_level.text = level
+        if (holder is ExperienceViewHolder) {
+            var tv_experience = holder.tv_experience
+            var ll_experience = holder.ll_experience
 
-            ll_level.setOnClickListener {
+            tv_experience.text = level
+            ll_experience.setOnClickListener {
                 fragment.getItemLevel(level)
             }
 
         }
     }
 
-    class LevelViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        var tv_level: TextView = view.findViewById(R.id.tv_level)
-        var ll_level: LinearLayout = view.findViewById(R.id.ll_level)
+    class ExperienceViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        var tv_experience: TextView = view.findViewById(R.id.tv_experience)
+        var ll_experience: LinearLayout = view.findViewById(R.id.ll_experience)
 
     }
 }
