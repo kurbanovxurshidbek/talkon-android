@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/white"
+    android:orientation="vertical"
     tools:context=".activity.entryActivity.SplashActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,33 +23,34 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:padding="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingEnd="12dp"
                 android:text="Talk"
-                android:textStyle="bold"
+                android:textColor="@color/black"
                 android:textSize="50sp"
-                android:textColor="@color/black"/>
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
                 android:background="@drawable/back_rounded_border"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
-                android:layout_marginTop="3dp"
                 android:paddingBottom="3dp">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="On"
                     android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:textSize="45sp"/>
+                    android:textSize="45sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
         </LinearLayout>
@@ -56,8 +61,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1.2"
-        android:orientation="vertical"
-        android:gravity="top">
+        android:gravity="top"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
@@ -66,24 +71,24 @@
             android:text="@string/str_sign_in"
             android:textColor="@color/black"
             android:textSize="24sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_vertical|start"
             android:orientation="vertical"
-            android:padding="20dp"
-            android:gravity="center_vertical|start">
+            android:padding="20dp">
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_marginTop="15dp"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
                 android:text="@string/str_phone_number"
                 android:textColor="@color/black"
-                android:layout_marginLeft="20dp"
                 android:textSize="16sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -99,49 +104,50 @@
                     android:layout_height="50dp"
                     android:layout_weight="0.5"
                     android:allowClickWhenDisabled="true"
-                    android:padding="7dp"
                     android:background="@drawable/border_rounded_grey_green"
-                    android:gravity="center_vertical">
+                    android:gravity="center_vertical"
+                    android:padding="7dp">
 
 
                     <FrameLayout
                         android:layout_width="0dp"
-                        android:layout_weight="0.6"
-                        android:layout_height="30dp">
+                        android:layout_height="30dp"
+                        android:layout_weight="0.6">
 
                         <com.google.android.material.imageview.ShapeableImageView
                             android:id="@+id/iv_country_flag"
                             android:layout_width="30dp"
                             android:layout_height="match_parent"
                             android:layout_gravity="center"
+                            android:scaleType="centerCrop"
                             android:src="@drawable/iv_uz_flag"
-                            app:shapeAppearanceOverlay="@style/circle"
-                            android:scaleType="centerCrop"/>
+                            app:shapeAppearanceOverlay="@style/circle" />
 
 
                         <ProgressBar
                             android:id="@+id/pb_country_code"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
-                            android:visibility="gone"
-                            android:layout_gravity="center"/>
+                            android:layout_gravity="center"
+                            android:visibility="gone" />
                     </FrameLayout>
+
                     <TextView
                         android:id="@+id/tv_country_code"
                         android:layout_width="0dp"
-                        android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:text="+998"
+                        android:layout_weight="1"
                         android:gravity="center"
+                        android:text="+998"
                         android:textColor="@color/black"
-                        android:textSize="16sp"/>
+                        android:textSize="16sp" />
 
                     <ImageView
                         android:id="@+id/iv_country_menu"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_drop_down_menu"
                         android:layout_marginRight="2dp"
+                        android:src="@drawable/ic_drop_down_menu"
                         app:tint="@color/grey" />
 
 
@@ -151,23 +157,22 @@
                     android:id="@+id/ll_number"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
-                    android:layout_weight="1"
-                    android:padding="5dp"
                     android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/border_rounded_grey_green"
-                    android:gravity="center_vertical">
+                    android:gravity="center_vertical"
+                    android:padding="5dp">
 
                     <EditText
                         android:id="@+id/et_phone_number"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:textColor="@color/black"
-                        android:inputType="number"
-                        android:gravity="center_vertical"
-                        android:textSize="16sp"
                         android:layout_marginLeft="5dp"
+                        android:gravity="center_vertical"
+                        android:inputType="number"
+                        android:textColor="@color/black"
                         android:textColorHint="@color/grey"
-                        />
+                        android:textSize="16sp" />
                 </LinearLayout>
 
 
@@ -199,9 +204,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:padding="5dp"
                 android:text="@string/str_or_continue_with"
                 android:textColor="@color/grey"
-                android:padding="5dp"
                 android:textSize="14sp" />
 
             <LinearLayout
@@ -215,19 +220,18 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_google"/>
+                    android:src="@drawable/ic_google" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Google"
                     android:layout_marginLeft="15dp"
+                    android:text="Google"
                     android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
-
 
 
             <FrameLayout
@@ -235,26 +239,26 @@
                 android:layout_height="wrap_content">
 
                 <Button
-                    android:textAllCaps="false"
                     android:id="@+id/bt_sign_in_light"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="20dp"
-                    android:text="@string/str_sign_in"
-                    android:backgroundTint="@null"
+                    android:layout_marginBottom="10dp"
                     android:background="@drawable/button_rounded_full_green_light"
-                    android:layout_marginBottom="10dp"/>
+                    android:backgroundTint="@null"
+                    android:text="@string/str_sign_in"
+                    android:textAllCaps="false" />
 
                 <Button
                     android:id="@+id/bt_sign_in"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:visibility="gone"
                     android:layout_marginTop="20dp"
-                    android:text="@string/str_sign_in"
-                    android:backgroundTint="@null"
+                    android:layout_marginBottom="10dp"
                     android:background="@drawable/button_rounded_full_green"
-                    android:layout_marginBottom="10dp"/>
+                    android:backgroundTint="@null"
+                    android:text="@string/str_sign_in"
+                    android:visibility="gone" />
 
 
             </FrameLayout>
@@ -263,8 +267,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:gravity="center">
+            android:gravity="center"
+            android:padding="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -280,10 +284,15 @@
                 android:layout_marginLeft="10dp"
                 android:text="@string/str_sign_up"
                 android:textColor="@color/main_green"
-                android:textStyle="bold"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
     </LinearLayout>
 
-</LinearLayout>
+    </LinearLayout>
+    <include
+        android:id="@+id/bottom_sheet"
+        layout="@layout/country_bottom_sheet_layout" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

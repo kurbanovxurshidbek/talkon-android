@@ -22,9 +22,6 @@ class NumberVerificationActivity : BaseActivity() {
     }
 
     private fun initViews() {
-        sms_code_view.onChangeListener = SmsConfirmationView.OnChangeListener { code, isComplete ->
-
-        }
 
 
         var timer = object : CountDownTimer(20000, 1000) {
@@ -43,6 +40,14 @@ class NumberVerificationActivity : BaseActivity() {
 
         bt_verify_light.setOnClickListener {
             callStatusChooseActivity(this)
+        }
+    }
+
+    private fun checkSmsCode(){
+        sms_code_view.onChangeListener = SmsConfirmationView.OnChangeListener { code, isComplete ->
+            if (code.equals("1111")) {
+                isComplete.not()
+            }
         }
     }
 }
