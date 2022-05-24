@@ -2,16 +2,16 @@ package com.talkon.talkon.activity.entryActivity
 
 import android.animation.ArgbEvaluator
 import android.animation.ValueAnimator
+import android.animation.ValueAnimator.AnimatorUpdateListener
 import android.annotation.SuppressLint
 import android.content.Context
-import android.graphics.Color.BLACK
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.LinearLayout
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
-import com.google.type.Color
 import com.talkon.talkon.R
 import com.talkon.talkon.activity.BaseActivity
 import com.talkon.talkon.adapter.IntroFragmentAdapter
@@ -22,7 +22,7 @@ import kotlinx.android.synthetic.main.activity_intro.*
 /**
  * IntroActivity is used to introduce the application for users when they first installed the app
  */
-class IntroActivity : BaseActivity(), ViewPager.OnPageChangeListener {
+class IntroActivity : BaseActivity() {
     private lateinit var viewPager: ViewPager
     override var context: Context = this
     private var adapter: IntroFragmentAdapter? = null
@@ -41,7 +41,6 @@ class IntroActivity : BaseActivity(), ViewPager.OnPageChangeListener {
         dotsIndicator = findViewById<View>(R.id.dots_indicator) as WormDotsIndicator
         viewPager = findViewById(R.id.viewPager)
         ll_viewPager_background = findViewById(R.id.ll_viewPager_background)
-//        ll_viewPager_background.setBackgroundColor(R.color.black);
 
         var slideAnimation = AnimationUtils.loadAnimation(this, R.anim.slide);
         ll_white_corner_rounded.animation = slideAnimation
@@ -56,25 +55,22 @@ class IntroActivity : BaseActivity(), ViewPager.OnPageChangeListener {
             callSignInActivity(this)
         }
         // init slider pager adapter
-        adapter = IntroFragmentAdapter(
-            supportFragmentManager,
-            FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
-        )
+        adapter = IntroFragmentAdapter(supportFragmentManager, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT)
         // set adapter
         viewPager.setAdapter(adapter)
         // set dot indicators
         dotsIndicator!!.setViewPager(viewPager)
         // make status bar transparent
-
+//        backgroundTransition()
         viewPager.addOnPageChangeListener(object : ViewPager.SimpleOnPageChangeListener() {
-            override fun onPageScrolled(
-                position: Int,
-                positionOffset: Float,
-                positionOffsetPixels: Int
-            ) {
+            override fun onPageSelected(position: Int) {
+                super.onPageSelected(position)
+                animateToColor(pageColors[position])
+
+            }
+            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
                 super.onPageScrolled(position, positionOffset, positionOffsetPixels)
                 if (position == adapter!!.count - 1) {
-
                     bt_get_started.setOnClickListener {
 //                        SharedPref(context).isSaved = true
                         callSignUpActivity(this@IntroActivity)
@@ -82,31 +78,22 @@ class IntroActivity : BaseActivity(), ViewPager.OnPageChangeListener {
                 }
             }
         })
-
     }
 
+    var pageColors = intArrayOf(Color.CYAN, Color.YELLOW, Color.LTGRAY, Color.MAGENTA, Color.GREEN)
+    var currentColor = pageColors[4]
 
-    fun backgroundTransition() {
-        mColorAnimation = ValueAnimator.ofObject(ArgbEvaluator(),R.color.background_green, R.color.light_gold, R.color.light_purple,R.color.light_blue, R.color.light_grey )
-        mColorAnimation.addUpdateListener { animator -> ll_viewPager_background.setBackgroundColor(animator.animatedValue as Int) }
-        // (3 - 1) = number of pages minus 1
-        mColorAnimation.setDuration((5 - 1) * 10000000000L);
+    fun animateToColor(colorTo: Int) {
+        mColorAnimation = ValueAnimator()
+        if (mColorAnimation != null) {
+            mColorAnimation.cancel()
+        }
+        mColorAnimation = ValueAnimator.ofObject(ArgbEvaluator(), currentColor, colorTo)
+        mColorAnimation.setDuration(600) // milliseconds
+        mColorAnimation.addUpdateListener(AnimatorUpdateListener { animator ->
+            currentColor = animator.animatedValue as Int
+            ll_viewPager_background.setBackgroundColor(currentColor)
+        })
+        mColorAnimation.start()
     }
-
-    var colors = arrayOf(R.color.background_green, R.color.light_gold, R.color.light_purple,R.color.light_blue, R.color.light_grey)
-
-    override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
-//        if (position < adapter!!.getCount() - 1 && position < colors.size - 1) {
-//            val argbEvaluator = ArgbEvaluator()
-//            ll_viewPager_background.setBackgroundColor(
-//                argbEvaluator.evaluate(positionOffset, colors[position], colors[position + 1]) as Int)
-//        } else {
-//            ll_viewPager_background.setBackgroundColor(colors[colors.size - 1])
-//        }
-    }
-
-    override fun onPageSelected(position: Int) {}
-
-    override fun onPageScrollStateChanged(state: Int) {}
-
 }
