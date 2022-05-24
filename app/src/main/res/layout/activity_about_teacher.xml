@@ -41,21 +41,18 @@
                     android:textColor="@color/black"
                     android:textSize="20sp" />
 
-                <ImageView
-                    android:id="@+id/iv_like"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:background="@drawable/background_light_green_rounded"
-                    android:src="@drawable/ic_like_foreground" />
 
                 <ImageView
-                    android:id="@+id/iv_share"
-                    android:layout_width="50dp"
+                    android:id="@+id/iv_filter"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:background="@drawable/background_light_green_rounded"
-                    android:src="@drawable/ic_share_foreground" />
+                    android:visibility="visible"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="center"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_share"
+                    android:background="@drawable/background_light_green_rounded"/>
+
             </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
 
@@ -395,7 +392,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="About teacher"
-                    android:textSize="23sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="@color/black"/>
 
@@ -427,7 +424,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Make appointment"
-                    android:textSize="23sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="@color/black"/>
 
@@ -452,7 +449,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Course the hour"
-                    android:textSize="23sp"
+                    android:textSize="18sp"
                     android:textColor="@color/black"/>
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -474,7 +471,7 @@
                 android:layout_marginTop="20dp"
                 android:text="More"
                 android:textColor="@color/main_green"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold"/>
 
             <Button
@@ -485,7 +482,8 @@
                 android:layout_marginHorizontal="20dp"
                 android:text="Buy"
                 android:textStyle="bold"
-                android:textSize="18sp"
+                android:textAllCaps="false"
+                android:textSize="16sp"
                 android:textColor="@color/white"/>
 
             <LinearLayout
@@ -501,7 +499,7 @@
                     android:layout_height="wrap_content"
                     android:text="12"
                     android:textColor="@color/black"
-                    android:textSize="23sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"/>
 
                 <TextView
@@ -510,7 +508,7 @@
                     android:text="reviews"
                     android:layout_marginLeft="10dp"
                     android:textColor="@color/black"
-                    android:textSize="23sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"/>
 
             </LinearLayout>
