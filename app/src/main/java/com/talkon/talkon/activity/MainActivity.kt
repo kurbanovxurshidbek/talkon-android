@@ -3,7 +3,7 @@ package com.talkon.talkon.activity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.talkon.talkon.R
-import com.talkon.talkon.fragment.CoursesFragment
+import com.talkon.talkon.fragment.LessonHistoryFragment
 import com.talkon.talkon.fragment.ChatFragment
 import com.talkon.talkon.fragment.ProfileFragment
 import com.talkon.talkon.fragment.SearchFragment
@@ -21,18 +21,18 @@ class MainActivity : BaseActivity() {
     }
 
     private fun initViews() {
-        val homeFragment = ChatFragment()
         val searchFragment = SearchFragment()
-        val messagesFragment = CoursesFragment()
+        val chatFragment = ChatFragment()
+        val lessonHistoryFragment = LessonHistoryFragment()
         val profileFragment = ProfileFragment()
 
         replaceFragment(searchFragment)
 
         bottomNavigationView.setOnNavigationItemSelectedListener {
             when (it.itemId) {
-                R.id.menu_message -> replaceFragment(homeFragment)
                 R.id.menu_search -> replaceFragment(searchFragment)
-                R.id.menu_courses -> replaceFragment(messagesFragment)
+                R.id.menu_message -> replaceFragment(chatFragment)
+                R.id.menu_courses -> replaceFragment(lessonHistoryFragment)
                 R.id.menu_profile -> replaceFragment(profileFragment)
 
             }

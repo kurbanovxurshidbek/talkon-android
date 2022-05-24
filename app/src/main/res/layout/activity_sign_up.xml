@@ -20,7 +20,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:gravity="center_horizontal">
+            android:layout_marginTop="30dp"
+            android:gravity="center_horizontal|center_vertical">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -28,7 +29,7 @@
                 android:paddingEnd="12dp"
                 android:text="Talk"
                 android:textStyle="bold"
-                android:textSize="50sp"
+                android:textSize="40sp"
                 android:textColor="@color/black"/>
 
             <LinearLayout
@@ -36,16 +37,14 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/back_rounded_border"
                 android:paddingStart="20dp"
-                android:paddingEnd="20dp"
-                android:layout_marginTop="3dp"
-                android:paddingBottom="3dp">
+                android:paddingEnd="20dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="On"
                     android:textColor="@color/white"
                     android:textStyle="bold"
-                    android:textSize="45sp"/>
+                    android:textSize="35sp"/>
             </LinearLayout>
 
         </LinearLayout>

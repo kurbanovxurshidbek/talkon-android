@@ -8,6 +8,7 @@ import android.widget.AdapterView
 import android.widget.DatePicker
 import com.talkon.talkon.R
 import com.talkon.talkon.activity.BaseActivity
+import com.talkon.talkon.utils.ExperienceDialog
 import com.talkon.talkon.utils.LevelDialog
 import kotlinx.android.synthetic.main.activity_status_choose.*
 import java.util.*
@@ -49,10 +50,10 @@ class StatusChooseActivity : BaseActivity(), DatePickerDialog.OnDateSetListener 
 
         ll_level.setOnClickListener {
             LevelDialog().show(supportFragmentManager, "MyCustomFragment")
-
         }
-
-
+        ll_experience.setOnClickListener {
+            ExperienceDialog().show(supportFragmentManager, "MyCustomFragment")
+        }
         bt_next_light.setOnClickListener {
             callMainActivity(this)
         }

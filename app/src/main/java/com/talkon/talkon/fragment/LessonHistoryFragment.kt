@@ -11,7 +11,7 @@ import com.talkon.talkon.fragment.BaseFragment
  * CoursesFragment
  */
 
-class CoursesFragment : BaseFragment(){
+class LessonHistoryFragment : BaseFragment(){
 
     override fun onCreateView(
         inflater: LayoutInflater,

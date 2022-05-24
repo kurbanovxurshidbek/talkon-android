@@ -2,16 +2,14 @@ package com.talkon.talkon.utils
 
 import android.os.Bundle
 import android.view.*
-import android.widget.Toast
 import androidx.annotation.Nullable
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.talkon.talkon.R
-import com.talkon.talkon.adapter.CountryAdapter
+import com.talkon.talkon.adapter.CountryDialogAdapter
 import com.talkon.talkon.model.Country
-import kotlinx.android.synthetic.main.country_bottom_sheet_layout.*
 
 /**
  * CountryBottomSheetDialog is used for choosing a country code when entering a phone number in SignUpActivity
@@ -47,7 +45,7 @@ class CountryBottomSheetDialog : BottomSheetDialogFragment() {
     }
 
     private fun refreshAdapter(items: ArrayList<Country>) {
-        var adapter = CountryAdapter(this, items)
+        var adapter = CountryDialogAdapter(this, items)
         recyclerView.adapter = adapter
     }
 

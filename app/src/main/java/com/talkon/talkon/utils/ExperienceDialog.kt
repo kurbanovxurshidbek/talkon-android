@@ -1,6 +1,7 @@
 package com.talkon.talkon.utils
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,16 +10,17 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.talkon.talkon.R
 import com.talkon.talkon.activity.entryActivity.StatusChooseActivity
+import com.talkon.talkon.adapter.ExperienceDialogAdapter
 import com.talkon.talkon.adapter.LevelDialogAdapter
 
-class LevelDialog: DialogFragment() {
+class ExperienceDialog: DialogFragment() {
     lateinit var recyclerView: RecyclerView
     lateinit var activity: StatusChooseActivity
 
     public lateinit var selectedLevel: String
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         getDialog()!!.getWindow()?.setBackgroundDrawableResource(R.drawable.white_border_rounded);
-        var view = inflater.inflate(R.layout.level_dialog_fragment, container, false)
+        var view = inflater.inflate(R.layout.experience_dialog_fragment, container, false)
 
         initViews(view)
         return view
@@ -38,23 +40,22 @@ class LevelDialog: DialogFragment() {
     }
 
     private fun refreshAdapter(items: ArrayList<String>) {
-        var adapter = LevelDialogAdapter(this, items)
+        var adapter = ExperienceDialogAdapter(this, items)
         recyclerView.adapter = adapter
     }
-    fun getItemLevel(level: String) {
-        selectedLevel = level
+    fun getItemLevel(experience: String) {
+        selectedLevel = experience
+        Log.d("@@@", experience)
     }
 
     private fun getLevel(): ArrayList<String> {
-        var level = ArrayList<String>()
+        var experience = ArrayList<String>()
 
-        level.add("Beginner")
-        level.add("Elementary")
-        level.add("PreIntermediate")
-        level.add("Intermediate")
-        level.add("UpperIntermediate")
-        level.add("Advanced")
-        return level
+        for (i in 1..30){
+            experience.add("$i years")
+        }
+
+        return experience
     }
 
 
