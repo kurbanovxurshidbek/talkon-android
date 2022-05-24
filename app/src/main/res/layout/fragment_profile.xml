@@ -12,79 +12,10 @@
         android:layout_height="wrap_content"
         app:elevation="0dp"
         android:background="@color/white">
-
-    <com.google.android.material.appbar.CollapsingToolbarLayout
-        android:id="@+id/collapsingToolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:contentScrim="@color/white"
-        app:collapsedTitleGravity="left|center_vertical"
-        app:layout_scrollFlags="scroll|exitUntilCollapsed"
-        android:elevation="0dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:orientation="vertical"
-            android:gravity="center_horizontal">
-
-            <FrameLayout
-                android:layout_width="150dp"
-                android:layout_height="150dp">
-
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/iv_profile"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/person88"
-                    android:scaleType="centerCrop"
-                    app:shapeAppearance="@style/circle" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="right|bottom">
-
-                    <ImageView
-                        android:id="@+id/iv_plus"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:padding="4.5dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:src="@drawable/ic_edit"
-                        android:background="@drawable/ic_background_circle_green"/>
-                </LinearLayout>
-            </FrameLayout>
-
-            <TextView
-                android:id="@+id/tv_fullname"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:textColor="@color/black"
-                android:textSize="22sp"
-                android:text="Khurshidebek"
-                android:textStyle="bold"/>
-
-            <TextView
-                android:id="@+id/tv_number"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:text="+998 90 809 05 11"
-                android:layout_marginTop="5dp"
-                android:textStyle="bold"
-                android:textColor="@color/dark_grey" />
-
-        </LinearLayout>
-
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:layout_collapseMode="pin"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Dark">
 
             <LinearLayout
@@ -111,7 +42,6 @@
 
             </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
-    </com.google.android.material.appbar.CollapsingToolbarLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -120,7 +50,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
-
 
         <androidx.core.widget.NestedScrollView
             android:id="@+id/nestedScrollView"
@@ -133,7 +62,65 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
+                android:layout_marginBottom="50dp"
                 android:background="@color/white">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                    <FrameLayout
+                        android:layout_width="150dp"
+                        android:layout_height="150dp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/iv_profile"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/person88"
+                            android:scaleType="centerCrop"
+                            app:shapeAppearance="@style/circle" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="right|bottom">
+
+                            <ImageView
+                                android:id="@+id/iv_plus"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:padding="4.5dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:src="@drawable/ic_edit"
+                                android:background="@drawable/ic_background_circle_green"/>
+                        </LinearLayout>
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/tv_fullname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        android:text="Khurshidebek"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/tv_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:text="+998 90 809 05 11"
+                        android:layout_marginTop="5dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/dark_grey" />
+
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -230,123 +217,6 @@
                             android:layout_height="56dp"
                             android:padding="15dp"
                             android:src="@drawable/ic_subscribe"
-                            android:background="@drawable/ic_background_light_green_settings"/>
-
-
-                    </FrameLayout>
-
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp">
-
-                        <LinearLayout
-                            android:id="@+id/ll_lesson_history"
-                            android:layout_width="match_parent"
-                            android:layout_height="55dp"
-                            android:layout_marginLeft="40dp"
-                            android:gravity="center_vertical"
-                            android:background="@drawable/border_rounded_grey_green">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_weight="1"
-                                android:layout_height="wrap_content"
-                                android:text="@string/str_lesson_history"
-                                android:textStyle="bold"
-                                android:layout_marginLeft="35dp"
-                                android:textSize="16sp"
-                                android:textColor="@color/black"/>
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginRight="15dp"
-                                android:src="@drawable/ic_vector_green"/>
-                        </LinearLayout>
-                        <ImageView
-                            android:layout_width="56dp"
-                            android:layout_height="56dp"
-                            android:padding="15dp"
-                            android:src="@drawable/ic_balance"
-                            android:background="@drawable/ic_background_light_green_settings"/>
-
-
-                    </FrameLayout>
-
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp">
-
-                        <LinearLayout
-                            android:id="@+id/ll_favourite_teachers"
-                            android:layout_width="match_parent"
-                            android:layout_height="55dp"
-                            android:layout_marginLeft="40dp"
-                            android:gravity="center_vertical"
-                            android:background="@drawable/border_rounded_grey_green">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_weight="1"
-                                android:layout_height="wrap_content"
-                                android:text="@string/str_favorite_teachers"
-                                android:textStyle="bold"
-                                android:layout_marginLeft="35dp"
-                                android:textSize="16sp"
-                                android:textColor="@color/black"/>
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginRight="15dp"
-                                android:src="@drawable/ic_vector_green"/>
-                        </LinearLayout>
-                        <ImageView
-                            android:layout_width="56dp"
-                            android:layout_height="56dp"
-                            android:padding="15dp"
-                            android:src="@drawable/ic_favourite"
-                            android:background="@drawable/ic_background_light_green_settings"/>
-
-
-                    </FrameLayout>
-
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp">
-
-                        <LinearLayout
-                            android:id="@+id/ll_vocabulary"
-                            android:layout_width="match_parent"
-                            android:layout_height="55dp"
-                            android:layout_marginLeft="40dp"
-                            android:gravity="center_vertical"
-                            android:background="@drawable/border_rounded_grey_green">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_weight="1"
-                                android:layout_height="wrap_content"
-                                android:text="@string/str_vocabulary"
-                                android:textStyle="bold"
-                                android:layout_marginLeft="35dp"
-                                android:textSize="16sp"
-                                android:textColor="@color/black"/>
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginRight="15dp"
-                                android:src="@drawable/ic_vector_green"/>
-                        </LinearLayout>
-                        <ImageView
-                            android:layout_width="56dp"
-                            android:layout_height="56dp"
-                            android:padding="15dp"
-                            android:src="@drawable/ic_vocabulary"
                             android:background="@drawable/ic_background_light_green_settings"/>
 
 
@@ -467,49 +337,11 @@
 
                     </FrameLayout>
 
+
                     <FrameLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp">
-
-                        <LinearLayout
-                            android:id="@+id/ll_privacy_policy"
-                            android:layout_width="match_parent"
-                            android:layout_height="55dp"
-                            android:layout_marginLeft="40dp"
-                            android:gravity="center_vertical"
-                            android:background="@drawable/border_rounded_grey_green">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_weight="1"
-                                android:layout_height="wrap_content"
-                                android:text="Privacy Policy"
-                                android:textStyle="bold"
-                                android:layout_marginLeft="35dp"
-                                android:textSize="16sp"
-                                android:textColor="@color/black"/>
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginRight="15dp"
-                                android:src="@drawable/ic_vector_green"/>
-                        </LinearLayout>
-                        <ImageView
-                            android:layout_width="56dp"
-                            android:layout_height="56dp"
-                            android:padding="15dp"
-                            android:src="@drawable/ic_privacy_policy"
-                            android:background="@drawable/ic_background_light_green_settings"/>
-
-                    </FrameLayout>
-
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="50dp">
 
                         <LinearLayout
                             android:id="@+id/ll_logout"
