@@ -3,7 +3,7 @@ package com.talkon.talkon.activity.entryActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
-import com.mukesh.OnOtpCompletionListener
+import com.fraggjkee.smsconfirmationview.SmsConfirmationView
 import com.talkon.talkon.R
 import com.talkon.talkon.activity.BaseActivity
 import kotlinx.android.synthetic.main.activity_number_verification.*
@@ -22,9 +22,11 @@ class NumberVerificationActivity : BaseActivity() {
     }
 
     private fun initViews() {
-        var timer = object: CountDownTimer(20000, 1000) {
+
+
+        var timer = object : CountDownTimer(20000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
-                tv_seconds.setText(""+millisUntilFinished / 1000)
+                tv_seconds.setText("" + millisUntilFinished / 1000)
             }
 
             override fun onFinish() {
@@ -38,6 +40,14 @@ class NumberVerificationActivity : BaseActivity() {
 
         bt_verify_light.setOnClickListener {
             callStatusChooseActivity(this)
+        }
+    }
+
+    private fun checkSmsCode(){
+        sms_code_view.onChangeListener = SmsConfirmationView.OnChangeListener { code, isComplete ->
+            if (code.equals("1111")) {
+                isComplete.not()
+            }
         }
     }
 }

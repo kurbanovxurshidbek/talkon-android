@@ -95,6 +95,7 @@
 
 
                 <LinearLayout
+                    android:clickable="true"
                     android:id="@+id/ll_country_code"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -271,5 +272,7 @@
         </LinearLayout>
 
     </LinearLayout>
+
+
 
 </LinearLayout>

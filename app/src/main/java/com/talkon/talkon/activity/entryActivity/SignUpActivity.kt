@@ -10,6 +10,7 @@ import kotlinx.android.synthetic.main.activity_sign_up.*
 * In SignUpActivity, user can sign up using phone number or Google
 */
 class SignUpActivity : BaseActivity() {
+    private val bottomSheet = CountryBottomSheetDialog()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
@@ -25,10 +26,17 @@ class SignUpActivity : BaseActivity() {
         bt_sign_up_light.setOnClickListener {
             callNumberVerificationActivity(this)
         }
-        ll_country_code.setOnClickListener {
-            val bottomSheet = CountryBottomSheetDialog()
-            bottomSheet.show(supportFragmentManager,
-                "ModalBottomSheet")
+
+        bottomSheet.apiCountryList()
+
+         ll_country_code.setOnClickListener {
+
+            if (!bottomSheet.isVisible){
+                bottomSheet.show(supportFragmentManager,
+                    "ModalBottomSheet",)
+            }
+
+
         }
     }
 
