@@ -75,7 +75,7 @@ class AboutTeacherActivity : BaseActivity() {
         var course = ArrayList<Course>()
 
         course.add(Course("13 : 00 pm"))
-        course.add(Course("11 : 00 pmfdsfdsfsdfdsfsdfsdf"))
+        course.add(Course("11 : 00 pm"))
         course.add(Course("12 : 00 am"))
         course.add(Course("13 : 00 pm"))
         course.add(Course("11 : 00 pm"))

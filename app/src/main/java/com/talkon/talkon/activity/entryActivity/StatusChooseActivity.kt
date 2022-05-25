@@ -3,13 +3,17 @@ package com.talkon.talkon.activity.entryActivity
 import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.DatePicker
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelStore
 import com.talkon.talkon.R
 import com.talkon.talkon.activity.BaseActivity
 import com.talkon.talkon.utils.ExperienceDialog
 import com.talkon.talkon.utils.LevelDialog
+import com.talkon.talkon.viewModel.StatusSharedViewModel
 import kotlinx.android.synthetic.main.activity_status_choose.*
 import java.util.*
 
@@ -17,6 +21,7 @@ import java.util.*
 /**
  * StatusChooseActivity is used for users to choose if they enter as Teacher or Student
  */
+
 class StatusChooseActivity : BaseActivity(), DatePickerDialog.OnDateSetListener {
     var day : Int = 0
     var month : Int = 0
@@ -24,6 +29,7 @@ class StatusChooseActivity : BaseActivity(), DatePickerDialog.OnDateSetListener 
     var savedDay : Int = 0
     var savedMonth : Int = 0
     var savedYear : Int = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_status_choose)
@@ -49,10 +55,23 @@ class StatusChooseActivity : BaseActivity(), DatePickerDialog.OnDateSetListener 
         }
 
         ll_level.setOnClickListener {
-            LevelDialog().show(supportFragmentManager, "MyCustomFragment")
+            LevelDialog(object : LevelDialog.LevelListener{
+                override fun onSelected(level: String) {
+                    tv_level.visibility = View.VISIBLE
+                    tv_level_hint.visibility = View.GONE
+                    tv_level.text = level
+                }
+            }).show(supportFragmentManager, "MyCustomFragment")
+
         }
         ll_experience.setOnClickListener {
-            ExperienceDialog().show(supportFragmentManager, "MyCustomFragment")
+            ExperienceDialog(object : ExperienceDialog.ExperienceListener{
+                override fun onSelected(experience: String) {
+                    tv_experience.visibility = View.VISIBLE
+                    tv_experience_hint.visibility = View.GONE
+                    tv_experience.text = experience
+                }
+            }).show(supportFragmentManager, "MyCustomFragment")
         }
         bt_next_light.setOnClickListener {
             callMainActivity(this)
@@ -61,9 +80,6 @@ class StatusChooseActivity : BaseActivity(), DatePickerDialog.OnDateSetListener 
 
     }
 
-    fun getLevel(level: String){
-        tv_experience.text = level
-    }
 
     private fun pickDate() {
         ll_age_date.setOnClickListener {
@@ -89,6 +105,10 @@ class StatusChooseActivity : BaseActivity(), DatePickerDialog.OnDateSetListener 
         tv_age_hint.visibility = View.GONE
         tv_age_format.visibility = View.VISIBLE
         tv_age_format.text = "$savedDay/$savedMonth/$savedYear"
+    }
+
+    companion object{
+        var sometext = ""
     }
 
 

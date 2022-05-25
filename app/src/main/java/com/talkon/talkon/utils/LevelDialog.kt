@@ -4,22 +4,28 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.DialogFragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.talkon.talkon.R
 import com.talkon.talkon.activity.entryActivity.StatusChooseActivity
+import com.talkon.talkon.activity.entryActivity.StatusChooseActivity.Companion.sometext
 import com.talkon.talkon.adapter.LevelDialogAdapter
+import com.talkon.talkon.viewModel.StatusSharedViewModel
 
-class LevelDialog: DialogFragment() {
+class LevelDialog(val listener: LevelListener): DialogFragment() {
     lateinit var recyclerView: RecyclerView
     lateinit var activity: StatusChooseActivity
+    private lateinit var statusSharedViewModel:StatusSharedViewModel
 
     public lateinit var selectedLevel: String
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         getDialog()!!.getWindow()?.setBackgroundDrawableResource(R.drawable.white_border_rounded);
         var view = inflater.inflate(R.layout.level_dialog_fragment, container, false)
 
+        activity = StatusChooseActivity()
         initViews(view)
         return view
     }
@@ -32,17 +38,21 @@ class LevelDialog: DialogFragment() {
     }
 
     private fun initViews(view: View) {
+        statusSharedViewModel = ViewModelProvider(this).get(StatusSharedViewModel::class.java)
         recyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.setLayoutManager(GridLayoutManager(context, 1))
         refreshAdapter(getLevel())
     }
 
+
+
     private fun refreshAdapter(items: ArrayList<String>) {
-        var adapter = LevelDialogAdapter(this, items)
+        var adapter = LevelDialogAdapter( items)
         recyclerView.adapter = adapter
-    }
-    fun getItemLevel(level: String) {
-        selectedLevel = level
+        adapter.onClick = {
+            this.dismiss()
+            listener.onSelected(it)
+        }
     }
 
     private fun getLevel(): ArrayList<String> {
@@ -57,5 +67,8 @@ class LevelDialog: DialogFragment() {
         return level
     }
 
-
+    interface LevelListener{
+        fun onSelected(level: String)
+    }
 }
+
