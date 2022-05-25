@@ -22,7 +22,6 @@ class MainActivity : BaseActivity() {
 
     private fun initViews() {
         val searchFragment = SearchFragment()
-        val chatFragment = ChatFragment()
         val lessonHistoryFragment = LessonHistoryFragment()
         val profileFragment = ProfileFragment()
 
@@ -31,7 +30,6 @@ class MainActivity : BaseActivity() {
         bottomNavigationView.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.menu_search -> replaceFragment(searchFragment)
-                R.id.menu_message -> replaceFragment(chatFragment)
                 R.id.menu_courses -> replaceFragment(lessonHistoryFragment)
                 R.id.menu_profile -> replaceFragment(profileFragment)
 

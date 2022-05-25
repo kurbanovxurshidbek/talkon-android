@@ -6,10 +6,6 @@
         android:icon="@drawable/ic_search"
         tools:ignore="MenuTitle" />
     <item
-        android:id="@+id/menu_message"
-        android:icon="@drawable/ic_chat"
-        tools:ignore="MenuTitle" />
-    <item
         android:id="@+id/menu_courses"
         android:icon="@drawable/ic_book"
         tools:ignore="MenuTitle" />

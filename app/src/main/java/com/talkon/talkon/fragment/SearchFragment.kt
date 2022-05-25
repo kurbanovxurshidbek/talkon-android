@@ -22,7 +22,6 @@ class SearchFragment : BaseFragment() {
     private var viewPager2: ViewPager2? = null
     private var tabLayout: TabLayout? = null
     private lateinit var iv_search: ImageView
-    private lateinit var iv_filter: ImageView
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -36,7 +35,6 @@ class SearchFragment : BaseFragment() {
     private fun initViews(view: View) {
         viewPager2 = view.findViewById(R.id.viewpager2)
         tabLayout = view.findViewById(R.id.tabLayout)
-        iv_filter = view.findViewById(R.id.iv_filter)
         iv_search = view.findViewById(R.id.iv_search)
 
         tabLayout!!.addTab(tabLayout!!.newTab().setText("Teachers"));
@@ -53,11 +51,9 @@ class SearchFragment : BaseFragment() {
             override fun onTabSelected(tab: TabLayout.Tab) {
                 viewpager2!!.setCurrentItem(tab.position)
                 if(tab.position == 0){
-                    iv_filter.visibility = View.VISIBLE
                     iv_search.visibility = View.VISIBLE
                 }
                 if(tab.position == 1){
-                    iv_filter.visibility = View.INVISIBLE
                     iv_search.visibility = View.INVISIBLE
                 }
             }
