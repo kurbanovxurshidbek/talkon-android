@@ -16,7 +16,7 @@
           android:id="@+id/iv_country_flag"
           android:layout_width="33dp"
           android:layout_height="33dp"
-          android:scaleType="centerCrop"
+          android:scaleType="fitXY"
           android:adjustViewBounds="true"
           android:layout_marginLeft="6dp"
           android:src="@drawable/img"
@@ -31,7 +31,7 @@
         android:textColor="@color/black"
         android:textSize="17sp"
         android:gravity="center_vertical"
-        android:text="+99999"
+        android:text=""
         android:singleLine="true"
         android:textStyle="bold"/>
 

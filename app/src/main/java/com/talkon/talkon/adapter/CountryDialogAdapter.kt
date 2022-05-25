@@ -11,13 +11,15 @@ import com.talkon.talkon.R
 import com.talkon.talkon.utils.CountryBottomSheetDialog
 import com.talkon.talkon.model.Country
 
-class CountryDialogAdapter(var fragment: CountryBottomSheetDialog, var items: ArrayList<Country>) : BaseAdapter(){
+class CountryDialogAdapter(var fragment: CountryBottomSheetDialog, var items: ArrayList<Country>) :
+    BaseAdapter() {
     override fun getItemCount(): Int {
         return items.size
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_country_layout, parent, false)
+        val view: View =
+            LayoutInflater.from(parent.context).inflate(R.layout.item_country_layout, parent, false)
         return CountryViewHolder(view)
     }
 
@@ -28,9 +30,9 @@ class CountryDialogAdapter(var fragment: CountryBottomSheetDialog, var items: Ar
             var tv_country_name = holder.tv_country_name
             var iv_country_flag = holder.iv_country_flag
 
-            tv_country_code.text = country.countryCode
-            tv_country_name.text = country.countryName
-            Glide.with(fragment).load(country.countryFlag).into(iv_country_flag)
+            tv_country_name.text = country.country_name
+            tv_country_code.text = "+${country.country_phone_code.toString()}"
+            Glide.with(fragment).load("https://countryflagsapi.com/png/${country.country_name}").into(iv_country_flag)
         }
     }
 

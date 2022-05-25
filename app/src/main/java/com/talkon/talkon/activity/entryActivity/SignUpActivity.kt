@@ -27,6 +27,7 @@ class SignUpActivity : BaseActivity() {
             callNumberVerificationActivity(this)
         }
 
+        bottomSheet.apiCountryList()
 
          ll_country_code.setOnClickListener {
 

@@ -80,7 +80,7 @@ class IntroActivity : BaseActivity() {
         })
     }
 
-    var pageColors = intArrayOf(Color.CYAN, Color.YELLOW, Color.LTGRAY, Color.MAGENTA, Color.GREEN)
+    var pageColors = intArrayOf(Color.rgb(131,190,60), Color.YELLOW, Color.LTGRAY, Color.MAGENTA, Color.GREEN)
     var currentColor = pageColors[4]
 
     fun animateToColor(colorTo: Int) {

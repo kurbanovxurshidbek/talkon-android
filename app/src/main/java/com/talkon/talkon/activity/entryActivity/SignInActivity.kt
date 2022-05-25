@@ -7,7 +7,8 @@ import com.talkon.talkon.R
 import com.talkon.talkon.activity.BaseActivity
 import com.talkon.talkon.utils.CountryBottomSheetDialog
 import kotlinx.android.synthetic.main.activity_sign_in.*
-import kotlinx.android.synthetic.main.activity_sign_up.tv_sign_in
+import kotlinx.android.synthetic.main.activity_sign_in.ll_country_code
+import kotlinx.android.synthetic.main.activity_sign_up.*
 
 /**
  * In SignInActivity, user can sign in using phone number or Google
@@ -35,15 +36,16 @@ class SignInActivity : BaseActivity() {
         }
 
 
-        var sheetBehavior = BottomSheetBehavior.from(bottom_sheet)
-
+        bottomSheet.apiCountryList()
 
         ll_country_code.setOnClickListener {
-            if (sheetBehavior.state != BottomSheetBehavior.STATE_EXPANDED) {
-                sheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
-            } else {
-                sheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+
+            if (!bottomSheet.isVisible){
+                bottomSheet.show(supportFragmentManager,
+                    "ModalBottomSheet",)
             }
+
+
         }
     }
 }
