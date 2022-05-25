@@ -24,6 +24,7 @@
                 android:gravity="center_vertical">
 
                 <TextView
+                    android:textStyle="bold"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -38,7 +39,7 @@
                     android:padding="5dp"
                     android:layout_marginRight="16dp"
                     android:src="@drawable/ic_settings"
-                    android:background="@drawable/background_light_green_rounded"/>
+                    />
 
             </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
@@ -154,7 +155,7 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginRight="5dp"
+                                android:layout_marginRight="9dp"
                                 android:src="@drawable/ic_coin"/>
 
                             <TextView
