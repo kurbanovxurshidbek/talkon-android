@@ -13,11 +13,8 @@ import com.talkon.talkon.activity.entryActivity.StatusChooseActivity
 import com.talkon.talkon.adapter.ExperienceDialogAdapter
 import com.talkon.talkon.adapter.LevelDialogAdapter
 
-class ExperienceDialog: DialogFragment() {
+class ExperienceDialog(var listener: ExperienceListener): DialogFragment() {
     lateinit var recyclerView: RecyclerView
-    lateinit var activity: StatusChooseActivity
-
-    public lateinit var selectedLevel: String
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         getDialog()!!.getWindow()?.setBackgroundDrawableResource(R.drawable.white_border_rounded);
         var view = inflater.inflate(R.layout.experience_dialog_fragment, container, false)
@@ -40,23 +37,27 @@ class ExperienceDialog: DialogFragment() {
     }
 
     private fun refreshAdapter(items: ArrayList<String>) {
-        var adapter = ExperienceDialogAdapter(this, items)
+        var adapter = ExperienceDialogAdapter( items)
         recyclerView.adapter = adapter
+        adapter.onClick = {
+            this.dismiss()
+            listener.onSelected(it)
+        }
     }
-    fun getItemLevel(experience: String) {
-        selectedLevel = experience
-        Log.d("@@@", experience)
-    }
+
 
     private fun getLevel(): ArrayList<String> {
         var experience = ArrayList<String>()
 
-        for (i in 1..30){
+        for (i in 2..30){
             experience.add("$i years")
         }
 
         return experience
     }
 
+    interface ExperienceListener{
+        fun onSelected(experience: String)
+    }
 
 }

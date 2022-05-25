@@ -13,7 +13,8 @@ import com.talkon.talkon.utils.CountryBottomSheetDialog
 import com.talkon.talkon.model.Country
 import com.talkon.talkon.utils.LevelDialog
 
-class LevelDialogAdapter(var fragment: LevelDialog, var items: ArrayList<String>) : BaseAdapter(){
+class LevelDialogAdapter(var items: ArrayList<String>) : BaseAdapter(){
+    var onClick : ((String) ->Unit)? = null
     override fun getItemCount(): Int {
         return items.size
     }
@@ -31,7 +32,7 @@ class LevelDialogAdapter(var fragment: LevelDialog, var items: ArrayList<String>
             tv_level.text = level
 
             ll_level.setOnClickListener {
-                fragment.getItemLevel(level)
+                onClick?.invoke(level)
             }
 
         }

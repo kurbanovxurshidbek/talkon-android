@@ -14,7 +14,8 @@ import com.talkon.talkon.model.Country
 import com.talkon.talkon.utils.ExperienceDialog
 import com.talkon.talkon.utils.LevelDialog
 
-class ExperienceDialogAdapter(var fragment: ExperienceDialog, var items: ArrayList<String>) : BaseAdapter(){
+class ExperienceDialogAdapter( var items: ArrayList<String>) : BaseAdapter(){
+    var onClick : ((String) ->Unit)? = null
     override fun getItemCount(): Int {
         return items.size
     }
@@ -32,7 +33,7 @@ class ExperienceDialogAdapter(var fragment: ExperienceDialog, var items: ArrayLi
 
             tv_experience.text = level
             ll_experience.setOnClickListener {
-                fragment.getItemLevel(level)
+                onClick?.invoke(level)
             }
 
         }

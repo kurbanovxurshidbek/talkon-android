@@ -60,8 +60,7 @@ class IntroActivity : BaseActivity() {
         viewPager.setAdapter(adapter)
         // set dot indicators
         dotsIndicator!!.setViewPager(viewPager)
-        // make status bar transparent
-//        backgroundTransition()
+
         viewPager.addOnPageChangeListener(object : ViewPager.SimpleOnPageChangeListener() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
@@ -80,7 +79,12 @@ class IntroActivity : BaseActivity() {
         })
     }
 
-    var pageColors = intArrayOf(Color.CYAN, Color.YELLOW, Color.LTGRAY, Color.MAGENTA, Color.GREEN)
+    var color1 = Color.argb(255,173, 247, 182 )
+    var color2 = Color.argb(255,241, 224, 33 )
+    var color3 = Color.argb(255,250, 69, 131 )
+    var color4 = Color.argb(255,26, 146, 250 )
+    var color5 = Color.argb(255,187, 134, 252 )
+    var pageColors = intArrayOf(color1, color2, color3, color4, color5)
     var currentColor = pageColors[4]
 
     fun animateToColor(colorTo: Int) {
@@ -89,7 +93,7 @@ class IntroActivity : BaseActivity() {
             mColorAnimation.cancel()
         }
         mColorAnimation = ValueAnimator.ofObject(ArgbEvaluator(), currentColor, colorTo)
-        mColorAnimation.setDuration(600) // milliseconds
+        mColorAnimation.setDuration(500) // milliseconds
         mColorAnimation.addUpdateListener(AnimatorUpdateListener { animator ->
             currentColor = animator.animatedValue as Int
             ll_viewPager_background.setBackgroundColor(currentColor)

@@ -127,6 +127,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="15dp"
                                 android:hint="@string/str_name"
+                                android:background="@null"
                                 android:textColor="@color/black"
                                 android:textColorHint="@color/grey" />
 
