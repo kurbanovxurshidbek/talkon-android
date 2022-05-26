@@ -25,21 +25,11 @@
 
                 <TextView
                     android:textStyle="bold"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:text="@string/str_profile"
                     android:textColor="@color/black"
                     android:textSize="17sp"/>
-
-                <ImageView
-                    android:id="@+id/iv_settings"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="5dp"
-                    android:layout_marginRight="16dp"
-                    android:src="@drawable/ic_settings"
-                    />
 
             </LinearLayout>
         </androidx.appcompat.widget.Toolbar>

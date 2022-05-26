@@ -80,11 +80,13 @@ class IntroActivity : BaseActivity() {
     }
 
     var color1 = Color.argb(255,173, 247, 182 )
-    var color2 = Color.argb(255,241, 224, 33 )
-    var color3 = Color.argb(255,250, 69, 131 )
-    var color4 = Color.argb(255,26, 146, 250 )
-    var color5 = Color.argb(255,187, 134, 252 )
-    var pageColors = intArrayOf(color1, color2, color3, color4, color5)
+    var color2 = Color.argb(255,205, 180, 250 )
+    var color3 = Color.argb(255,246, 238, 165 )
+    var color4 = Color.argb(255,169, 212, 250 )
+    var color5 = Color.argb(255,250, 189, 170 )
+    var pageColors = intArrayOf(color1, color3, color2, color4, color5)
+    var pageColors2 = intArrayOf(R.color.background_green,R.color.light_purple,R.color.light_gold,
+        R.color.light_blue,R.color.light_orange, )
     var currentColor = pageColors[4]
 
     fun animateToColor(colorTo: Int) {
@@ -97,6 +99,8 @@ class IntroActivity : BaseActivity() {
         mColorAnimation.addUpdateListener(AnimatorUpdateListener { animator ->
             currentColor = animator.animatedValue as Int
             ll_viewPager_background.setBackgroundColor(currentColor)
+            bt_get_started.setBackgroundColor(currentColor)
+
         })
         mColorAnimation.start()
     }
