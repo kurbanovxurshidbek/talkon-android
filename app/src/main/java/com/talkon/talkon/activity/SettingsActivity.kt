@@ -4,7 +4,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.talkon.talkon.R
 
-class SettingsActivity : AppCompatActivity() {
+/**
+ * In SettingsActivity, user can manage app Settings like account, notification..
+ */
+
+class SettingsActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)

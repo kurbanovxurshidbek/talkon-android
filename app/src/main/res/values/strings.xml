@@ -28,7 +28,7 @@
     <string name="str_log_out">Log out</string>
     <string name="str_get_started">Get Started</string>
     <string name="str_invite_friends">Invite Friends</string>
-    <string name="str_rate_talk_on">Rate Talk On</string>
+    <string name="str_rate_talk_on">Rate TalkOn</string>
     <string name="str_search">Search</string>
     <string name="str_online">Online</string>
     <string name="str_write_a_message">Write a message</string>
@@ -57,6 +57,7 @@
     <string name="str_practice_with_student_text">Practice your english with students. TalkOn is a great way to practice English for beginners or experts. Give it a try!</string>
     <string name="str_record_your_lessons_text">Imitate tutors, learn new words and analyze your english by recording your lessons!</string>
     <string name="str_lesson_history">Lesson history</string>
+    <string name="str_search_for_tutors">Search for tutors</string>
 
 
 </resources>

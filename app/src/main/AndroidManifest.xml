@@ -20,6 +20,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.NoActionBar.Bridge">
         <activity
+            android:name=".activity.SearchResultActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.ChatActivity"
             android:exported="false" />
         <activity
@@ -51,8 +54,7 @@
             android:launchMode="singleTop" />
         <activity
             android:name=".activity.entryActivity.StatusChooseActivity"
-            android:exported="false"
-             />
+            android:exported="false" />
         <activity
             android:name=".activity.MainActivity"
             android:exported="false" />

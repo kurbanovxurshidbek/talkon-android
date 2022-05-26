@@ -1,8 +1,13 @@
 package com.talkon.talkon.activity
 
 import android.annotation.SuppressLint
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.view.View
 import android.widget.Adapter
+import android.widget.MediaController
+import android.widget.VideoView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -15,6 +20,10 @@ import com.talkon.talkon.model.Reviews
 import com.talkon.talkon.model.WeekDay
 import kotlinx.android.synthetic.main.activity_about_teacher.*
 import kotlinx.android.synthetic.main.item_week_day.*
+
+/**
+ * In AboutTeacherActivity, user can read about teacher and book a trial
+ */
 
 class AboutTeacherActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,11 +42,41 @@ class AboutTeacherActivity : BaseActivity() {
         rv_about_teacher_reviews.layoutManager = LinearLayoutManager(this)
         reviewsAdapter(getReviews())
 
+        videoView()
+
     }
 
+    private fun videoView() {
+
+        val mediaController = MediaController(this)
+        mediaController.setAnchorView(vv_ab_teacher)
+        val onlineUri = Uri.parse("https://assets.mixkit.co/videos/preview/mixkit-people-pouring-a-warm-drink-around-a-campfire-513-large.mp4")
+
+        play_button.setOnClickListener{
+            if (vv_ab_teacher.isPlaying){
+                vv_ab_teacher.pause()
+                play_button.visibility = View.VISIBLE
+
+            }else{
+                vv_ab_teacher.setMediaController(mediaController)
+                vv_ab_teacher.setVideoURI(onlineUri)
+                vv_ab_teacher.requestFocus()
+                vv_ab_teacher.start()
+
+                play_button.visibility = View.GONE
+            }
+        }
+    }
+
+    @SuppressLint("ResourceAsColor")
     private fun weekDayAdapter(items: ArrayList<WeekDay>) {
        var adapter = TeacherWeekDayAdapter(items)
         rv_about_teacher_week_day.adapter = adapter
+
+
+        adapter.onClick = {
+
+        }
 
 //        adapter.onClick = {
 //        }
