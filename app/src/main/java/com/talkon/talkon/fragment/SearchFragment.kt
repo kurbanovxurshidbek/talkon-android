@@ -1,5 +1,6 @@
 package com.talkon.talkon.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.talkon.talkon.R
+import com.talkon.talkon.activity.SearchResultActivity
 import com.talkon.talkon.adapter.SearchViewPagerAdapter
 import kotlinx.android.synthetic.main.fragment_search.*
 
@@ -42,12 +44,16 @@ class SearchFragment : BaseFragment() {
         tabLayout = view.findViewById(R.id.tabLayout)
         iv_search = view.findViewById(R.id.iv_search)
         iv_search.setOnClickListener {
-            Log.d("@@@","pressed")
-            replaceFragment(SearchActiveFragment.newInstance(null))
+            callSearchResultActivity()
         }
 
         viewPagerSetUp()
 
+    }
+
+    private fun callSearchResultActivity() {
+        var intent = Intent(context, SearchResultActivity::class.java)
+        startActivity(intent)
     }
 
     private fun viewPagerSetUp() {
@@ -76,15 +82,6 @@ class SearchFragment : BaseFragment() {
                 tabLayout!!.selectTab(tabLayout!!.getTabAt(position))
             }
         })
-    }
-
-    private fun replaceFragment(fragment: Fragment) {
-        val backStateName = fragment.javaClass.name
-        val manager: FragmentManager = childFragmentManager
-        val ft: FragmentTransaction = manager.beginTransaction()
-        ft.replace(R.id.ll_view, fragment)
-        ft.addToBackStack(backStateName)
-        ft.commit()
     }
 
 }

@@ -309,7 +309,7 @@ class CountryBottomSheetDialog : BottomSheetDialogFragment() {
                 call: Call<ArrayList<Country>>,
                 response: Response<ArrayList<Country>>
             ) {
-                countries.addAll(response.body()!!)
+//                countries.addAll(response.body()!!)
             }
 
             override fun onFailure(call: Call<ArrayList<Country>>, t: Throwable) {

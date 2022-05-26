@@ -21,6 +21,10 @@ import com.talkon.talkon.model.WeekDay
 import kotlinx.android.synthetic.main.activity_about_teacher.*
 import kotlinx.android.synthetic.main.item_week_day.*
 
+/**
+ * In AboutTeacherActivity, user can read about teacher and book a trial
+ */
+
 class AboutTeacherActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
