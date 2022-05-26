@@ -1,31 +1,27 @@
 package com.talkon.talkon.utils
 
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
-import android.util.Log
 import android.view.*
 import androidx.annotation.Nullable
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.talkon.talkon.R
+import com.talkon.talkon.activity.entryActivity.SignInActivity
 import com.talkon.talkon.adapter.CountryDialogAdapter
 import com.talkon.talkon.model.Country
-import com.talkon.talkon.network.RetrofitHttp
-import kotlinx.android.synthetic.main.country_bottom_sheet_layout.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import org.json.JSONException
+import org.json.JSONObject
+import java.io.IOException
+import java.nio.charset.Charset
 
 /**
  * CountryBottomSheetDialog is used for choosing a country code when entering a phone number in SignUpActivity
  */
 
-class CountryBottomSheetDialog : BottomSheetDialogFragment() {
+class CountryBottomSheetDialog(var activity: SignInActivity) : BottomSheetDialogFragment() {
     lateinit var recyclerView: RecyclerView
-    private var countries: ArrayList<Country> = ArrayList()
-    private lateinit var adapter: CountryDialogAdapter
+    private var countriesList: ArrayList<Country> = ArrayList()
 
 
     override fun onCreateView(
@@ -34,7 +30,7 @@ class CountryBottomSheetDialog : BottomSheetDialogFragment() {
         @Nullable savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.country_bottom_sheet_layout, container, false)
-        adapter = CountryDialogAdapter(this, countries)
+        readJsonFile()
         initViews(view)
         return view
     }
@@ -42,28 +38,25 @@ class CountryBottomSheetDialog : BottomSheetDialogFragment() {
     override fun getTheme(): Int {
         return R.style.AppBottomSheetDialogTheme
     }
+
     private fun initViews(view: View) {
         recyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.setLayoutManager(GridLayoutManager(context, 1))
+        refreshAdapter(countriesList)
+        Logger.d("@@@",countriesList.toString())
+    }
+
+    private fun refreshAdapter(items: ArrayList<Country>) {
+        var adapter = CountryDialogAdapter(activity,this, items)
         recyclerView.adapter = adapter
-
-
-//        et_search.addTextChangedListener(object : TextWatcher {
-//            override fun afterTextChanged(s: Editable) {}
-//            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
-//            }
-//
-//            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-//                val keyword = s.toString().trim()
-//                usersByKeyword(keyword)
-//            }
-//        })
-
-        apiCountryList()
 
     }
 
-    fun phoneNumberRegex(countryShortName: String): String {
+    open fun itemCountryClick(country: Country){
+
+    }
+
+    fun phoneNumberMax(countryShortName: String): String {
 
         var hashMap: HashMap<String, String> = HashMap<String, String>()
         hashMap.put("AC", "+247-####")
@@ -301,33 +294,53 @@ class CountryBottomSheetDialog : BottomSheetDialogFragment() {
     }
 
 
+    fun readJsonFile() {
+        try {
+            val obj = JSONObject(getJSONFromAssets()!!)
+            val countryArray = obj.getJSONArray("countries")
 
 
-    open fun apiCountryList(){
-        RetrofitHttp.countryService.getCountryList().enqueue(object : Callback<ArrayList<Country>>{
-            override fun onResponse(
-                call: Call<ArrayList<Country>>,
-                response: Response<ArrayList<Country>>
-            ) {
-//                countries.addAll(response.body()!!)
+
+            for (i in 0 until countryArray.length()) {
+                val country = countryArray.getJSONObject(i)
+                val name = country.getString("name")
+                val countryIso = country.getString("countryIso")
+                val currencyIso = country.getString("currencyIso")
+                val currencySymbol = country.getString("currencySymbol")
+                val flag = country.getString("flag")
+                val prefix = country.getString("prefix")
+
+                val userDetails =
+                    Country(name, countryIso, currencyIso, currencySymbol, flag, prefix)
+
+                // add the details in the list
+                countriesList.add(userDetails)
             }
 
-            override fun onFailure(call: Call<ArrayList<Country>>, t: Throwable) {
-                Log.d("@@@",t.message.toString())
-            }
+        } catch (e: JSONException) {
+            //exception
+            e.printStackTrace()
+        }
 
-        })
     }
 
 
-//    fun usersByKeyword(keyword: String) {
-//        if (keyword.isEmpty())
-//        countries.clear()
-//        for (country in countries)
-//            if (user.fullname.toLowerCase().startsWith(keyword.toLowerCase()))
-//                users.add(user)
-//
-//        refreshAdapter(users)
-//    }
+    private fun getJSONFromAssets(): String? {
+
+        var json: String? = null
+        val charset: Charset = Charsets.UTF_8
+        try {
+            val myUsersJSONFile = activity?.assets!!.open("CountryCodes.json")
+            val size = myUsersJSONFile.available()
+            val buffer = ByteArray(size)
+            myUsersJSONFile.read(buffer)
+            myUsersJSONFile.close()
+            json = String(buffer, charset)
+        } catch (ex: IOException) {
+            ex.printStackTrace()
+            return null
+        }
+        return json
+    }
 
 }

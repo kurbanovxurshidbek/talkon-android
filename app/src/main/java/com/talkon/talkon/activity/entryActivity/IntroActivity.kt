@@ -47,13 +47,13 @@ class IntroActivity : BaseActivity() {
         var fadeAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_faster);
         viewPager.animation = fadeAnimation
 
-        bt_get_started.setOnClickListener { callSignUpActivity(this) }
-        tv_sign_in.setOnClickListener { callSignInActivity(this) }
+        bt_get_started.setOnClickListener {
+            callSignInActivity(this)
+        }
 
-       viewPagerSetUp()
-    }
-
-    private fun viewPagerSetUp() {
+        tv_sign_in.setOnClickListener {
+            callSignInActivity(this)
+        }
         // init slider pager adapter
         adapter = IntroFragmentAdapter(supportFragmentManager, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT)
         // set adapter
@@ -72,7 +72,7 @@ class IntroActivity : BaseActivity() {
                 if (position == adapter!!.count - 1) {
                     bt_get_started.setOnClickListener {
 //                        SharedPref(context).isSaved = true
-                        callSignUpActivity(this@IntroActivity)
+                        callSignInActivity(this@IntroActivity)
                     }
                 }
             }

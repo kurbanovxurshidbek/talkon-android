@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/dialog_corner_rounded"
     android:orientation="vertical"
@@ -10,7 +10,6 @@
     <LinearLayout
         android:layout_width="70dp"
         android:layout_height="3dp"
-        android:clipToOutline="true"
         android:background="@color/grey"/>
 
     <LinearLayout
@@ -26,19 +25,18 @@
             app:elevation="0dp">
 
             <EditText
+                android:layout_marginTop="16dp"
                 android:id="@+id/et_search"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:hint="Search a country"
+                android:padding="16dp"
                 android:drawableRight="@drawable/ic_search"
-                android:paddingBottom="10dp"
-                android:paddingRight="15dp"
-                android:background="@null"
-                android:paddingLeft="10dp"
-                android:outlineSpotShadowColor="@color/grey"
+                android:background="@drawable/item_input_rounded"
                 android:drawableTint="@color/grey"
                 android:textColorHint="@color/grey"/>
+
 
         </com.google.android.material.appbar.AppBarLayout>
 
