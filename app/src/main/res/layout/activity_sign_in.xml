@@ -91,7 +91,7 @@
                 android:textStyle="bold" />
 
             <LinearLayout
-                android:layout_width="match_parent"
+               android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
                 android:gravity="center_vertical"
@@ -163,15 +163,20 @@
                     android:gravity="center_vertical"
                     android:padding="5dp">
 
-                    <EditText
+                    <com.santalu.maskara.widget.MaskEditText
                         android:id="@+id/et_phone_number"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="5dp"
+                        app:maskStyle="normal"
                         android:gravity="center_vertical"
+                        android:outlineSpotShadowColor="@color/white"
                         android:inputType="number"
                         android:textColor="@color/black"
+                        android:textCursorDrawable="@color/light_green"
                         android:textColorHint="@color/grey"
+                        android:cursorVisible="true"
+                        android:background="@android:color/transparent"
                         android:textSize="16sp" />
                 </LinearLayout>
 
@@ -179,6 +184,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -264,35 +270,10 @@
             </FrameLayout>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="10dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/str_don_t_have_an_account"
-                android:textColor="@color/grey"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/tv_sign_up"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="@string/str_sign_up"
-                android:textColor="@color/main_green"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-        </LinearLayout>
 
     </LinearLayout>
 
     </LinearLayout>
-    <include
-        android:id="@+id/bottom_sheet"
-        layout="@layout/country_bottom_sheet_layout" />
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

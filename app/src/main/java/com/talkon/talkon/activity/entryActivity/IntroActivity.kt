@@ -48,7 +48,7 @@ class IntroActivity : BaseActivity() {
         viewPager.animation = fadeAnimation
 
         bt_get_started.setOnClickListener {
-            callSignUpActivity(this)
+            callSignInActivity(this)
         }
 
         tv_sign_in.setOnClickListener {
@@ -72,7 +72,7 @@ class IntroActivity : BaseActivity() {
                 if (position == adapter!!.count - 1) {
                     bt_get_started.setOnClickListener {
 //                        SharedPref(context).isSaved = true
-                        callSignUpActivity(this@IntroActivity)
+                        callSignInActivity(this@IntroActivity)
                     }
                 }
             }

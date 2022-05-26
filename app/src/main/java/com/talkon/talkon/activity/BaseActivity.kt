@@ -9,7 +9,6 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.talkon.talkon.activity.entryActivity.NumberVerificationActivity
 import com.talkon.talkon.activity.entryActivity.SignInActivity
-import com.talkon.talkon.activity.entryActivity.SignUpActivity
 import com.talkon.talkon.activity.entryActivity.StatusChooseActivity
 
 /**
@@ -55,12 +54,6 @@ open class BaseActivity : AppCompatActivity() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             window.statusBarColor = Color.TRANSPARENT
         }
-    }
-
-    fun callSignUpActivity(context: Context) {
-        val intent = Intent(this, SignUpActivity::class.java)
-        startActivity(intent)
-        finish()
     }
 
     fun callAboutTeacherActivity(context: Context) {

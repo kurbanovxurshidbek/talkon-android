@@ -1,49 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:id="@+id/liner"
     android:layout_height="60dp"
-    android:gravity="center_vertical"
     android:background="@color/white"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:gravity="center_vertical">
 
-  <LinearLayout
-      android:layout_width="0dp"
-      android:layout_weight="0.35"
-      android:gravity="center_vertical"
-      android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.35"
+        android:gravity="center_vertical">
 
-      <com.google.android.material.imageview.ShapeableImageView
-          android:id="@+id/iv_country_flag"
-          android:layout_width="33dp"
-          android:layout_height="33dp"
-          android:scaleType="fitXY"
-          android:adjustViewBounds="true"
-          android:layout_marginLeft="6dp"
-          android:src="@drawable/img"
-          app:shapeAppearanceOverlay="@style/circle"/>
-  </LinearLayout>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_country_flag"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_marginLeft="6dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/img"
+            app:shapeAppearanceOverlay="@style/circle" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tv_country_code"
         android:layout_width="0dp"
-        android:layout_weight="0.3"
         android:layout_height="wrap_content"
+        android:layout_weight="0.3"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:text=""
         android:textColor="@color/black"
         android:textSize="17sp"
-        android:gravity="center_vertical"
-        android:text=""
-        android:singleLine="true"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tv_country_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:textStyle="bold"
-        android:singleLine="true"
         android:layout_marginLeft="5dp"
+        android:layout_weight="1"
+        android:singleLine="true"
+        android:textColor="@color/black"
         android:textSize="17sp"
-        android:textColor="@color/black"/>
+        android:textStyle="bold" />
 
 </LinearLayout>
