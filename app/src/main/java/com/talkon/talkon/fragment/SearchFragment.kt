@@ -1,17 +1,18 @@
 package com.talkon.talkon.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
-import com.skydoves.powerspinner.PowerSpinnerView
 import com.talkon.talkon.R
 import com.talkon.talkon.adapter.SearchViewPagerAdapter
-import com.talkon.talkon.fragment.BaseFragment
-import com.talkon.talkon.utils.Extensions.toast
 import kotlinx.android.synthetic.main.fragment_search.*
 
 /**
@@ -28,25 +29,34 @@ class SearchFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view: View = inflater.inflate(R.layout.fragment_search, container, false)
-        initViews(view)
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initViews(view)
     }
 
     private fun initViews(view: View) {
         viewPager2 = view.findViewById(R.id.viewpager2)
         tabLayout = view.findViewById(R.id.tabLayout)
         iv_search = view.findViewById(R.id.iv_search)
+        iv_search.setOnClickListener {
+            Log.d("@@@","pressed")
+            replaceFragment(SearchActiveFragment.newInstance(null))
+        }
 
+        viewPagerSetUp()
+
+    }
+
+    private fun viewPagerSetUp() {
         tabLayout!!.addTab(tabLayout!!.newTab().setText("Teachers"));
         tabLayout!!.addTab(tabLayout!!.newTab().setText("Students"));
         // Set the adapter
         val fragmentManager: androidx.fragment.app.FragmentManager = childFragmentManager
         viewPagerAdapter = SearchViewPagerAdapter(fragmentManager, lifecycle = viewLifecycleOwner.lifecycle)
         viewPager2!!.setAdapter(viewPagerAdapter)
-
-        // The Page (fragment) titles will be displayed in the
-        // tabLayout hence we need to  set the page viewer
-        // we use the setupWithViewPager().
         tabLayout!!.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
                 viewpager2!!.setCurrentItem(tab.position)
@@ -57,7 +67,6 @@ class SearchFragment : BaseFragment() {
                     iv_search.visibility = View.INVISIBLE
                 }
             }
-
             override fun onTabUnselected(tab: TabLayout.Tab) {}
             override fun onTabReselected(tab: TabLayout.Tab) {}
         })
@@ -67,7 +76,15 @@ class SearchFragment : BaseFragment() {
                 tabLayout!!.selectTab(tabLayout!!.getTabAt(position))
             }
         })
-
-
     }
+
+    private fun replaceFragment(fragment: Fragment) {
+        val backStateName = fragment.javaClass.name
+        val manager: FragmentManager = childFragmentManager
+        val ft: FragmentTransaction = manager.beginTransaction()
+        ft.replace(R.id.ll_view, fragment)
+        ft.addToBackStack(backStateName)
+        ft.commit()
+    }
+
 }

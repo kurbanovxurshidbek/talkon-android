@@ -47,13 +47,13 @@ class IntroActivity : BaseActivity() {
         var fadeAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_faster);
         viewPager.animation = fadeAnimation
 
-        bt_get_started.setOnClickListener {
-            callSignUpActivity(this)
-        }
+        bt_get_started.setOnClickListener { callSignUpActivity(this) }
+        tv_sign_in.setOnClickListener { callSignInActivity(this) }
 
-        tv_sign_in.setOnClickListener {
-            callSignInActivity(this)
-        }
+       viewPagerSetUp()
+    }
+
+    private fun viewPagerSetUp() {
         // init slider pager adapter
         adapter = IntroFragmentAdapter(supportFragmentManager, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT)
         // set adapter
