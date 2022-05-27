@@ -19,6 +19,7 @@ import kotlinx.android.synthetic.main.item_week_day.*
 
 class TeacherWeekDayAdapter (var items: ArrayList<WeekDay>) : BaseAdapter(){
     var onClick: ((WeekDay) -> Unit)? = null
+
     override fun getItemCount(): Int {
         return items.size
     }
@@ -30,7 +31,7 @@ class TeacherWeekDayAdapter (var items: ArrayList<WeekDay>) : BaseAdapter(){
 
     @SuppressLint("ResourceAsColor")
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        val weekDay: WeekDay = items[position]
+        var weekDay: WeekDay = items[position]
         if (holder is AboutTeacherViewHolder) {
             var tv_week_light = holder.tv_week_light
             var tv_day_light = holder.tv_day_light
@@ -38,22 +39,13 @@ class TeacherWeekDayAdapter (var items: ArrayList<WeekDay>) : BaseAdapter(){
             tv_week_light.text = weekDay.tv_week_light
             tv_day_light.text = weekDay.tv_day_light
 
-//            holder.rootView.setOnClickListener {
-//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
-//
-//                }
-//            }
-
 
 
             holder.rootView.setOnClickListener {
                 onClick?.invoke(weekDay)
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
-                    holder.ll_week_day.setBackgroundResource(R.drawable.back_rounded_green)
-                    holder.tv_week_light.setTextColor(R.color.white)
-                    holder.tv_day_light.setTextColor(R.color.white)
-                } else {
-
+                holder.ll_week_day.setBackgroundResource(R.drawable.back_rounded_green)
+                holder.tv_day_light.setTextColor(R.color.white)
+                holder.tv_week_light.setTextColor(R.color.white)
                 }
 
 //                holder.ll_week_day.setBackgroundResource(R.drawable.back_rounded_green)
@@ -73,4 +65,3 @@ class TeacherWeekDayAdapter (var items: ArrayList<WeekDay>) : BaseAdapter(){
         val rootView = view.findViewById<LinearLayout>(R.id.ll_week)
         val ll_week_day = view.findViewById<LinearLayout>(R.id.ll_item_week_day_light)
     }
-}

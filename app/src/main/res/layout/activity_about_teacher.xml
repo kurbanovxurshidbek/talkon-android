@@ -42,17 +42,6 @@
                     android:textSize="20sp" />
 
 
-                <ImageView
-                    android:id="@+id/iv_filter"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:visibility="visible"
-                    android:layout_marginRight="10dp"
-                    android:layout_gravity="center"
-                    android:padding="5dp"
-                    android:src="@drawable/ic_share"
-                    android:background="@drawable/background_light_green_rounded"/>
-
             </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
 
@@ -68,8 +57,8 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <FrameLayout
-                android:id="@+id/video_frame"
+            <RelativeLayout
+                android:id="@+id/video_relative"
                 android:layout_width="match_parent"
                 android:layout_height="160dp">
 
@@ -78,24 +67,23 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:keepScreenOn="true"
-                    android:layout_gravity="center_vertical|center_horizontal" />
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"/>
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal|center_vertical">
 
-                    <ImageView
-                        android:id="@+id/play_button"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:background="@drawable/circle_white_backround"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/ic_play_button3_foreground" />
+                <ImageView
+                    android:id="@+id/play_button"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/circle_white_backround"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_play_button3_foreground" />
 
-                </LinearLayout>
 
-            </FrameLayout>
+
+            </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -282,57 +270,6 @@
                         android:layout_gravity="center_horizontal">
 
                         <TextView
-                            android:id="@+id/tv_count_message"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="16"
-                            android:maxWidth="40dp"
-                            android:singleLine="true"
-                            android:textStyle="bold"
-                            android:layout_marginStart="7dp"
-                            android:textColor="@color/black"
-                            android:textSize="15sp"/>
-
-                        <ImageView
-                            android:id="@+id/iv_message"
-                            android:layout_width="15dp"
-                            android:layout_height="15dp"
-                            android:layout_marginLeft="7dp"
-                            android:layout_marginTop="2dp"
-                            android:src="@drawable/ic_chat"/>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal">
-
-                        <TextView
-                            android:id="@+id/tv_reviews"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="reviews"
-                            android:textColor="@color/grey"
-                            android:textSize="18sp"/>
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_gravity="center"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal">
-
-                        <TextView
                             android:id="@+id/tv_experience_about_teacher"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -466,6 +403,7 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/tv_more_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -475,7 +413,20 @@
                 android:textSize="16sp"
                 android:textStyle="bold"/>
 
+            <TextView
+                android:id="@+id/tv_collapse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:text="Collapse"
+                android:visibility="gone"
+                android:textColor="@color/main_green"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
             <Button
+                android:id="@+id/btn_buy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"

@@ -58,6 +58,7 @@
     <string name="str_record_your_lessons_text">Imitate tutors, learn new words and analyze your english by recording your lessons!</string>
     <string name="str_lesson_history">Lesson history</string>
     <string name="str_search_for_tutors">Search for tutors</string>
+    <string name="str_collapse">Collapse</string>
 
 
 </resources>
