@@ -119,7 +119,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:background="@drawable/border_rounded_grey_green"
-                            android:padding="5dp">
+                            android:padding="5dp"
+                            android:gravity="center_vertical">
 
                             <EditText
                                 android:id="@+id/et_name"
