@@ -33,6 +33,11 @@
         <entry key="..\:/All Projects/android/Studio Projectes/github/talkon-android/app/src/main/res/layout/item_message_my.xml" value="0.4" />
         <entry key="..\:/All Projects/android/Studio Projectes/github/talkon-android/app/src/main/res/layout/item_message_your.xml" value="0.6" />
         <entry key="..\:/All Projects/android/Studio Projectes/github/talkon-android/app/src/main/res/layout/item_search_teacher_layout.xml" value="0.2484375" />
+        <entry key="..\:/Programming/talkon-android1/app/src/main/res/drawable-v24/border_rounded_grey_green.xml" value="0.1835" />
+        <entry key="..\:/Programming/talkon-android1/app/src/main/res/drawable/ic_background_light_green_settings.xml" value="0.1835" />
+        <entry key="..\:/Programming/talkon-android1/app/src/main/res/drawable/ic_background_logout.xml" value="0.1835" />
+        <entry key="..\:/Programming/talkon-android1/app/src/main/res/drawable/ic_book.xml" value="0.129" />
+        <entry key="..\:/Programming/talkon-android1/app/src/main/res/drawable/ic_logout.xml" value="0.1835" />
         <entry key="..\:/Programming/talkon-android1/app/src/main/res/layout/activity_about_teacher.xml" value="0.20416666666666666" />
         <entry key="..\:/Programming/talkon-android1/app/src/main/res/layout/activity_balance.xml" value="0.20416666666666666" />
         <entry key="..\:/Programming/talkon-android1/app/src/main/res/layout/activity_chat.xml" value="0.20416666666666666" />
@@ -52,7 +57,7 @@
         <entry key="..\:/Programming/talkon-android1/app/src/main/res/layout/fragment_chat.xml" value="0.20416666666666666" />
         <entry key="..\:/Programming/talkon-android1/app/src/main/res/layout/fragment_courses.xml" value="0.20416666666666666" />
         <entry key="..\:/Programming/talkon-android1/app/src/main/res/layout/fragment_intro.xml" value="0.25" />
-        <entry key="..\:/Programming/talkon-android1/app/src/main/res/layout/fragment_profile.xml" value="0.27593360995850624" />
+        <entry key="..\:/Programming/talkon-android1/app/src/main/res/layout/fragment_profile.xml" value="0.33" />
         <entry key="..\:/Programming/talkon-android1/app/src/main/res/layout/fragment_search.xml" value="0.20416666666666666" />
         <entry key="..\:/Programming/talkon-android1/app/src/main/res/layout/fragment_search_student.xml" value="0.20416666666666666" />
         <entry key="..\:/Programming/talkon-android1/app/src/main/res/layout/fragment_search_teacher.xml" value="0.20416666666666666" />
