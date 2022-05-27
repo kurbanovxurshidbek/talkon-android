@@ -7,7 +7,6 @@ import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import com.talkon.talkon.R
 import com.talkon.talkon.adapter.SearchHistoryAdapter
-import com.talkon.talkon.model.Chat
 import kotlinx.android.synthetic.main.activity_search_result.*
 
 /**
@@ -18,6 +17,7 @@ class SearchResultActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search_result)
+//        overridePendingTransition( 0,R.anim.search_fade_out )
         initViews()
     }
 
