@@ -27,7 +27,7 @@
     <string name="str_support_center">Support Center</string>
     <string name="str_log_out">Log out</string>
     <string name="str_get_started">Get Started</string>
-    <string name="str_invite_friends">Invite Friends</string>
+    <string name="str_book_lesson">Book a lesson</string>
     <string name="str_rate_talk_on">Rate TalkOn</string>
     <string name="str_search">Search</string>
     <string name="str_online">Online</string>
@@ -42,7 +42,6 @@
     <string name="str_practice_speaking_with_students">Practice speaking English with Students!</string>
     <string name="str_you_will_not_be_charged_any_coins">You will not be charged any coins!</string>
     <string name="str_search_partner">Search partner</string>
-    <string name="str_subscribe">Subscribe</string>
     <string name="for_the_most_part_teachers_are_undervalued_and_underappreciated_this_is_especially_sad_considering_the_tremendous_impact_that_teachers_have_on_a_daily_basis">For the most part, teachers are undervalued and underappreciated. This is especially sad considering the tremendous impact that teachers have on a daily basis.</string>
 
     <string name="str_talk_online">Talk Online</string>
