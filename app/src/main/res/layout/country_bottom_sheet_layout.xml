@@ -1,52 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="550dp"
     android:background="@drawable/dialog_corner_rounded"
-    android:orientation="vertical"
-    android:gravity="center_horizontal">
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
 
-    <LinearLayout
+    <View
         android:layout_width="70dp"
         android:layout_height="3dp"
-        android:background="@color/grey"/>
+        android:background="@color/grey" />
 
-    <LinearLayout
+    <EditText
+        android:id="@+id/et_search"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
-
-        <com.google.android.material.appbar.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:background="@color/white"
-            app:elevation="0dp">
-
-            <EditText
-                android:layout_marginTop="16dp"
-                android:id="@+id/et_search"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:hint="Search a country"
-                android:padding="16dp"
-                android:drawableRight="@drawable/ic_search"
-                android:background="@drawable/item_input_rounded"
-                android:drawableTint="@color/grey"
-                android:textColorHint="@color/grey"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:drawableRight="@drawable/ic_search"
+        android:drawableTint="@color/grey"
+        android:hint="Search a country"
+        android:padding="16dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey" />
 
 
-        </com.google.android.material.appbar.AppBarLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:visibility="visible" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:visibility="visible"
-            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
-
-    </LinearLayout>
 
 </LinearLayout>

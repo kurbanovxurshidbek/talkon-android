@@ -1,5 +1,7 @@
 package com.talkon.talkon.adapter
 
+import android.content.Context
+import android.telephony.TelephonyManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -41,14 +43,13 @@ class CountryDialogAdapter(
             liner.setOnClickListener {
                 var str = phoneNumberMask(country.countryIso)
 
-                var maskStr: String = str.removeRange(0,country.prefix!!.length+1)
-                Logger.d("@@@",maskStr)
+                var maskStr: String = str.removeRange(0,country.prefix!!.length)
 
                 activity.itemCountry(country, maskStr)
             }
             tv_country_name.text = country.name
             tv_country_code.text = country.prefix
-            Glide.with(fragment).load(country.flag).into(iv_country_flag)
+            Glide.with(fragment).load(country.flag).error(R.drawable.ic_warning).into(iv_country_flag)
         }
     }
 
@@ -59,6 +60,7 @@ class CountryDialogAdapter(
         var tv_country_name: TextView = view.findViewById(R.id.tv_country_name)
 
     }
+
 
     fun phoneNumberMask(countryShortName: String?): String {
 
