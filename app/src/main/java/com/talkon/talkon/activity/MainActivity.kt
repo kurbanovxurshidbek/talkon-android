@@ -2,17 +2,20 @@ package com.talkon.talkon.activity
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.hbisoft.hbrecorder.HBRecorder
+import com.hbisoft.hbrecorder.HBRecorderListener
 import com.talkon.talkon.R
 import com.talkon.talkon.fragment.LessonHistoryFragment
-import com.talkon.talkon.fragment.ChatFragment
 import com.talkon.talkon.fragment.ProfileFragment
 import com.talkon.talkon.fragment.SearchFragment
 import kotlinx.android.synthetic.main.activity_main.*
+
 /**
  * MainActivity contains view pager with 4 fragments
  * and pages can be controlled by BottomNavigationView
  */
 class MainActivity : BaseActivity() {
+    private val hbRecorder: HBRecorder? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -57,4 +60,5 @@ class MainActivity : BaseActivity() {
         else
             super.onBackPressed()
     }
+
 }
