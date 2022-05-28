@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Adapter
 import android.widget.MediaController
@@ -32,18 +33,61 @@ class AboutTeacherActivity : BaseActivity() {
         initViews()
     }
 
+    @SuppressLint("SetTextI18n")
     private fun initViews() {
         rv_about_teacher_week_day.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         weekDayAdapter(getWeekDay())
 
         rv_about_teacher_course.layoutManager = GridLayoutManager(this,3)
         courseAdapter(getCourse())
+        tv_more_btn.setOnClickListener {
+            (rv_about_teacher_course.adapter as TeacherCourseAdapter).updateList(getCourseAll())
+            Log.d("@@@", "nimadur")
+            tv_collapse.visibility = View.VISIBLE
+            tv_more_btn.visibility = View.GONE
+        }
+        tv_collapse.setOnClickListener {
+            (rv_about_teacher_course.adapter as TeacherCourseAdapter).updateList(getCourse())
+            tv_collapse.visibility = View.GONE
+            tv_more_btn.visibility = View.VISIBLE
+        }
 
         rv_about_teacher_reviews.layoutManager = LinearLayoutManager(this)
         reviewsAdapter(getReviews())
 
         videoView()
 
+    }
+
+    private fun getCourseAll(): java.util.ArrayList<Course> {
+
+        var course = ArrayList<Course>()
+
+        course.add(Course("01 : 00 pm"))
+        course.add(Course("02 : 00 pm"))
+        course.add(Course("03 : 00 am"))
+        course.add(Course("04 : 00 pm"))
+        course.add(Course("05 : 00 pm"))
+        course.add(Course("06 : 00 am"))
+        course.add(Course("07 : 00 am"))
+        course.add(Course("08 : 00 am"))
+        course.add(Course("09 : 00 am"))
+        course.add(Course("10 : 00 am"))
+        course.add(Course("11 : 00 am"))
+        course.add(Course("12 : 00 am"))
+        course.add(Course("13 : 00 am"))
+        course.add(Course("14 : 00 am"))
+        course.add(Course("15 : 00 am"))
+        course.add(Course("16 : 00 am"))
+        course.add(Course("17 : 00 am"))
+        course.add(Course("18 : 00 am"))
+
+        val list = (rv_about_teacher_course.adapter as TeacherCourseAdapter).items
+        for (position in 0 until list.size){
+            course[position].isChecked = list[position].isChecked
+        }
+
+        return course
     }
 
     private fun videoView() {
@@ -113,12 +157,12 @@ class AboutTeacherActivity : BaseActivity() {
     private fun getCourse(): ArrayList<Course> {
         var course = ArrayList<Course>()
 
-        course.add(Course("13 : 00 pm"))
-        course.add(Course("11 : 00 pm"))
-        course.add(Course("12 : 00 am"))
-        course.add(Course("13 : 00 pm"))
-        course.add(Course("11 : 00 pm"))
-        course.add(Course("12 : 00 am"))
+        course.add(Course("01 : 00 pm"))
+        course.add(Course("02 : 00 pm"))
+        course.add(Course("03 : 00 am"))
+        course.add(Course("04 : 00 pm"))
+        course.add(Course("05 : 00 pm"))
+        course.add(Course("06 : 00 am"))
 
         return course
     }

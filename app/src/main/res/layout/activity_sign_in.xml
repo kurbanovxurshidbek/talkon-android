@@ -121,7 +121,6 @@
                             android:layout_height="match_parent"
                             android:layout_gravity="center"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/iv_uz_flag"
                             app:shapeAppearanceOverlay="@style/circle" />
 
 
@@ -139,7 +138,6 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="+998"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
 
@@ -242,11 +240,6 @@
 
             </LinearLayout>
 
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
                 <Button
                     android:id="@+id/bt_sign_in_light"
                     android:layout_width="match_parent"
@@ -254,23 +247,10 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="10dp"
                     android:background="@drawable/button_rounded_full_green_light"
-                    android:backgroundTint="@null"
+                    android:enabled="false"
                     android:text="@string/str_sign_in"
                     android:textAllCaps="false" />
 
-                <Button
-                    android:id="@+id/bt_sign_in"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/button_rounded_full_green"
-                    android:backgroundTint="@null"
-                    android:text="@string/str_sign_in"
-                    android:visibility="gone" />
-
-
-            </FrameLayout>
         </LinearLayout>
 
 
