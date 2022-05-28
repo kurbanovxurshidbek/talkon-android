@@ -63,24 +63,29 @@ class AboutTeacherActivity : BaseActivity() {
 
         var course = ArrayList<Course>()
 
-        course.add(Course("13 : 00 pm"))
-        course.add(Course("11 : 00 pm"))
+        course.add(Course("01 : 00 pm"))
+        course.add(Course("02 : 00 pm"))
+        course.add(Course("03 : 00 am"))
+        course.add(Course("04 : 00 pm"))
+        course.add(Course("05 : 00 pm"))
+        course.add(Course("06 : 00 am"))
+        course.add(Course("07 : 00 am"))
+        course.add(Course("08 : 00 am"))
+        course.add(Course("09 : 00 am"))
+        course.add(Course("10 : 00 am"))
+        course.add(Course("11 : 00 am"))
         course.add(Course("12 : 00 am"))
-        course.add(Course("13 : 00 pm"))
-        course.add(Course("11 : 00 pm"))
-        course.add(Course("12 : 00 am"))
-        course.add(Course("12 : 00 am"))
-        course.add(Course("12 : 00 am"))
-        course.add(Course("12 : 00 am"))
-        course.add(Course("12 : 00 am"))
-        course.add(Course("12 : 00 am"))
-        course.add(Course("12 : 00 am"))
-        course.add(Course("12 : 00 am"))
-        course.add(Course("12 : 00 am"))
-        course.add(Course("12 : 00 am"))
-        course.add(Course("12 : 00 am"))
-        course.add(Course("12 : 00 am"))
-        course.add(Course("12 : 00 am"))
+        course.add(Course("13 : 00 am"))
+        course.add(Course("14 : 00 am"))
+        course.add(Course("15 : 00 am"))
+        course.add(Course("16 : 00 am"))
+        course.add(Course("17 : 00 am"))
+        course.add(Course("18 : 00 am"))
+
+        val list = (rv_about_teacher_course.adapter as TeacherCourseAdapter).items
+        for (position in 0 until list.size){
+            course[position].isChecked = list[position].isChecked
+        }
 
         return course
     }
@@ -152,12 +157,12 @@ class AboutTeacherActivity : BaseActivity() {
     private fun getCourse(): ArrayList<Course> {
         var course = ArrayList<Course>()
 
-        course.add(Course("13 : 00 pm"))
-        course.add(Course("11 : 00 pm"))
-        course.add(Course("12 : 00 am"))
-        course.add(Course("13 : 00 pm"))
-        course.add(Course("11 : 00 pm"))
-        course.add(Course("12 : 00 am"))
+        course.add(Course("01 : 00 pm"))
+        course.add(Course("02 : 00 pm"))
+        course.add(Course("03 : 00 am"))
+        course.add(Course("04 : 00 pm"))
+        course.add(Course("05 : 00 pm"))
+        course.add(Course("06 : 00 am"))
 
         return course
     }

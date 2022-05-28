@@ -247,7 +247,6 @@
                             android:layout_width="56dp"
                             android:layout_height="56dp"
                             android:padding="15dp"
-                            android:src="@drawable/ic_book_lesson"
                             android:background="@drawable/ic_background_light_green_settings"/>
 
                     </FrameLayout>
