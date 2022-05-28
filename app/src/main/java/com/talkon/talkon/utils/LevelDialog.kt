@@ -17,7 +17,6 @@ import com.talkon.talkon.viewModel.StatusSharedViewModel
 
 class LevelDialog(val listener: LevelListener): DialogFragment() {
     lateinit var recyclerView: RecyclerView
-    lateinit var activity: StatusChooseActivity
     private lateinit var statusSharedViewModel:StatusSharedViewModel
 
     public lateinit var selectedLevel: String
@@ -25,7 +24,6 @@ class LevelDialog(val listener: LevelListener): DialogFragment() {
         getDialog()!!.getWindow()?.setBackgroundDrawableResource(R.drawable.white_border_rounded);
         var view = inflater.inflate(R.layout.level_dialog_fragment, container, false)
 
-        activity = StatusChooseActivity()
         initViews(view)
         return view
     }

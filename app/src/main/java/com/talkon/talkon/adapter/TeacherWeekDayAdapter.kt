@@ -1,6 +1,8 @@
 package com.talkon.talkon.adapter
 
 import android.annotation.SuppressLint
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
@@ -19,6 +21,7 @@ import kotlinx.android.synthetic.main.item_week_day.*
 
 class TeacherWeekDayAdapter (var items: ArrayList<WeekDay>) : BaseAdapter(){
     var onClick: ((WeekDay) -> Unit)? = null
+
     override fun getItemCount(): Int {
         return items.size
     }
@@ -28,41 +31,30 @@ class TeacherWeekDayAdapter (var items: ArrayList<WeekDay>) : BaseAdapter(){
         return AboutTeacherViewHolder(view)
     }
 
-    @SuppressLint("ResourceAsColor")
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        val weekDay: WeekDay = items[position]
+        var weekDay: WeekDay = items[position]
         if (holder is AboutTeacherViewHolder) {
             var tv_week_light = holder.tv_week_light
             var tv_day_light = holder.tv_day_light
-
             tv_week_light.text = weekDay.tv_week_light
             tv_day_light.text = weekDay.tv_day_light
-
-//            holder.rootView.setOnClickListener {
-//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
-//
-//                }
-//            }
-
 
 
             holder.rootView.setOnClickListener {
                 onClick?.invoke(weekDay)
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+                if (weekDay.isChecked){
+                    holder.ll_week_day.setBackgroundResource(R.drawable.back_rounded_light)
+                    holder.tv_week_light.setTextColor(ColorStateList.valueOf(Color.parseColor("#B235C759")))
+                    holder.tv_day_light.setTextColor(ColorStateList.valueOf(Color.parseColor("#35C759")))
+                    weekDay.isChecked = false
+                }else{
                     holder.ll_week_day.setBackgroundResource(R.drawable.back_rounded_green)
-                    holder.tv_week_light.setTextColor(R.color.white)
-                    holder.tv_day_light.setTextColor(R.color.white)
-                } else {
-
+                    holder.tv_week_light.setTextColor(ColorStateList.valueOf(Color.WHITE))
+                    holder.tv_day_light.setTextColor(ColorStateList.valueOf(Color.WHITE))
+                    weekDay.isChecked = true
                 }
-
-//                holder.ll_week_day.setBackgroundResource(R.drawable.back_rounded_green)
-//                holder.tv_day_light.setTextColor(R.color.white)
-//                holder.tv_week_light.setTextColor(R.color.white)
             }
-
-
-
+            }
         }
     }
 
@@ -73,4 +65,3 @@ class TeacherWeekDayAdapter (var items: ArrayList<WeekDay>) : BaseAdapter(){
         val rootView = view.findViewById<LinearLayout>(R.id.ll_week)
         val ll_week_day = view.findViewById<LinearLayout>(R.id.ll_item_week_day_light)
     }
-}

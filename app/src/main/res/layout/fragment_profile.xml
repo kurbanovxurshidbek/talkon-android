@@ -29,7 +29,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/str_profile"
                     android:textColor="@color/black"
-                    android:textSize="17sp"/>
+                    android:textSize="19sp"/>
 
             </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
@@ -81,8 +81,8 @@
 
                             <ImageView
                                 android:id="@+id/iv_plus"
-                                android:layout_width="25dp"
-                                android:layout_height="25dp"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
                                 android:padding="4.5dp"
                                 android:layout_marginRight="10dp"
                                 android:layout_marginBottom="10dp"
@@ -177,7 +177,7 @@
                     <FrameLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp">
+                        android:layout_marginTop="12dp">
 
                         <LinearLayout
                             android:id="@+id/ll_subscribe"
@@ -191,7 +191,7 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:text="@string/str_subscribe"
+                                android:text="@string/str_lesson_history"
                                 android:textStyle="bold"
                                 android:layout_marginLeft="35dp"
                                 android:textSize="16sp"
@@ -203,12 +203,13 @@
                                 android:layout_marginRight="15dp"
                                 android:src="@drawable/ic_vector_green"/>
                         </LinearLayout>
+
                         <ImageView
                             android:layout_width="56dp"
                             android:layout_height="56dp"
+                            android:background="@drawable/ic_background_light_green_settings"
                             android:padding="15dp"
-                            android:src="@drawable/ic_subscribe"
-                            android:background="@drawable/ic_background_light_green_settings"/>
+                            android:src="@drawable/ic_book" />
 
 
                     </FrameLayout>
@@ -216,7 +217,7 @@
                     <FrameLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp">
+                        android:layout_marginTop="12dp">
 
                         <LinearLayout
                             android:id="@+id/ll_invite_friends"
@@ -230,7 +231,7 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:text="@string/str_invite_friends"
+                                android:text="@string/str_book_lesson"
                                 android:textStyle="bold"
                                 android:layout_marginLeft="35dp"
                                 android:textSize="16sp"
@@ -246,93 +247,18 @@
                             android:layout_width="56dp"
                             android:layout_height="56dp"
                             android:padding="15dp"
-                            android:src="@drawable/ic_invite_friends"
-                            android:background="@drawable/ic_background_light_green_settings"/>
-
-                    </FrameLayout>
-
-                    <FrameLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp">
-
-                    <LinearLayout
-                        android:id="@+id/ll_rate_talk_on"
-                        android:layout_width="match_parent"
-                        android:layout_height="55dp"
-                        android:layout_marginLeft="40dp"
-                        android:gravity="center_vertical"
-                        android:background="@drawable/border_rounded_grey_green">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="wrap_content"
-                            android:text="@string/str_rate_talk_on"
-                            android:textStyle="bold"
-                            android:layout_marginLeft="35dp"
-                            android:textSize="16sp"
-                            android:textColor="@color/black"/>
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="15dp"
-                            android:src="@drawable/ic_vector_green"/>
-                    </LinearLayout>
-
-                    <ImageView
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
-                        android:padding="15dp"
-                        android:src="@drawable/ic_rate_our_app"
-                        android:background="@drawable/ic_background_light_green_settings"/>
-
-                </FrameLayout>
-
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp">
-
-                        <LinearLayout
-                            android:id="@+id/ll_support_center"
-                            android:layout_width="match_parent"
-                            android:layout_height="55dp"
-                            android:layout_marginLeft="40dp"
-                            android:gravity="center_vertical"
-                            android:background="@drawable/border_rounded_grey_green">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_weight="1"
-                                android:layout_height="wrap_content"
-                                android:text="@string/str_support_center"
-                                android:textStyle="bold"
-                                android:layout_marginLeft="35dp"
-                                android:textSize="16sp"
-                                android:textColor="@color/black"/>
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginRight="15dp"
-                                android:src="@drawable/ic_vector_green"/>
-                        </LinearLayout>
-                        <ImageView
-                            android:layout_width="56dp"
-                            android:layout_height="56dp"
-                            android:padding="15dp"
-                            android:src="@drawable/ic_help"
                             android:background="@drawable/ic_background_light_green_settings"/>
 
                     </FrameLayout>
 
 
+
+
                     <FrameLayout
+                        android:id="@+id/log_out"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp">
+                        android:layout_marginTop="12dp">
 
                         <LinearLayout
                             android:id="@+id/ll_logout"

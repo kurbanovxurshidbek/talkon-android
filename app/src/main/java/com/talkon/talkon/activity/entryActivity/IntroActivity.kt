@@ -22,13 +22,12 @@ import kotlinx.android.synthetic.main.activity_intro.*
 /**
  * IntroActivity is used to introduce the application for users when they first installed the app
  */
-class IntroActivity : BaseActivity() {
-    private lateinit var viewPager: ViewPager
+class IntroActivity(): BaseActivity() {
     override var context: Context = this
     private var adapter: IntroFragmentAdapter? = null
     var dotsIndicator: WormDotsIndicator? = null
     lateinit var mColorAnimation: ValueAnimator
-    lateinit var ll_viewPager_background: LinearLayout
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_intro)
@@ -39,8 +38,6 @@ class IntroActivity : BaseActivity() {
     @SuppressLint("ResourceAsColor")
     private fun initViews() {
         dotsIndicator = findViewById<View>(R.id.dots_indicator) as WormDotsIndicator
-        viewPager = findViewById(R.id.viewPager)
-        ll_viewPager_background = findViewById(R.id.ll_viewPager_background)
 
         var slideAnimation = AnimationUtils.loadAnimation(this, R.anim.slide);
         ll_white_corner_rounded.animation = slideAnimation
@@ -65,7 +62,6 @@ class IntroActivity : BaseActivity() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
                 animateToColor(pageColors[position])
-
             }
             override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
                 super.onPageScrolled(position, positionOffset, positionOffsetPixels)
@@ -100,6 +96,7 @@ class IntroActivity : BaseActivity() {
             currentColor = animator.animatedValue as Int
             ll_viewPager_background.setBackgroundColor(currentColor)
             bt_get_started.setBackgroundColor(currentColor)
+            dotsIndicator?.setDotIndicatorColor(currentColor)
 
         })
         mColorAnimation.start()

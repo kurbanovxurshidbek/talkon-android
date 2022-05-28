@@ -11,6 +11,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:focusable="true" android:focusableInTouchMode="true"
         android:orientation="vertical">
 
     <LinearLayout
@@ -157,6 +158,8 @@
                     android:layout_height="50dp"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
                     android:background="@drawable/border_rounded_grey_green"
                     android:gravity="center_vertical"
                     android:padding="5dp">

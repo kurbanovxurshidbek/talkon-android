@@ -1,8 +1,12 @@
 package com.talkon.talkon.fragment
 
+import android.animation.ArgbEvaluator
+import android.animation.ValueAnimator
 import android.annotation.SuppressLint
+import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +17,7 @@ import androidx.annotation.RequiresApi
 import androidx.annotation.StringRes
 import com.airbnb.lottie.LottieAnimationView
 import com.talkon.talkon.R
+import com.talkon.talkon.activity.entryActivity.IntroActivity
 import kotlinx.android.synthetic.main.activity_intro.*
 import kotlinx.android.synthetic.main.activity_splash.*
 import kotlinx.android.synthetic.main.fragment_intro.*
@@ -24,6 +29,7 @@ import kotlinx.android.synthetic.main.fragment_intro.*
 
 class IntroFragment : BaseFragment() {
     private var position = 0
+    public lateinit var title: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (arguments != null) {
@@ -43,7 +49,7 @@ class IntroFragment : BaseFragment() {
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val title = view.findViewById<TextView>(R.id.tv_title)
+        title = view.findViewById<TextView>(R.id.tv_title)
         val text = view.findViewById<TextView>(R.id.tv_text)
         val anim = view.findViewById<LottieAnimationView>(R.id.lotti_teacher)
         // set page title
@@ -51,6 +57,8 @@ class IntroFragment : BaseFragment() {
         // set page sub title text
         text.setText(PAGE_TEXT[position])
         anim.setAnimation(PAGE_ANIMS[position])
+
+
     }
 
     companion object {
@@ -58,7 +66,7 @@ class IntroFragment : BaseFragment() {
 
         // prepare all title ids arrays
         @StringRes
-        private val PAGE_TITLES = intArrayOf(R.string.str_talk_online, R.string.str_professional_tutors, R.string.str_flexible_lessons, R.string.str_practice_with_student, R.string.str_record_your_lessons)
+        val PAGE_TITLES = intArrayOf(R.string.str_talk_online, R.string.str_professional_tutors, R.string.str_flexible_lessons, R.string.str_practice_with_student, R.string.str_record_your_lessons)
 
         // prepare all subtitle ids arrays
         @StringRes
@@ -75,4 +83,5 @@ class IntroFragment : BaseFragment() {
             return fragment
         }
     }
+
 }
