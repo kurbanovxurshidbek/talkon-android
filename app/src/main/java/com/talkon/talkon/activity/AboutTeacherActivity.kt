@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Adapter
+import android.widget.LinearLayout.HORIZONTAL
 import android.widget.MediaController
 import android.widget.VideoView
 import androidx.recyclerview.widget.GridLayoutManager
@@ -35,7 +36,7 @@ class AboutTeacherActivity : BaseActivity() {
 
     @SuppressLint("SetTextI18n")
     private fun initViews() {
-        rv_about_teacher_week_day.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        rv_about_teacher_week_day.layoutManager = LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)
         weekDayAdapter(getWeekDay())
 
         rv_about_teacher_course.layoutManager = GridLayoutManager(this,3)
@@ -122,9 +123,6 @@ class AboutTeacherActivity : BaseActivity() {
 
         }
 
-//        adapter.onClick = {
-//        }
-
     }
 
     private fun courseAdapter(items: ArrayList<Course>) {
@@ -150,6 +148,7 @@ class AboutTeacherActivity : BaseActivity() {
         weekDay.add(WeekDay("Mon", "12"))
         weekDay.add(WeekDay("Mon", "12"))
         weekDay.add(WeekDay("Mon", "12"))
+
 
         return weekDay
     }

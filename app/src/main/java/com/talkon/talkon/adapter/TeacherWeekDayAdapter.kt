@@ -43,12 +43,12 @@ class TeacherWeekDayAdapter (var items: ArrayList<WeekDay>) : BaseAdapter(){
             holder.rootView.setOnClickListener {
                 onClick?.invoke(weekDay)
                 if (weekDay.isChecked){
-                    holder.ll_week_day.setBackgroundResource(R.drawable.back_rounded_light)
+                    holder.rootView.setBackgroundResource(R.drawable.back_rounded_light)
                     holder.tv_week_light.setTextColor(ColorStateList.valueOf(Color.parseColor("#B235C759")))
                     holder.tv_day_light.setTextColor(ColorStateList.valueOf(Color.parseColor("#35C759")))
                     weekDay.isChecked = false
                 }else{
-                    holder.ll_week_day.setBackgroundResource(R.drawable.back_rounded_green)
+                    holder.rootView.setBackgroundResource(R.drawable.back_rounded_green)
                     holder.tv_week_light.setTextColor(ColorStateList.valueOf(Color.WHITE))
                     holder.tv_day_light.setTextColor(ColorStateList.valueOf(Color.WHITE))
                     weekDay.isChecked = true
@@ -63,5 +63,4 @@ class TeacherWeekDayAdapter (var items: ArrayList<WeekDay>) : BaseAdapter(){
         var tv_week_light: TextView = view.findViewById(R.id.tv_week_light)
         var tv_day_light: TextView = view.findViewById(R.id.tv_day_light)
         val rootView = view.findViewById<LinearLayout>(R.id.ll_week)
-        val ll_week_day = view.findViewById<LinearLayout>(R.id.ll_item_week_day_light)
     }
