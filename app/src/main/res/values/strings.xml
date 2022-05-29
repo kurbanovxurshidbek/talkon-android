@@ -58,6 +58,12 @@
     <string name="str_lesson_history">Lesson history</string>
     <string name="str_search_for_tutors">Search for tutors</string>
     <string name="str_collapse">Collapse</string>
+    <string name="str_more">More</string>
+    <string name="str_your_local_time_zone">Your local time zone</string>
+    <string name="str_buy_trial">Buy trial</string>
+    <string name="str_about_teacher">About Teacher</string>
+    <string name="str_start_lesson">Start lesson</string>
+    <string name="str_per_lesson">per lesson</string>
 
 
 </resources>
