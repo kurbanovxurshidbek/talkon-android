@@ -16,7 +16,7 @@
         android:background="@drawable/back_rounded_light"
         android:gravity="center_vertical|center_horizontal"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="15dp">
 
         <TextView
             android:id="@+id/tv_week_light"
