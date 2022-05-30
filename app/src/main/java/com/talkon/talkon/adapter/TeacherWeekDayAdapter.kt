@@ -26,10 +26,15 @@ class TeacherWeekDayAdapter (var items: ArrayList<WeekDay>) : BaseAdapter(){
         return items.size
     }
 
+    override fun getItemViewType(position: Int): Int {
+        return position
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_week_day, parent, false)
         return AboutTeacherViewHolder(view)
     }
+
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         var weekDay: WeekDay = items[position]
