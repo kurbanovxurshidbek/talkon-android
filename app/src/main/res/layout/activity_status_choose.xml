@@ -56,14 +56,14 @@
                             android:layout_height="wrap_content"
                             android:text="@string/str_student"
                             android:textColor="@color/black"
-                            android:textSize="16sp"
+                            android:textSize="18sp"
                             android:textStyle="bold" />
 
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
-                            android:src="@drawable/iv_student" />
+                            android:src="@drawable/student_png" />
 
                     </LinearLayout>
 
@@ -83,14 +83,14 @@
                             android:layout_height="wrap_content"
                             android:text="@string/str_teacher"
                             android:textColor="@color/black"
-                            android:textSize="16sp"
+                            android:textSize="18sp"
                             android:textStyle="bold" />
 
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
-                            android:src="@drawable/iv_teacher" />
+                            android:src="@drawable/teacher2" />
 
                     </LinearLayout>
 

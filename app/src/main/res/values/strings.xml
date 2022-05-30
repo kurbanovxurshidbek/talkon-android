@@ -12,7 +12,7 @@
     <string name="str_verify">Verify</string>
     <string name="str_resend_code_in">Resend code in</string>
     <string name="str_seconds">seconds</string>
-    <string name="str_please_choose_your_status">Please choose your status</string>
+    <string name="str_please_choose_your_status">Please choose your status:</string>
     <string name="str_teacher">Teacher</string>
     <string name="str_student">Student</string>
     <string name="str_name">Name</string>
