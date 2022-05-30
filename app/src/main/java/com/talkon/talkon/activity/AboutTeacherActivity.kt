@@ -2,26 +2,19 @@ package com.talkon.talkon.activity
 
 import android.annotation.SuppressLint
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Adapter
-import android.widget.LinearLayout.HORIZONTAL
 import android.widget.MediaController
-import android.widget.VideoView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.talkon.talkon.R
 import com.talkon.talkon.adapter.*
-import com.talkon.talkon.helpers.SpaceItemDecoration
 import com.talkon.talkon.model.Course
 import com.talkon.talkon.model.Reviews
 import com.talkon.talkon.model.WeekDay
 import kotlinx.android.synthetic.main.activity_about_teacher.*
-import kotlinx.android.synthetic.main.item_week_day.*
 
 /**
  * In AboutTeacherActivity, user can read about teacher and book a trial
