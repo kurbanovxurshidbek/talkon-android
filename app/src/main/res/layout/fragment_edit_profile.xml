@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/edit_profile_fragment"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     tools:context=".fragment.EditProfileFragment">
@@ -117,6 +118,7 @@
                 android:layout_height="50dp"
                 android:hint="@string/str_name"
                 android:textColorHint="@color/black"
+                android:textColor="@color/black"
                 android:paddingLeft="10dp"
                 android:paddingEnd="10dp"
                 android:drawableEnd="@drawable/ic_drop_down_menu"
