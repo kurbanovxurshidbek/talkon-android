@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    tools:context=".fragment.EditProfileFragment">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp"
+        android:background="@color/white">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_edit_profile"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"
+                    android:textSize="17sp"/>
+
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical"
+       app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+       >
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="5dp"
+           android:orientation="vertical"
+           android:gravity="center_horizontal">
+
+           <FrameLayout
+               android:layout_width="150dp"
+               android:layout_height="150dp">
+
+               <com.google.android.material.imageview.ShapeableImageView
+                   android:id="@+id/iv_edit_profile"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:src="@drawable/person88"
+                   android:scaleType="centerCrop"
+                   app:shapeAppearance="@style/circle" />
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:gravity="right|bottom">
+
+                   <ImageView
+                       android:id="@+id/iv_edit_profile_plus"
+                       android:layout_width="25dp"
+                       android:layout_height="25dp"
+                       android:padding="4.5dp"
+                       android:layout_marginRight="10dp"
+                       android:layout_marginBottom="10dp"
+                       android:src="@drawable/ic_edit"
+                       android:background="@drawable/ic_background_circle_green"/>
+               </LinearLayout>
+           </FrameLayout>
+
+           <TextView
+               android:id="@+id/tv_fullname_edit_profile"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="15dp"
+               android:textColor="@color/black"
+               android:textSize="22sp"
+               android:text="Khurshidebek"
+               android:textStyle="bold"/>
+
+           <TextView
+               android:id="@+id/tv_number_edit_profile"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textSize="16sp"
+               android:text="+998 90 809 05 11"
+               android:layout_marginTop="5dp"
+               android:textStyle="bold"
+               android:textColor="@color/dark_grey" />
+       </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingHorizontal="10dp"
+            android:layout_marginTop="20dp"
+            >
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="@string/str_name"
+                android:textColorHint="@color/black"
+                android:paddingLeft="10dp"
+                android:paddingEnd="10dp"
+                android:drawableEnd="@drawable/ic_drop_down_menu"
+                android:background="@drawable/edittext_background_rounded"
+                />
+
+        </LinearLayout>
+
+   </LinearLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
