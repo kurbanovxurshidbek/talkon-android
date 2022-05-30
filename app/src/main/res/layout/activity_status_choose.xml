@@ -63,7 +63,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
-                            android:src="@drawable/student_png" />
+                            android:src="@drawable/student1952" />
 
                     </LinearLayout>
 
@@ -89,8 +89,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginTop="10dp"
-                            android:src="@drawable/teacher2" />
+                            android:src="@drawable/teacher" />
 
                     </LinearLayout>
 
