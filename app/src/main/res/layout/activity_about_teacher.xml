@@ -36,7 +36,7 @@
                     android:text="@string/str_about_teacher"
                     android:textStyle="bold"
                     android:textColor="@color/black"
-                    android:textSize="17sp" />
+                    android:textSize="16sp" />
 
 
             </LinearLayout>
@@ -60,7 +60,7 @@
                 <RelativeLayout
                     android:id="@+id/video_relative"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp">
+                    android:layout_height="220dp">
 
                     <VideoView
                         android:id="@+id/vv_ab_teacher"
@@ -126,7 +126,7 @@
                             android:id="@+id/tv_busy_free"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="14sp"
+                            android:textSize="12sp"
                             android:textColor="@color/black"
                             android:layout_marginTop="3dp"
                             android:singleLine="true"
@@ -140,11 +140,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
                     android:background="@color/light_grey"
-                    android:layout_marginBottom="5dp"/>
+                    android:layout_marginBottom="1dp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="80dp"
+                    android:layout_height="50dp"
                     android:padding="2dp">
 
                     <LinearLayout
@@ -169,12 +169,12 @@
                                 android:textStyle="bold"
                                 android:layout_marginLeft="7dp"
                                 android:textColor="@color/gold"
-                                android:textSize="16sp"/>
+                                android:textSize="18sp"/>
 
                             <ImageView
                                 android:id="@+id/iv_star_about_teacher"
-                                android:layout_width="16dp"
-                                android:layout_height="16dp"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
                                 android:layout_marginLeft="7dp"
                                 android:layout_gravity="center_vertical"
                                 android:src="@drawable/ic_gold_star_empty"/>
@@ -192,7 +192,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="rating"
                                 android:textColor="@color/gold"
-                                android:textSize="18sp"/>
+                                android:textSize="14sp"/>
 
                         </LinearLayout>
 
@@ -212,8 +212,8 @@
 
                             <ImageView
                                 android:id="@+id/iv_coin"
-                                android:layout_width="16dp"
-                                android:layout_height="16dp"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
                                 android:layout_marginLeft="7dp"
                                 android:layout_gravity="center_vertical"
                                 android:src="@drawable/ic_coin"/>
@@ -222,13 +222,13 @@
                                 android:id="@+id/tv_count_coin"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="10"
+                                android:text="20"
                                 android:maxWidth="40dp"
                                 android:singleLine="true"
                                 android:textStyle="bold"
                                 android:layout_marginStart="7dp"
                                 android:textColor="@color/black"
-                                android:textSize="16sp"/>
+                                android:textSize="18sp"/>
 
 
                         </LinearLayout>
@@ -244,7 +244,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="@string/str_per_lesson"
                                 android:textColor="@color/grey"
-                                android:textSize="18sp"/>
+                                android:textSize="14sp"/>
 
                         </LinearLayout>
 
@@ -266,13 +266,13 @@
                                 android:id="@+id/tv_experience_about_teacher"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="3"
+                                android:text="3+"
                                 android:maxWidth="40dp"
                                 android:singleLine="true"
                                 android:textStyle="bold"
                                 android:layout_marginStart="7dp"
                                 android:textColor="@color/black"
-                                android:textSize="16sp"/>
+                                android:textSize="18sp"/>
 
                             <TextView
                                 android:id="@+id/tv_experience_about_teacher_years"
@@ -281,7 +281,6 @@
                                 android:text="years"
                                 android:maxWidth="40dp"
                                 android:singleLine="true"
-                                android:textStyle="bold"
                                 android:layout_marginStart="7dp"
                                 android:textColor="@color/black"
                                 android:textSize="16sp"/>
@@ -299,7 +298,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Experience"
                                 android:textColor="@color/grey"
-                                android:textSize="18sp"/>
+                                android:textSize="14sp"/>
 
                         </LinearLayout>
 
@@ -315,16 +314,16 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="38dp"
                     android:padding="10dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="About teacher"
-                        android:textSize="18sp"
+                        android:text="About teacher:"
                         android:textStyle="bold"
+                        android:textSize="16sp"
                         android:textColor="@color/black"/>
 
                 </LinearLayout>
@@ -332,7 +331,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10dp">
+                    android:padding="5dp">
 
                     <TextView
                         android:id="@+id/tv_about_teacher_experience"
@@ -340,7 +339,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/for_the_most_part_teachers_are_undervalued_and_underappreciated_this_is_especially_sad_considering_the_tremendous_impact_that_teachers_have_on_a_daily_basis"
                         android:textColor="@color/black"
-                        android:textSize="16sp"/>
+                        android:textSize="14sp"/>
 
                 </LinearLayout>
 
@@ -354,8 +353,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Make appointment"
-                        android:textSize="18sp"
+                        android:text="Make appointment:"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         android:textColor="@color/black"/>
 

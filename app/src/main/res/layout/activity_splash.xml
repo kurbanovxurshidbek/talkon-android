@@ -27,7 +27,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingEnd="12dp"
+                android:paddingEnd="5dp"
                 android:text="Talk"
                 android:textStyle="bold"
                 android:textSize="40sp"
@@ -37,7 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/back_rounded_border"
-                android:paddingStart="20dp"
+                android:paddingStart="17dp"
                 android:paddingEnd="20dp">
 
                 <TextView
