@@ -7,7 +7,7 @@
     xmlns:card_view="http://schemas.android.com/tools"
     android:background="@color/background_green"
     android:orientation="vertical"
-    tools:context=".activity.entryActivity.SignInActivity">
+    tools:context=".activity.entryActivity.LogInActivity">
 
     <FrameLayout
         android:layout_width="match_parent"

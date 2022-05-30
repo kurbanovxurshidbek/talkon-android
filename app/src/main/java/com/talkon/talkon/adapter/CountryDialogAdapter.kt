@@ -1,7 +1,5 @@
 package com.talkon.talkon.adapter
 
-import android.content.Context
-import android.telephony.TelephonyManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,13 +9,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.android.material.imageview.ShapeableImageView
 import com.talkon.talkon.R
-import com.talkon.talkon.activity.entryActivity.SignInActivity
+import com.talkon.talkon.activity.entryActivity.LogInActivity
 import com.talkon.talkon.utils.CountryBottomSheetDialog
 import com.talkon.talkon.model.Country
-import com.talkon.talkon.utils.Logger
 
 class CountryDialogAdapter(
-    var activity: SignInActivity,
+    var activity: LogInActivity,
     var fragment: CountryBottomSheetDialog,
     var items: ArrayList<Country>
 ) :

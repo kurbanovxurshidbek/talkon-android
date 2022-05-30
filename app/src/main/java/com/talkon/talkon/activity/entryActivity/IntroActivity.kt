@@ -15,6 +15,7 @@ import androidx.viewpager.widget.ViewPager
 import com.talkon.talkon.R
 import com.talkon.talkon.activity.BaseActivity
 import com.talkon.talkon.adapter.IntroFragmentAdapter
+import com.talkon.talkon.manager.SharedPref
 import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
 import kotlinx.android.synthetic.main.activity_intro.*
 
@@ -45,7 +46,8 @@ class IntroActivity(): BaseActivity() {
         viewPager.animation = fadeAnimation
 
         bt_get_started.setOnClickListener {
-            callSignInActivity(this)
+//            callSignInActivity(this)
+            callMainActivity(this@IntroActivity)
         }
 
         tv_sign_in.setOnClickListener {
@@ -67,8 +69,8 @@ class IntroActivity(): BaseActivity() {
                 super.onPageScrolled(position, positionOffset, positionOffsetPixels)
                 if (position == adapter!!.count - 1) {
                     bt_get_started.setOnClickListener {
-//                        SharedPref(context).isSaved = true
-                        callSignInActivity(this@IntroActivity)
+//                        SharedPref(context).isSaved = false
+//                        callSignInActivity(this@IntroActivity)
                     }
                 }
             }

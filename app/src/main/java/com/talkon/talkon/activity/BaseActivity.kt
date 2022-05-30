@@ -8,7 +8,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.talkon.talkon.activity.entryActivity.NumberVerificationActivity
-import com.talkon.talkon.activity.entryActivity.SignInActivity
+import com.talkon.talkon.activity.entryActivity.LogInActivity
 import com.talkon.talkon.activity.entryActivity.StatusChooseActivity
 
 /**
@@ -43,7 +43,7 @@ open class BaseActivity : AppCompatActivity() {
     }
 
     fun callSignInActivity(context: Context) {
-        val intent = Intent(this, SignInActivity::class.java)
+        val intent = Intent(this, LogInActivity::class.java)
         startActivity(intent)
         finish()
     }
