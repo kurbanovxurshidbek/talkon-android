@@ -1,6 +1,8 @@
 package com.talkon.talkon.fragment
 
+import android.app.AlertDialog
 import android.content.ActivityNotFoundException
+import android.content.DialogInterface
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -9,7 +11,10 @@ import android.view.View
 import android.view.ViewGroup
 import com.talkon.talkon.R
 import com.talkon.talkon.activity.BalanceActivity
+import com.talkon.talkon.activity.entryActivity.LogInActivity
+import com.talkon.talkon.activity.entryActivity.SplashActivity
 import kotlinx.android.synthetic.main.fragment_profile.*
+
 
 /**
  * ProfileFragment is used for managing users profile: setting, balance, notifications...
@@ -57,6 +62,23 @@ class ProfileFragment : BaseFragment() {
     }
 
     private fun longOut() {
+
+        val dialogClickListener =
+            DialogInterface.OnClickListener { dialog, which ->
+                when (which) {
+                    DialogInterface.BUTTON_POSITIVE -> {
+                        val intent=Intent(requireContext(),LogInActivity::class.java)
+                        startActivity(intent)
+                    }
+                    DialogInterface.BUTTON_NEGATIVE -> {
+
+                    }
+                }
+            }
+
+        val builder: AlertDialog.Builder = AlertDialog.Builder(context)
+        builder.setMessage("Are you sure?").setPositiveButton("Yes", dialogClickListener)
+            .setNegativeButton("No", dialogClickListener).show()
 
 
     }
