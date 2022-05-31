@@ -19,21 +19,26 @@ class ProfileFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_profile, container, false)
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         iv_plus.setOnClickListener {
-            getFragmentEditProfile()
+            callEditProfileFragment()
         }
     }
 
-    private fun getFragmentEditProfile() {
+    private fun callEditProfileFragment() {
         val fragmentEditProfile = EditProfileFragment()
         parentFragmentManager.beginTransaction()
             .replace(R.id.fl_Fragment, fragmentEditProfile, "fragmnetId")
             .commit()
     }
+
+
+
 
 }
 
