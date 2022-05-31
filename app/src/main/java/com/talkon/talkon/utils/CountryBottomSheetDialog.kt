@@ -5,12 +5,11 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.*
 import androidx.annotation.Nullable
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.talkon.talkon.R
-import com.talkon.talkon.activity.entryActivity.SignInActivity
+import com.talkon.talkon.activity.entryActivity.LogInActivity
 import com.talkon.talkon.adapter.CountryDialogAdapter
 import com.talkon.talkon.model.Country
 import kotlinx.android.synthetic.main.country_bottom_sheet_layout.*
@@ -23,10 +22,10 @@ import java.nio.charset.Charset
  * CountryBottomSheetDialog is used for choosing a country code when entering a phone number in SignUpActivity
  */
 
-class CountryBottomSheetDialog(var activity: SignInActivity) : BottomSheetDialogFragment() {
+class CountryBottomSheetDialog(var activity: LogInActivity) : BottomSheetDialogFragment() {
     lateinit var recyclerView: RecyclerView
     private var countries: ArrayList<Country> = ArrayList()
-    private var items: ArrayList<Country> = ArrayList()
+    private var items: ArrayList<Country> = ArrayList<Country>()
 
 
     override fun onCreateView(
@@ -49,10 +48,13 @@ class CountryBottomSheetDialog(var activity: SignInActivity) : BottomSheetDialog
     }
 
     private fun initViews(view: View) {
+
         recyclerView = view.findViewById(R.id.recyclerView)
         val layoutManger = LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false)
         recyclerView.layoutManager = layoutManger
+
         refreshAdapter(countries)
+
         et_search.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable) {}
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
@@ -81,7 +83,6 @@ class CountryBottomSheetDialog(var activity: SignInActivity) : BottomSheetDialog
     private fun refreshAdapter(items: ArrayList<Country>) {
         var adapter = CountryDialogAdapter(activity, this, items)
         recyclerView.adapter = adapter
-
     }
 
     fun readJsonFile() {

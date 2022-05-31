@@ -41,7 +41,7 @@
             android:name=".activity.entryActivity.IntroActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.entryActivity.SignInActivity"
+            android:name=".activity.entryActivity.LogInActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustPan" />
         <activity

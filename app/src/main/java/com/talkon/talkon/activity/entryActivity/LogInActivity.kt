@@ -17,6 +17,7 @@ import com.talkon.talkon.model.Country
 import com.talkon.talkon.utils.CountryBottomSheetDialog
 import com.talkon.talkon.utils.Logger
 import kotlinx.android.synthetic.main.activity_sign_in.*
+import kotlinx.android.synthetic.main.country_bottom_sheet_layout.*
 import org.json.JSONException
 import org.json.JSONObject
 import java.io.IOException
@@ -27,7 +28,7 @@ import java.nio.charset.Charset
  * In SignInActivity, user can sign in using phone number or Google
  */
 
-class SignInActivity : BaseActivity() {
+class LogInActivity : BaseActivity() {
     private val bottomSheet = CountryBottomSheetDialog(this)
 
     @RequiresApi(Build.VERSION_CODES.N)

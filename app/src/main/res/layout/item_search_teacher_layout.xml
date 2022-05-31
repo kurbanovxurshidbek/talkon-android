@@ -27,9 +27,9 @@
                    android:id="@+id/iv_profile_picture"
                    android:layout_width="60dp"
                    android:layout_height="60dp"
-                   app:shapeAppearance="@style/circle"
                    android:scaleType="centerCrop"
-                   android:src="@drawable/img"/>
+                   android:src="@drawable/img"
+                   app:shapeAppearance="@style/circle" />
 
                <ImageView
                    android:id="@+id/iv_online"
