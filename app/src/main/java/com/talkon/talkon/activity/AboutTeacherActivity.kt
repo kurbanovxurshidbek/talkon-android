@@ -29,10 +29,11 @@ class AboutTeacherActivity : BaseActivity() {
 
     @SuppressLint("SetTextI18n")
     private fun initViews() {
-        rv_about_teacher_week_day.layoutManager = LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)
+        rv_about_teacher_week_day.layoutManager =
+            LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)
         weekDayAdapter(getWeekDay())
 
-        rv_about_teacher_course.layoutManager = GridLayoutManager(this,3)
+        rv_about_teacher_course.layoutManager = GridLayoutManager(this, 3)
         courseAdapter(getCourse())
         tv_more_btn.setOnClickListener {
             (rv_about_teacher_course.adapter as TeacherCourseAdapter).updateList(getCourseAll())
@@ -77,7 +78,7 @@ class AboutTeacherActivity : BaseActivity() {
         course.add(Course("18 : 00 am"))
 
         val list = (rv_about_teacher_course.adapter as TeacherCourseAdapter).items
-        for (position in 0 until list.size){
+        for (position in 0 until list.size) {
             course[position].isChecked = list[position].isChecked
         }
 
@@ -88,14 +89,15 @@ class AboutTeacherActivity : BaseActivity() {
 
         val mediaController = MediaController(this)
         mediaController.setAnchorView(vv_ab_teacher)
-        val onlineUri = Uri.parse("https://assets.mixkit.co/videos/preview/mixkit-people-pouring-a-warm-drink-around-a-campfire-513-large.mp4")
+        val onlineUri =
+            Uri.parse("https://assets.mixkit.co/videos/preview/mixkit-people-pouring-a-warm-drink-around-a-campfire-513-large.mp4")
 
-        play_button.setOnClickListener{
-            if (vv_ab_teacher.isPlaying){
+        play_button.setOnClickListener {
+            if (vv_ab_teacher.isPlaying) {
                 vv_ab_teacher.pause()
                 play_button.visibility = View.VISIBLE
 
-            }else{
+            } else {
                 vv_ab_teacher.setMediaController(mediaController)
                 vv_ab_teacher.setVideoURI(onlineUri)
                 vv_ab_teacher.requestFocus()
@@ -108,7 +110,7 @@ class AboutTeacherActivity : BaseActivity() {
 
     @SuppressLint("ResourceAsColor")
     private fun weekDayAdapter(items: ArrayList<WeekDay>) {
-       var adapter = TeacherWeekDayAdapter(items)
+        var adapter = TeacherWeekDayAdapter(items)
         rv_about_teacher_week_day.adapter = adapter
 
 
