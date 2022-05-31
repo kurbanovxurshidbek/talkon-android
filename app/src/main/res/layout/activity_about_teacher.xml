@@ -27,16 +27,17 @@
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:src="@drawable/ic_back_foreground" />
+
                 <TextView
                     android:id="@+id/tv_ab_teacher"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:layout_marginStart="5dp"
+                    android:layout_weight="1"
                     android:text="@string/str_about_teacher"
-                    android:textStyle="bold"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
@@ -48,6 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -85,9 +87,9 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
-                    android:padding="10dp"
+                    android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:gravity="center_vertical">
+                    android:padding="10dp">
 
                     <FrameLayout
                         android:layout_width="60dp"
@@ -98,40 +100,40 @@
                             android:id="@+id/iv_profile_picture"
                             android:layout_width="55dp"
                             android:layout_height="55dp"
-                            app:shapeAppearance="@style/circle"
                             android:layout_gravity="center_vertical"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/img"/>
+                            android:src="@drawable/img"
+                            app:shapeAppearance="@style/circle" />
 
                     </FrameLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
                         android:layout_marginLeft="10dp"
-                        android:gravity="center_vertical">
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
 
                         <TextView
                             android:id="@+id/tv_fullname"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="18sp"
-                            android:textColor="@color/black"
                             android:singleLine="true"
-                            android:textStyle="bold"
-                            android:text="Rosette L."/>
+                            android:text="Rosette L."
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/tv_busy_free"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="12sp"
-                            android:textColor="@color/black"
+                            android:layout_marginLeft="1dp"
                             android:layout_marginTop="3dp"
                             android:singleLine="true"
-                            android:layout_marginLeft="1dp"
-                            android:text="From United Kingdom"/>
+                            android:text="From United Kingdom"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
 
                     </LinearLayout>
                 </LinearLayout>
@@ -139,8 +141,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
-                    android:background="@color/light_grey"
-                    android:layout_marginBottom="1dp"/>
+                    android:layout_marginBottom="1dp"
+                    android:background="@color/light_grey" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -150,8 +152,8 @@
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -163,21 +165,21 @@
                                 android:id="@+id/tv_rating"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="5"
+                                android:layout_marginLeft="7dp"
                                 android:maxWidth="40dp"
                                 android:singleLine="true"
-                                android:textStyle="bold"
-                                android:layout_marginLeft="7dp"
+                                android:text="5"
                                 android:textColor="@color/gold"
-                                android:textSize="18sp"/>
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
 
                             <ImageView
                                 android:id="@+id/iv_star_about_teacher"
                                 android:layout_width="18dp"
                                 android:layout_height="18dp"
-                                android:layout_marginLeft="7dp"
                                 android:layout_gravity="center_vertical"
-                                android:src="@drawable/ic_gold_star_empty"/>
+                                android:layout_marginLeft="7dp"
+                                android:src="@drawable/ic_gold_star_empty" />
 
                         </LinearLayout>
 
@@ -192,7 +194,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="rating"
                                 android:textColor="@color/gold"
-                                android:textSize="14sp"/>
+                                android:textSize="14sp" />
 
                         </LinearLayout>
 
@@ -201,8 +203,8 @@
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_gravity="center"
+                        android:layout_weight="1"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -214,21 +216,21 @@
                                 android:id="@+id/iv_coin"
                                 android:layout_width="18dp"
                                 android:layout_height="18dp"
-                                android:layout_marginLeft="7dp"
                                 android:layout_gravity="center_vertical"
-                                android:src="@drawable/ic_coin"/>
+                                android:layout_marginLeft="7dp"
+                                android:src="@drawable/ic_coin" />
 
                             <TextView
                                 android:id="@+id/tv_count_coin"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="20"
+                                android:layout_marginStart="7dp"
                                 android:maxWidth="40dp"
                                 android:singleLine="true"
-                                android:textStyle="bold"
-                                android:layout_marginStart="7dp"
+                                android:text="20"
                                 android:textColor="@color/black"
-                                android:textSize="18sp"/>
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
 
 
                         </LinearLayout>
@@ -244,7 +246,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="@string/str_per_lesson"
                                 android:textColor="@color/grey"
-                                android:textSize="14sp"/>
+                                android:textSize="14sp" />
 
                         </LinearLayout>
 
@@ -253,8 +255,8 @@
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_gravity="center"
+                        android:layout_weight="1"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -266,24 +268,24 @@
                                 android:id="@+id/tv_experience_about_teacher"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="3+"
+                                android:layout_marginStart="7dp"
                                 android:maxWidth="40dp"
                                 android:singleLine="true"
-                                android:textStyle="bold"
-                                android:layout_marginStart="7dp"
+                                android:text="3+"
                                 android:textColor="@color/black"
-                                android:textSize="18sp"/>
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
 
                             <TextView
                                 android:id="@+id/tv_experience_about_teacher_years"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="years"
+                                android:layout_marginStart="7dp"
                                 android:maxWidth="40dp"
                                 android:singleLine="true"
-                                android:layout_marginStart="7dp"
+                                android:text="years"
                                 android:textColor="@color/black"
-                                android:textSize="16sp"/>
+                                android:textSize="16sp" />
 
                         </LinearLayout>
 
@@ -298,7 +300,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Experience"
                                 android:textColor="@color/grey"
-                                android:textSize="14sp"/>
+                                android:textSize="14sp" />
 
                         </LinearLayout>
 
@@ -309,8 +311,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
-                    android:background="@color/light_grey"
-                    android:layout_marginBottom="5dp"/>
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/light_grey" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -322,9 +324,9 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="About teacher:"
-                        android:textStyle="bold"
+                        android:textColor="@color/black"
                         android:textSize="16sp"
-                        android:textColor="@color/black"/>
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -339,7 +341,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/for_the_most_part_teachers_are_undervalued_and_underappreciated_this_is_especially_sad_considering_the_tremendous_impact_that_teachers_have_on_a_daily_basis"
                         android:textColor="@color/black"
-                        android:textSize="14sp"/>
+                        android:textSize="14sp" />
 
                 </LinearLayout>
 
@@ -347,49 +349,49 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="10dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Make appointment:"
+                        android:textColor="@color/black"
                         android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"/>
+                        android:textStyle="bold" />
 
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rv_about_teacher_week_day"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        tools:listitem="@layout/item_ab_tech_course"
-                        android:layout_marginTop="10dp" />
+                        android:layout_marginTop="10dp"
+                        tools:listitem="@layout/item_ab_tech_course" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="10dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/str_your_local_time_zone"
-                        android:textSize="16sp"
-                        android:textColor="@color/dark_grey"/>
+                        android:textColor="@color/dark_grey"
+                        android:textSize="16sp" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rv_about_teacher_course"
-                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                        app:spanCount="3"
-                        tools:listitem="@layout/item_ab_tech_course"
-                        tools:itemCount="9"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"/>
+                        android:layout_marginTop="10dp"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        app:spanCount="3"
+                        tools:itemCount="9"
+                        tools:listitem="@layout/item_ab_tech_course" />
 
                 </LinearLayout>
 
@@ -402,7 +404,7 @@
                     android:text="@string/str_more"
                     android:textColor="@color/main_green"
                     android:textSize="16sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tv_collapse"
@@ -411,30 +413,30 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
                     android:text="@string/str_collapse"
-                    android:visibility="gone"
                     android:textColor="@color/main_green"
                     android:textSize="16sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:visibility="gone" />
 
                 <Button
                     android:id="@+id/btn_buy"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/back_rounded_green_10"
-                    android:layout_marginHorizontal="20dp"
                     android:text="@string/str_buy_trial"
-                    android:textStyle="bold"
                     android:textAllCaps="false"
+                    android:textColor="@color/white"
                     android:textSize="16sp"
-                    android:textColor="@color/white"/>
+                    android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="30dp"
-                    android:padding="10dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:padding="10dp">
 
                     <TextView
                         android:id="@+id/tv_reviews_count"
@@ -443,16 +445,16 @@
                         android:text="12"
                         android:textColor="@color/black"
                         android:textSize="18sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="reviews"
                         android:layout_marginLeft="10dp"
+                        android:text="reviews"
                         android:textColor="@color/black"
                         android:textSize="18sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -469,7 +471,6 @@
 
 
     <com.google.android.material.bottomappbar.BottomAppBar
-        app:layout_behavior="com.google.android.material.bottomappbar.BottomAppBar$Behavior"
         android:id="@+id/main_bottom_app_bar"
         android:layout_width="match_parent"
         android:layout_height="80dp"
@@ -477,115 +478,117 @@
         app:backgroundTint="@color/white"
         app:fabAlignmentMode="center"
         app:fabCradleRoundedCornerRadius="2dp"
-        app:hideOnScroll="true" >
+        app:hideOnScroll="true"
+        app:layout_behavior="com.google.android.material.bottomappbar.BottomAppBar$Behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center_vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:orientation="horizontal">
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_bottomBar_teacher"
+                    android:layout_width="43dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img"
+                    app:shapeAppearance="@style/circle" />
 
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/iv_bottomBar_teacher"
-                        android:layout_width="43dp"
-                        android:layout_height="45dp"
-                        android:layout_gravity="center"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/img"
-                        app:shapeAppearance="@style/circle" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_fullname_bottomBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="Rosette L."
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_marginLeft="10dp"
                         android:gravity="center_vertical">
 
-                        <TextView
-                            android:id="@+id/tv_fullname_bottomBar"
+                        <FrameLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="18sp"
-                            android:textColor="@color/black"
-                            android:singleLine="true"
-                            android:text="Rosette L."/>
+                            android:layout_height="wrap_content">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical">
-
-                            <FrameLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content">
-
-                                <LinearLayout
-                                    android:id="@+id/ll_rated"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="center_vertical">
-                                    <ImageView
-                                        android:id="@+id/iv_star"
-                                        android:layout_width="15dp"
-                                        android:layout_height="15dp"
-                                        android:src="@drawable/ic_gold_star_empty"/>
-
-                                </LinearLayout>
-                            </FrameLayout>
-
-                            <TextView
-                                android:id="@+id/tv_lessons"
+                            <LinearLayout
+                                android:id="@+id/ll_rated"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textSize="15sp"
-                                android:textColor="@color/black"
-                                android:maxWidth="180dp"
-                                android:singleLine="true"
-                                android:layout_marginLeft="12dp"
-                                android:text="4.88"/>
+                                android:gravity="center_vertical">
 
-                        </LinearLayout>
+                                <ImageView
+                                    android:id="@+id/iv_star"
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:src="@drawable/ic_gold_star_empty" />
+
+                            </LinearLayout>
+                        </FrameLayout>
+
+                        <TextView
+                            android:id="@+id/tv_lessons"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:maxWidth="180dp"
+                            android:singleLine="true"
+                            android:text="4.88"
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
 
                     </LinearLayout>
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/ll_start_lesson"
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_start_lesson"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/back_rounded_green_10"
+                android:padding="10dp">
+
+                <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:background="@drawable/back_rounded_green_10"
-                    android:padding="10dp"
-                    android:layout_marginEnd="10dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="14dp"
-                        android:src="@drawable/ic_video"
-                        android:layout_gravity="center"
-                        app:tint="@color/white" />
+                    android:layout_marginLeft="14dp"
+                    android:src="@drawable/ic_video"
+                    app:tint="@color/white" />
 
 
-                    <TextView
-                        android:id="@+id/tv_start_lesson"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="15dp"
-                        android:text="@string/str_start_lesson"
-                        android:textColor="@color/white"
-                        android:textSize="16sp"/>
+                <TextView
+                    android:id="@+id/tv_start_lesson"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/str_start_lesson"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
 
-                </LinearLayout>
             </LinearLayout>
+        </LinearLayout>
     </com.google.android.material.bottomappbar.BottomAppBar>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -63,6 +63,11 @@ class LessonHistoryAdapter(
             }
 
 
+            liner.setOnClickListener {
+                item.isExpandable = !item.isExpandable
+                notifyItemChanged(position)
+            }
+
             ic_arrow.setOnClickListener {
                 item.isExpandable = !item.isExpandable
                 notifyItemChanged(position)
