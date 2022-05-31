@@ -1,10 +1,14 @@
 package com.talkon.talkon.fragment
 
+import android.content.ActivityNotFoundException
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.talkon.talkon.R
+import com.talkon.talkon.activity.BalanceActivity
 import kotlinx.android.synthetic.main.fragment_profile.*
 
 /**
@@ -22,9 +26,26 @@ class ProfileFragment : BaseFragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
         super.onViewCreated(view, savedInstanceState)
+
+        log_out.setOnClickListener {
+            longOut()
+        }
+
         iv_plus.setOnClickListener {
             getFragmentEditProfile()
+        }
+
+        rate_app.setOnClickListener {
+            rateApp()
+        }
+
+        profile_support_center.setOnClickListener {
+            supportCenter()
+        }
+        profile_balance.setOnClickListener {
+            goBalanceActivity()
         }
     }
 
@@ -35,5 +56,45 @@ class ProfileFragment : BaseFragment() {
             .commit()
     }
 
+    private fun longOut() {
+
+
+    }
+
+    private fun goBalanceActivity() {
+        val intent=Intent(requireContext(),BalanceActivity::class.java)
+        startActivity(intent)
+    }
+
+
+    private fun rateApp() {
+            val uri=Uri.parse("market://details?id=com.mobile.paybek")
+        val goToMarket=Intent(Intent.ACTION_VIEW,uri)
+        goToMarket.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY or Intent.FLAG_ACTIVITY_NEW_DOCUMENT
+                or Intent.FLAG_ACTIVITY_MULTIPLE_TASK)
+
+        try {
+            startActivity(goToMarket)
+        } catch (e:ActivityNotFoundException){
+            startActivity(Intent(Intent.ACTION_VIEW,
+                Uri.parse("https://play.google.com/store/apps/details?id=com.mobile.paybek")))
+        }
+
+    }
+
+    private fun supportCenter() {
+        val uri=Uri.parse("https://www.instagram.com/mirzayev_sh_sh")
+        val goToMarket=Intent(Intent.ACTION_VIEW,uri)
+        goToMarket.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY or Intent.FLAG_ACTIVITY_NEW_DOCUMENT
+                or Intent.FLAG_ACTIVITY_MULTIPLE_TASK)
+
+        try {
+            startActivity(goToMarket)
+        } catch (e:ActivityNotFoundException){
+            startActivity(Intent(Intent.ACTION_VIEW,
+                Uri.parse("t.me/mirzayev_sh_sh")))
+        }
+
+    }
 }
 
