@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.talkon.talkon.R
+import com.talkon.talkon.activity.BalanceActivity
 import kotlinx.android.synthetic.main.fragment_profile.*
 
 /**
@@ -43,6 +44,9 @@ class ProfileFragment : BaseFragment() {
         profile_support_center.setOnClickListener {
             supportCenter()
         }
+        profile_balance.setOnClickListener {
+            goBalanceActivity()
+        }
     }
 
     private fun getFragmentEditProfile() {
@@ -56,6 +60,12 @@ class ProfileFragment : BaseFragment() {
 
 
     }
+
+    private fun goBalanceActivity() {
+        val intent=Intent(requireContext(),BalanceActivity::class.java)
+        startActivity(intent)
+    }
+
 
     private fun rateApp() {
             val uri=Uri.parse("market://details?id=com.mobile.paybek")
