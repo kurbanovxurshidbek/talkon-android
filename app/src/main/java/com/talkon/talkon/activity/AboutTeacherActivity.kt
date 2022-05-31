@@ -25,6 +25,7 @@ class AboutTeacherActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_about_teacher)
         initViews()
+
     }
 
     @SuppressLint("SetTextI18n")
@@ -147,6 +148,7 @@ class AboutTeacherActivity : BaseActivity() {
 
         return weekDay
     }
+
 
     private fun getCourse(): ArrayList<Course> {
         var course = ArrayList<Course>()

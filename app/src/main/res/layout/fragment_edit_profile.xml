@@ -114,6 +114,7 @@
             >
 
             <EditText
+                android:id="@+id/editext_edit_profile"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:hint="@string/str_name"
@@ -121,8 +122,15 @@
                 android:textColor="@color/black"
                 android:paddingLeft="10dp"
                 android:paddingEnd="10dp"
-                android:drawableEnd="@drawable/ic_drop_down_menu"
                 android:background="@drawable/edittext_background_rounded"
+                />
+            <Button
+                android:id="@+id/edit_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/str_edit_profile"
+                android:backgroundTint="@color/main_green"
+                android:layout_marginTop="20dp"
                 />
 
         </LinearLayout>

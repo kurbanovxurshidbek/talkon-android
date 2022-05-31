@@ -32,27 +32,40 @@ class EditProfileFragment : BaseFragment() {
 
     private fun initViews(view: View?) {
 
-            iv_edit_profile_plus.setOnClickListener {
-                pickFishBunPhoto()
-            }
-    }
+        iv_edit_profile_plus.setOnClickListener {
+            pickFishBunPhoto()
+        }
 
-    private val photoLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-        if (it.resultCode == Activity.RESULT_OK) {
-            allPhotos =
-                it.data?.getParcelableArrayListExtra(FishBun.INTENT_PATH) ?: arrayListOf()
-            pickedPhoto = allPhotos.get(0)
+
+        edit_button.setOnClickListener {
+            changeUserName()
             uploadUserPhoto()
         }
     }
 
+    private val photoLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            if (it.resultCode == Activity.RESULT_OK) {
+                allPhotos =
+                    it.data?.getParcelableArrayListExtra(FishBun.INTENT_PATH) ?: arrayListOf()
+                pickedPhoto = allPhotos.get(0)
+            }
+        }
+
     private fun uploadUserPhoto() {
-        if (pickedPhoto == null) return
+//        if (pickedPhoto == null) return
 //        StorageManager.uploadUserPhoto(pickedPhoto!!, object : StorageHandler {
 //            override fun onSuccess(imgUrl: String) {
 //                DatabaseManager.updateUserImage(imgUrl)
-                iv_edit_profile.setImageURI(pickedPhoto)
-            }
+        iv_edit_profile.setImageURI(pickedPhoto)
+    }
+
+    private fun callProfileFragment() {
+        val fragmentProfile = ProfileFragment()
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.fl_Fragment, fragmentProfile, "fragmnetId")
+            .commit()
+    }
 
 
     private fun pickFishBunPhoto() {
@@ -62,6 +75,10 @@ class EditProfileFragment : BaseFragment() {
             .setMinCount(1)
             .setSelectedImages(allPhotos)
             .startAlbumWithActivityResultCallback(photoLauncher)
+    }
+
+    private fun changeUserName(){
+        tv_fullname_edit_profile.text = editext_edit_profile.text
     }
 
 }
