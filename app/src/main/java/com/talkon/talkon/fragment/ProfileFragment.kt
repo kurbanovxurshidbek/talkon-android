@@ -39,6 +39,10 @@ class ProfileFragment : BaseFragment() {
         rate_app.setOnClickListener {
             rateApp()
         }
+
+        profile_support_center.setOnClickListener {
+            supportCenter()
+        }
     }
 
     private fun getFragmentEditProfile() {
@@ -64,6 +68,21 @@ class ProfileFragment : BaseFragment() {
         } catch (e:ActivityNotFoundException){
             startActivity(Intent(Intent.ACTION_VIEW,
                 Uri.parse("https://play.google.com/store/apps/details?id=com.mobile.paybek")))
+        }
+
+    }
+
+    private fun supportCenter() {
+        val uri=Uri.parse("https://www.instagram.com/mirzayev_sh_sh")
+        val goToMarket=Intent(Intent.ACTION_VIEW,uri)
+        goToMarket.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY or Intent.FLAG_ACTIVITY_NEW_DOCUMENT
+                or Intent.FLAG_ACTIVITY_MULTIPLE_TASK)
+
+        try {
+            startActivity(goToMarket)
+        } catch (e:ActivityNotFoundException){
+            startActivity(Intent(Intent.ACTION_VIEW,
+                Uri.parse("t.me/mirzayev_sh_sh")))
         }
 
     }
