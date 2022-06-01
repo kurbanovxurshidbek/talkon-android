@@ -6,9 +6,7 @@ import com.talkon.talkon.R
 import kotlinx.android.synthetic.main.activity_balance.*
 
 
-/**
- * In BalanceActivity, user can fill balance and see balance history
- */
+/*** In BalanceActivity, user can fill balance and see balance history */
 
 class BalanceActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +29,10 @@ class BalanceActivity : BaseActivity() {
             try {
                 val presentValStr: String = tv_balance_count.text.toString()
                 var presentIntVal = presentValStr.toInt()
-                presentIntVal -= 5
+
+                if (presentIntVal>0){
+                    presentIntVal -= 5
+                }
                 tv_balance_count.text = presentIntVal.toString()
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -40,9 +41,8 @@ class BalanceActivity : BaseActivity() {
         }
 
         bt_buy_coins.setOnClickListener {
-
-
-            Toast.makeText(context, "You have got ${tv_balance_count.text} coins :)", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "You have got ${tv_balance_count.text} coins :)",
+                Toast.LENGTH_SHORT).show()
 
         }
 
