@@ -15,19 +15,39 @@ class BalanceActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_balance)
 
-        bt_buy_coins.setOnClickListener {
+        bt_plus_coins.setOnClickListener {
             try {
-                val presentValStr: String = tv_balance_count.getText().toString()
+                val presentValStr: String = tv_balance_count.text.toString()
                 var presentIntVal = presentValStr.toInt()
-                presentIntVal += 20
-                tv_balance_count.setText(presentIntVal.toString())
+                presentIntVal += 5
+                tv_balance_count.text = presentIntVal.toString()
             } catch (e: Exception) {
                 e.printStackTrace()
                 Toast.makeText(context, "Some error :(", Toast.LENGTH_LONG).show()
             }
         }
 
+        bt_minus_coins.setOnClickListener {
+            try {
+                val presentValStr: String = tv_balance_count.text.toString()
+                var presentIntVal = presentValStr.toInt()
+                presentIntVal -= 5
+                tv_balance_count.text = presentIntVal.toString()
+            } catch (e: Exception) {
+                e.printStackTrace()
+                Toast.makeText(context, "Some error :(", Toast.LENGTH_LONG).show()
+            }
+        }
+
+        bt_buy_coins.setOnClickListener {
+
+
+            Toast.makeText(context, "You have got ${tv_balance_count.text} coins :)", Toast.LENGTH_SHORT).show()
+
+        }
+
     }
+
 
 
 }

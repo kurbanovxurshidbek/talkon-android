@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:background="@color/white">
+    android:background="@color/white"
+    android:orientation="vertical">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -13,55 +13,91 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
             android:gravity="center"
+            android:orientation="vertical"
             android:padding="20dp">
+
             <TextView
+                android:layout_marginTop="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textSize="22sp"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:padding="15dp"
                 android:lineSpacingExtra="4dp"
-                android:layout_marginBottom="10dp"
-                android:text="@string/str_your_balance" />
-          <LinearLayout
-              android:layout_marginTop="10dp"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content">
-              <TextView
-                  android:id="@+id/tv_balance_count"
-                  android:layout_marginEnd="5dp"
-                  android:textColor="@color/black"
-                  android:textSize="22sp"
-                  android:text="0"
-                  android:textStyle="bold"
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"/>
+                android:padding="15dp"
+                android:text="@string/str_your_balance"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                android:textStyle="bold" />
 
-              <ImageView
-                  android:layout_marginTop="3dp"
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:src="@drawable/ic_coin"/>
-          </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/tv_balance_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:text="0"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:src="@drawable/ic_coin" />
+            </LinearLayout>
 
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center">
+                android:gravity="center"
+                android:orientation="vertical">
 
                 <com.airbnb.lottie.LottieAnimationView
                     android:id="@+id/animationView"
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
-                    app:lottie_rawRes="@raw/cash_card"
                     app:lottie_autoPlay="true"
-                    app:lottie_loop="true"/>
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/cash_card" />
+
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bt_plus_coins"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_rounded_full_green"
+                    android:backgroundTint="@null"
+                    android:text="@string/str_plus_coins"
+                    android:textAllCaps="false"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/bt_minus_coins"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_rounded_full_green"
+                    android:backgroundTint="@null"
+                    android:text="@string/str_minus_coins"
+                    android:textAllCaps="false"
+                    android:textSize="14sp" />
 
             </LinearLayout>
 
@@ -69,22 +105,21 @@
                 android:id="@+id/bt_buy_coins"
                 android:layout_width="200dp"
                 android:layout_height="44dp"
-                android:layout_marginTop="100dp"
-                android:text="@string/str_buy_coins"
-                android:textSize="14sp"
-                android:textAllCaps="false"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_rounded_full_buying"
                 android:backgroundTint="@null"
-                android:background="@drawable/button_rounded_full_green"/>
+                android:text="@string/str_buy_coins"
+                android:textAllCaps="false"
+                android:textSize="14sp" />
 
             <TextView
+                android:layout_marginTop="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
+                android:text="@string/str_get_coins_speak_more"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:layout_marginBottom="50dp"
-                android:text="@string/str_get_coins_speak_more"
-                android:layout_marginTop="30dp"/>
+                android:textStyle="bold" />
 
         </LinearLayout>
 

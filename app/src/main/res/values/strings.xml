@@ -73,6 +73,8 @@
     <string name="str_minus">-</string>
     <string name="str_calendar">12/05/22</string>
     <string name="str_buy_coins">Buy coins</string>
+    <string name="str_plus_coins">Plus coins</string>
+    <string name="str_minus_coins">Minus coins</string>
     <string name="str_get_coins_speak_more">Get more coins, speak more!</string>
 
 
