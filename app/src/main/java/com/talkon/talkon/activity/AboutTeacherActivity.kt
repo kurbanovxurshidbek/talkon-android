@@ -1,6 +1,7 @@
 package com.talkon.talkon.activity
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -11,6 +12,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.talkon.talkon.R
 import com.talkon.talkon.adapter.*
+import com.talkon.talkon.fragment.SearchFragment
+import com.talkon.talkon.fragment.SearchTeacherFragment
 import com.talkon.talkon.model.Course
 import com.talkon.talkon.model.Reviews
 import com.talkon.talkon.model.WeekDay
@@ -53,6 +56,16 @@ class AboutTeacherActivity : BaseActivity() {
         reviewsAdapter(getReviews())
 
         videoView()
+
+        iv_back.setOnClickListener {
+            callSearchTeacherFragment()
+        }
+
+    }
+
+    private fun callSearchTeacherFragment() {
+        val intent = Intent(context, MainActivity::class.java)
+        startActivity(intent)
 
     }
 
