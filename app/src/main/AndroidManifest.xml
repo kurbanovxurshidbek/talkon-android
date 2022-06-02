@@ -27,7 +27,7 @@
             android:exported="false" />
         <activity
             android:name=".activity.AboutTeacherActivity"
-            android:exported="true"
+            android:exported="false"
             android:theme="@style/Theme.MaterialComponents.NoActionBar.Bridge"></activity>
         <activity
             android:name=".activity.BalanceActivity"
@@ -57,7 +57,9 @@
         <activity
             android:name=".activity.TeacherActivity"
             android:exported="false"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustPan" >
+
+        </activity>
 
         <activity
             android:name=".activity.entryActivity.SplashActivity"
