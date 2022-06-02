@@ -56,20 +56,20 @@
 
         <activity
             android:name=".activity.TeacherActivity"
-            android:exported="true"
+            android:exported="false"
             android:windowSoftInputMode="adjustPan" >
+
+        </activity>
+
+        <activity
+            android:name=".activity.entryActivity.SplashActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <activity
-            android:name=".activity.entryActivity.SplashActivity"
-            android:exported="false"
-            android:theme="@style/AppTheme.Splash">
-
         </activity>
     </application>
 
