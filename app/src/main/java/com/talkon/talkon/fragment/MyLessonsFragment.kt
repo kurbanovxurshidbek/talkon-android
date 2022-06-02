@@ -63,6 +63,17 @@ class MyLessonsFragment : BaseFragment() {
         items.add(TeacherLessons(teacher, "12:30", "12:50", "14/05/22"))
         items.add(TeacherLessons(teacher, "12:30", "12:50", "16/05/22"))
 
+        items.add(TeacherLessons(teacher, "12:30", "12:50", "10/05/22"))
+        items.add(TeacherLessons(teacher, "15:00", "12:50", "11/05/22"))
+        items.add(TeacherLessons(teacher, "1:30", "12:50", "17/05/22"))
+        items.add(TeacherLessons(teacher, "12:30", "12:50", "14/05/22"))
+        items.add(TeacherLessons(teacher, "12:30", "12:50", "16/05/22"))
+
+        items.add(TeacherLessons(teacher, "12:30", "12:50", "10/05/22"))
+        items.add(TeacherLessons(teacher, "15:00", "12:50", "11/05/22"))
+        items.add(TeacherLessons(teacher, "1:30", "12:50", "17/05/22"))
+        items.add(TeacherLessons(teacher, "12:30", "12:50", "14/05/22"))
+        items.add(TeacherLessons(teacher, "12:30", "12:50", "16/05/22"))
         return items
 
     }

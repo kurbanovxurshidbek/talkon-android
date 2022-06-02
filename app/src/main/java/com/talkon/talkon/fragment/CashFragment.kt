@@ -64,6 +64,18 @@ class CashFragment : BaseFragment() {
         items.add(Cash(teacher, "12:30", "12:50", "14/05/22", "14"))
         items.add(Cash(teacher, "12:30", "12:50", "16/05/22", "10"))
 
+        items.add(Cash(teacher, "12:30", "12:50", "10/05/22", "23"))
+        items.add(Cash(teacher, "15:00", "12:50", "11/05/22", "30"))
+        items.add(Cash(teacher, "1:30", "12:50", "17/05/22", "90"))
+        items.add(Cash(teacher, "12:30", "12:50", "14/05/22", "14"))
+        items.add(Cash(teacher, "12:30", "12:50", "16/05/22", "10"))
+
+        items.add(Cash(teacher, "12:30", "12:50", "10/05/22", "23"))
+        items.add(Cash(teacher, "15:00", "12:50", "11/05/22", "30"))
+        items.add(Cash(teacher, "1:30", "12:50", "17/05/22", "90"))
+        items.add(Cash(teacher, "12:30", "12:50", "14/05/22", "14"))
+        items.add(Cash(teacher, "12:30", "12:50", "16/05/22", "10"))
+
         return items
 
     }
