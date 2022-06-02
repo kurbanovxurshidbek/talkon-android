@@ -10,8 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <LinearLayout
@@ -30,10 +28,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="40dp"
                     android:text="@string/str_please_choose_your_status"
                     android:textColor="@color/black"
                     android:textSize="24sp"
+                    android:layout_marginTop="30dp"
                     android:textStyle="bold" />
 
                 <LinearLayout
@@ -100,10 +98,11 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.8"
+                android:layout_weight="0.9"
                 android:gravity="top|center_horizontal"
                 android:orientation="vertical"
-                android:padding="20dp">
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
 
                 <FrameLayout
                     android:layout_width="match_parent"
@@ -114,7 +113,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:visibility="invisible">
+                        android:visibility="">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -245,9 +244,46 @@
                             </LinearLayout>
                         </FrameLayout>
 
+                        <LinearLayout
+                            android:id="@+id/ll_about_yourself"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/border_rounded_grey_green"
+                            android:padding="5dp">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/tv_about"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:visibility="gone"
+                                    android:singleLine="true"
+                                    android:layout_marginRight="10dp"
+                                    android:textColor="@color/black"
+                                    android:textSize="15sp"/>
+
+                                <TextView
+                                    android:id="@+id/tv_about_hint"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/str_about_yourself"
+                                    android:textSize="17sp"
+                                    android:textColor="@color/grey"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginLeft="20dp"/>
+                            </FrameLayout>
+
+                        </LinearLayout>
+
+
                     </LinearLayout>
                 </FrameLayout>
-
             </LinearLayout>
 
             <LinearLayout
@@ -256,39 +292,21 @@
                 android:layout_weight="0.3"
                 android:gravity="top"
                 android:layout_gravity="bottom"
-                android:orientation="vertical"
                 android:paddingLeft="20dp"
                 android:paddingTop="5dp"
-                android:paddingRight="20dp"
-                android:paddingBottom="10sp">
+                android:paddingRight="20dp">
 
-                <FrameLayout
+                <Button
+                    android:id="@+id/bt_next_light"
+                    android:textAllCaps="false"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <Button
-                        android:id="@+id/bt_next_light"
-                        android:textAllCaps="false"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@drawable/button_rounded_full_green_light"
-                        android:backgroundTint="@null"
-                        android:text="@string/str_next" />
-
-                    <Button
-                        android:textAllCaps="false"
-                        android:id="@+id/bt_next"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@drawable/button_rounded_full_green"
-                        android:backgroundTint="@null"
-                        android:text="@string/str_next"
-                        android:visibility="gone" />
-
-
-                </FrameLayout>
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/button_rounded_full_green_light"
+                    android:backgroundTint="@null"
+                    android:enabled="true"
+                    android:textColor="@color/white"
+                    android:text="@string/str_next" />
 
             </LinearLayout>
         </LinearLayout>

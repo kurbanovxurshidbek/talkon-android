@@ -11,12 +11,12 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelStore
 import com.talkon.talkon.R
 import com.talkon.talkon.activity.BaseActivity
+import com.talkon.talkon.manager.SharedPref
 import com.talkon.talkon.utils.ExperienceDialog
 import com.talkon.talkon.utils.LevelDialog
 import com.talkon.talkon.viewModel.StatusSharedViewModel
 import kotlinx.android.synthetic.main.activity_status_choose.*
 import java.util.*
-import kotlin.properties.Delegates
 
 
 /**
@@ -41,20 +41,20 @@ class StatusChooseActivity : BaseActivity(), DatePickerDialog.OnDateSetListener 
     }
 
     private fun initViews() {
-
         ll_student.setOnClickListener {
             ll_info.visibility = View.VISIBLE
             ll_level.visibility = View.VISIBLE
             ll_experience.visibility = View.INVISIBLE
+            ll_about_yourself.visibility = View.INVISIBLE
             ll_student.setBackgroundResource(R.drawable.background_onpressed_green)
             ll_teacher.setBackgroundResource(R.drawable.border_rounded_grey_green)
         }
-
         ll_teacher.setOnClickListener {
             isSelected = true
             ll_info.visibility = View.VISIBLE
             ll_level.visibility = View.INVISIBLE
             ll_experience.visibility = View.VISIBLE
+            ll_about_yourself.visibility = View.VISIBLE
             ll_teacher.setBackgroundResource(R.drawable.background_onpressed_green)
             ll_student.setBackgroundResource(R.drawable.border_rounded_grey_green)
         }
@@ -79,16 +79,12 @@ class StatusChooseActivity : BaseActivity(), DatePickerDialog.OnDateSetListener 
             }).show(supportFragmentManager, "MyCustomFragment")
         }
         bt_next_light.setOnClickListener {
-            if (isSelected){
-                callTeacherActivity(this)
-            }else {
-                callMainActivity(this)
-            }
+            SharedPref(context).isSaved = true
+            callMainActivity(this)
         }
         pickDate()
 
     }
-
 
     private fun pickDate() {
         ll_age_date.setOnClickListener {
@@ -104,7 +100,6 @@ class StatusChooseActivity : BaseActivity(), DatePickerDialog.OnDateSetListener 
         year = cal.get(Calendar.YEAR)
     }
 
-
     override fun onDateSet(view: DatePicker?, year: Int, month: Int, day: Int) {
         savedDay = day
         savedMonth = month
@@ -115,10 +110,4 @@ class StatusChooseActivity : BaseActivity(), DatePickerDialog.OnDateSetListener 
         tv_age_format.visibility = View.VISIBLE
         tv_age_format.text = "$savedDay/$savedMonth/$savedYear"
     }
-
-    companion object{
-        var sometext = ""
-    }
-
-
 }
