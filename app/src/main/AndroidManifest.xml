@@ -27,7 +27,7 @@
             android:exported="false" />
         <activity
             android:name=".activity.AboutTeacherActivity"
-            android:exported="true"
+            android:exported="false"
             android:theme="@style/Theme.MaterialComponents.NoActionBar.Bridge"></activity>
         <activity
             android:name=".activity.BalanceActivity"
@@ -56,18 +56,20 @@
 
         <activity
             android:name=".activity.TeacherActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustPan" />
-
-        <activity
-            android:name=".activity.entryActivity.SplashActivity"
             android:exported="true"
-            android:theme="@style/AppTheme.Splash">
+            android:windowSoftInputMode="adjustPan" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activity.entryActivity.SplashActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme.Splash">
+
         </activity>
     </application>
 
