@@ -91,8 +91,5 @@ dependencies {
     implementation 'com.github.HBiSoft:HBRecorder:2.0.4'
 
     // Fishbun image picker
-
     implementation 'io.github.sangcomz:fishbun:1.0.0-beta01'
-
-
 }

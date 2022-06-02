@@ -63,85 +63,6 @@
                 app:scv_symbolTextSize="25dp"
                 app:scv_symbolWidth="50dp" />
 
-            <!--            <LinearLayout-->
-            <!--                android:layout_width="0dp"-->
-            <!--                android:layout_height="70dp"-->
-            <!--                android:layout_weight="1"-->
-            <!--                android:background="@drawable/border_rounded_grey_green"-->
-            <!--                android:gravity="center">-->
-
-            <!--                <EditText-->
-            <!--                    android:id="@+id/et_code_1"-->
-            <!--                    android:layout_width="match_parent"-->
-            <!--                    android:layout_height="match_parent"-->
-            <!--                    android:gravity="center"-->
-            <!--                    android:imeOptions="actionNext"-->
-            <!--                    android:inputType="number"-->
-            <!--                    android:maxLength="1"-->
-            <!--                    android:textColor="@color/black"-->
-            <!--                    android:textSize="30sp" />-->
-            <!--            </LinearLayout>-->
-
-            <!--            <LinearLayout-->
-            <!--                android:layout_width="0dp"-->
-            <!--                android:layout_height="70dp"-->
-            <!--                android:layout_marginLeft="20dp"-->
-            <!--                android:layout_weight="1"-->
-            <!--                android:background="@drawable/border_rounded_grey_green"-->
-            <!--                android:gravity="center">-->
-
-            <!--                <EditText-->
-            <!--                    android:id="@+id/et_code_2"-->
-            <!--                    android:layout_width="match_parent"-->
-            <!--                    android:layout_height="match_parent"-->
-            <!--                    android:gravity="center"-->
-            <!--                    android:imeOptions="actionNext"-->
-            <!--                    android:inputType="number"-->
-            <!--                    android:maxLength="1"-->
-            <!--                    android:textColor="@color/black"-->
-            <!--                    android:textSize="30sp" />-->
-            <!--            </LinearLayout>-->
-
-            <!--            <LinearLayout-->
-            <!--                android:layout_width="0dp"-->
-            <!--                android:layout_height="70dp"-->
-            <!--                android:layout_marginLeft="20dp"-->
-            <!--                android:layout_weight="1"-->
-            <!--                android:background="@drawable/border_rounded_grey_green"-->
-            <!--                android:gravity="center">-->
-
-            <!--                <EditText-->
-            <!--                    android:id="@+id/et_code_3"-->
-            <!--                    android:layout_width="match_parent"-->
-            <!--                    android:layout_height="match_parent"-->
-            <!--                    android:gravity="center"-->
-            <!--                    android:imeOptions="actionNext"-->
-            <!--                    android:inputType="number"-->
-            <!--                    android:maxLength="1"-->
-            <!--                    android:textColor="@color/black"-->
-            <!--                    android:textSize="30sp" />-->
-            <!--            </LinearLayout>-->
-
-            <!--            <LinearLayout-->
-            <!--                android:layout_width="0dp"-->
-            <!--                android:layout_height="70dp"-->
-            <!--                android:layout_marginLeft="20dp"-->
-            <!--                android:layout_weight="1"-->
-            <!--                android:background="@drawable/border_rounded_grey_green"-->
-            <!--                android:gravity="center">-->
-
-            <!--                <EditText-->
-            <!--                    android:id="@+id/et_code_4"-->
-            <!--                    android:layout_width="match_parent"-->
-            <!--                    android:layout_height="match_parent"-->
-            <!--                    android:gravity="center"-->
-            <!--                    android:imeOptions="actionGo"-->
-            <!--                    android:inputType="number"-->
-            <!--                    android:maxLength="1"-->
-            <!--                    android:textColor="@color/black"-->
-            <!--                    android:textSize="30sp" />-->
-            <!--            </LinearLayout>-->
-
         </LinearLayout>
 
         <FrameLayout
@@ -214,34 +135,19 @@
         android:orientation="vertical"
         android:padding="20dp">
 
-        <FrameLayout
+        <Button
+            android:id="@+id/bt_verify_light"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button_rounded_full_green_light"
+            android:backgroundTint="@null"
+            android:text="@string/str_verify"
+            android:textColor="@color/white"
+            android:enabled="false"
+            android:textAllCaps="false" />
 
-            <Button
-                android:id="@+id/bt_verify_light"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/button_rounded_full_green_light"
-                android:backgroundTint="@null"
-                android:text="@string/str_verify"
-                android:textAllCaps="false" />
-
-            <Button
-                android:id="@+id/bt_verify"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/button_rounded_full_green"
-                android:backgroundTint="@null"
-                android:text="@string/str_verify"
-                android:visibility="gone" />
-
-
-        </FrameLayout>
 
     </LinearLayout>
 

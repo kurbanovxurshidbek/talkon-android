@@ -80,6 +80,6 @@
     <string name="str_get_coins_speak_more">Get more coins, speak more!</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
+    <string name="str_about_yourself">About yourself</string>
 
 </resources>

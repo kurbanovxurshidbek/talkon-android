@@ -33,6 +33,7 @@ class SplashActivity : BaseActivity() {
                 Intent(this, MainActivity::class.java).also {
                     startActivity(it)
                     finish()
+                    overridePendingTransition( 0, R.anim.splash_fade_out)
                 }
             }else Intent(this, IntroActivity::class.java).also {
                 startActivity(it)

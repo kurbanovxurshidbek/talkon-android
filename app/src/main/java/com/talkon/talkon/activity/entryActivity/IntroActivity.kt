@@ -46,8 +46,7 @@ class IntroActivity(): BaseActivity() {
         viewPager.animation = fadeAnimation
 
         bt_get_started.setOnClickListener {
-//            callSignInActivity(this)
-            callMainActivity(this@IntroActivity)
+            callSignInActivity(this)
         }
 
         tv_sign_in.setOnClickListener {
@@ -64,15 +63,6 @@ class IntroActivity(): BaseActivity() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
                 animateToColor(pageColors[position])
-            }
-            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
-                super.onPageScrolled(position, positionOffset, positionOffsetPixels)
-                if (position == adapter!!.count - 1) {
-                    bt_get_started.setOnClickListener {
-//                        SharedPref(context).isSaved = false
-//                        callSignInActivity(this@IntroActivity)
-                    }
-                }
             }
         })
     }

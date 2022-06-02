@@ -102,7 +102,7 @@ class AboutTeacherActivity : BaseActivity() {
 
     private fun videoView() {
 
-        val mediaController = MediaController(this)
+        val mediaController = MediaController( this)
         mediaController.setAnchorView(vv_ab_teacher)
         val onlineUri =
             Uri.parse("https://assets.mixkit.co/videos/preview/mixkit-people-pouring-a-warm-drink-around-a-campfire-513-large.mp4")
@@ -127,7 +127,6 @@ class AboutTeacherActivity : BaseActivity() {
     private fun weekDayAdapter(items: ArrayList<WeekDay>) {
         var adapter = TeacherWeekDayAdapter(items)
         rv_about_teacher_week_day.adapter = adapter
-
 
         adapter.onClick = {
 
