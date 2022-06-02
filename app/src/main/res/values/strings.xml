@@ -67,7 +67,7 @@
     <string name="str_start_lesson">Start lesson</string>
     <string name="str_per_lesson">per lesson</string>
 
-    
+
     <string name="str_started_hour">12:30</string>
     <string name="str_finished_hour">12:50</string>
     <string name="str_minus">-</string>
@@ -76,7 +76,8 @@
     <string name="str_plus_coins">Plus coins</string>
     <string name="str_minus_coins">Minus coins</string>
     <string name="str_get_coins_speak_more">Get more coins, speak more!</string>
-
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
