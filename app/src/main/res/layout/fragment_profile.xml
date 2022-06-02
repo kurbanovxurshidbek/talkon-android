@@ -240,12 +240,12 @@
                     </FrameLayout>
 
                     <FrameLayout
+                        android:id="@+id/fr_reservation"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp">
 
                         <LinearLayout
-                            android:id="@+id/ll_invite_friends"
                             android:layout_width="match_parent"
                             android:layout_height="55dp"
                             android:layout_marginLeft="40dp"

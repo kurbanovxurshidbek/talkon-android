@@ -52,6 +52,12 @@ class ProfileFragment : BaseFragment() {
         profile_balance.setOnClickListener {
             goBalanceActivity()
         }
+
+        fr_reservation.setOnClickListener{
+            callReservationActivity()
+        }
+
+
     }
 
     private fun getFragmentEditProfile() {
@@ -86,6 +92,14 @@ class ProfileFragment : BaseFragment() {
     private fun goBalanceActivity() {
         val intent=Intent(requireContext(),BalanceActivity::class.java)
         startActivity(intent)
+    }
+
+    private fun callReservationActivity(){
+            val fragmentReservationFragment = ReservationFragment()
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fl_Fragment, fragmentReservationFragment, "fragmnetId")
+                .commit()
+
     }
 
 
