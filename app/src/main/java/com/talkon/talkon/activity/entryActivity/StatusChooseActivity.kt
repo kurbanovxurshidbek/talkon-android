@@ -16,6 +16,7 @@ import com.talkon.talkon.utils.LevelDialog
 import com.talkon.talkon.viewModel.StatusSharedViewModel
 import kotlinx.android.synthetic.main.activity_status_choose.*
 import java.util.*
+import kotlin.properties.Delegates
 
 
 /**
@@ -29,6 +30,7 @@ class StatusChooseActivity : BaseActivity(), DatePickerDialog.OnDateSetListener 
     var savedDay : Int = 0
     var savedMonth : Int = 0
     var savedYear : Int = 0
+    var isSelected : Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +41,7 @@ class StatusChooseActivity : BaseActivity(), DatePickerDialog.OnDateSetListener 
     }
 
     private fun initViews() {
+
         ll_student.setOnClickListener {
             ll_info.visibility = View.VISIBLE
             ll_level.visibility = View.VISIBLE
@@ -46,7 +49,9 @@ class StatusChooseActivity : BaseActivity(), DatePickerDialog.OnDateSetListener 
             ll_student.setBackgroundResource(R.drawable.background_onpressed_green)
             ll_teacher.setBackgroundResource(R.drawable.border_rounded_grey_green)
         }
+
         ll_teacher.setOnClickListener {
+            isSelected = true
             ll_info.visibility = View.VISIBLE
             ll_level.visibility = View.INVISIBLE
             ll_experience.visibility = View.VISIBLE
@@ -74,7 +79,11 @@ class StatusChooseActivity : BaseActivity(), DatePickerDialog.OnDateSetListener 
             }).show(supportFragmentManager, "MyCustomFragment")
         }
         bt_next_light.setOnClickListener {
-            callMainActivity(this)
+            if (isSelected){
+                callTeacherActivity(this)
+            }else {
+                callMainActivity(this)
+            }
         }
         pickDate()
 

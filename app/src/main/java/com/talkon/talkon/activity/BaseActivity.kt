@@ -30,6 +30,12 @@ open class BaseActivity : AppCompatActivity() {
         finish()
     }
 
+    fun callTeacherActivity(context: Context) {
+        val intent = Intent(this, TeacherActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+
     fun callNumberVerificationActivity(context: Context) {
         val intent = Intent(this, NumberVerificationActivity::class.java)
         startActivity(intent)
