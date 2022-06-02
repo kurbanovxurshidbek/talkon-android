@@ -32,13 +32,7 @@ class LessonHistoryFragment : BaseFragment() {
 
     private fun initViews(view: View) {
         recyclerView = view.findViewById(R.id.rv_lessonhistory)
-        recyclerView.setLayoutManager(
-            LinearLayoutManager(
-                context,
-                LinearLayoutManager.VERTICAL,
-                false
-            )
-        )
+        recyclerView.setLayoutManager(LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false))
 
         refreshAdapter(historyItems())
     }
