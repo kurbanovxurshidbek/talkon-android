@@ -125,7 +125,7 @@
             android:layout_height="24dp"
             android:layout_marginLeft="35dp"
             android:background="@color/white"
-            android:src="@drawable/ic_arrow_down" />
+            android:src="@drawable/ic_video_call" />
     </LinearLayout>
 
 
