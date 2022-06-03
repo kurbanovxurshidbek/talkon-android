@@ -6,28 +6,34 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.talkon.talkon.R
 import com.talkon.talkon.activity.BalanceActivity
 import com.talkon.talkon.activity.entryActivity.LogInActivity
-import com.talkon.talkon.activity.entryActivity.SplashActivity
 import kotlinx.android.synthetic.main.fragment_profile.*
+import kotlinx.android.synthetic.main.fragment_profile.iv_plus
+import kotlinx.android.synthetic.main.fragment_profile.log_out
+import kotlinx.android.synthetic.main.fragment_profile.profile_support_center
+import kotlinx.android.synthetic.main.fragment_profile.rate_app
+import kotlinx.android.synthetic.main.fragment_teacher_profile.*
 
 
-/**
- * ProfileFragment is used for managing users profile: setting, balance, notifications...
- */
+class TeacherProfileFragment : Fragment() {
 
-class ProfileFragment : BaseFragment() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+    }
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_teacher_profile, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -49,13 +55,11 @@ class ProfileFragment : BaseFragment() {
         profile_support_center.setOnClickListener {
             supportCenter()
         }
-        profile_balance.setOnClickListener {
-            goBalanceActivity()
-        }
 
-        fr_reservation.setOnClickListener{
-            callReservationActivity()
-        }
+       teacher_money.setOnClickListener {
+           goCashFragment()
+       }
+
 
 
     }
@@ -73,7 +77,7 @@ class ProfileFragment : BaseFragment() {
             DialogInterface.OnClickListener { dialog, which ->
                 when (which) {
                     DialogInterface.BUTTON_POSITIVE -> {
-                        val intent=Intent(requireContext(),LogInActivity::class.java)
+                        val intent= Intent(requireContext(), LogInActivity::class.java)
                         startActivity(intent)
                     }
                     DialogInterface.BUTTON_NEGATIVE -> {
@@ -89,18 +93,11 @@ class ProfileFragment : BaseFragment() {
 
     }
 
-    private fun goBalanceActivity() {
-        val intent=Intent(requireContext(),BalanceActivity::class.java)
+    private fun goCashFragment() {
+      val intent=Intent(requireContext(),CashFragment::class.java)
         startActivity(intent)
     }
 
-    private fun callReservationActivity(){
-            val fragmentReservationFragment = ReservationFragment()
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.fl_Fragment, fragmentReservationFragment, "fragmnetId")
-                .commit()
-
-    }
 
 
     private fun rateApp() {
@@ -145,4 +142,3 @@ class ProfileFragment : BaseFragment() {
 
     }
 }
-

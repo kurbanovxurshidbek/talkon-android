@@ -27,10 +27,8 @@
             android:exported="false" />
         <activity
             android:name=".activity.AboutTeacherActivity"
-            android:theme="@style/Theme.MaterialComponents.NoActionBar.Bridge"
-            android:exported="true">
-        </activity>
-
+            android:exported="false"
+            android:theme="@style/Theme.MaterialComponents.NoActionBar.Bridge"></activity>
         <activity
             android:name=".activity.BalanceActivity"
             android:exported="false" />
@@ -53,8 +51,16 @@
             android:exported="false" />
         <activity
             android:name=".activity.MainActivity"
-            android:windowSoftInputMode="adjustPan"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".activity.TeacherActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" >
+
+        </activity>
+
         <activity
             android:name=".activity.entryActivity.SplashActivity"
             android:exported="true"

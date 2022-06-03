@@ -70,7 +70,7 @@
                             android:id="@+id/iv_profile"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/person88"
+                            android:src="@drawable/img_1"
                             android:scaleType="centerCrop"
                             app:shapeAppearance="@style/circle" />
 
@@ -98,7 +98,7 @@
                         android:layout_marginTop="15dp"
                         android:textColor="@color/black"
                         android:textSize="22sp"
-                        android:text="Khurshidebek"
+                        android:text="John Doe"
                         android:textStyle="bold"/>
 
                     <TextView
@@ -121,7 +121,7 @@
                     android:gravity="top">
 
                     <FrameLayout
-                        android:id="@+id/profile_balance"
+                        android:id="@+id/teacher_money"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
@@ -138,7 +138,7 @@
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:textStyle="bold"
-                                android:text="@string/str_balance"
+                                android:text="@string/str_take_money"
                                 android:layout_marginLeft="35dp"
                                 android:textSize="16sp"
                                 android:textColor="@color/black"/>
@@ -239,43 +239,6 @@
 
                     </FrameLayout>
 
-                    <FrameLayout
-                        android:id="@+id/fr_reservation"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="55dp"
-                            android:layout_marginLeft="40dp"
-                            android:gravity="center_vertical"
-                            android:background="@drawable/border_rounded_grey_green">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_weight="1"
-                                android:layout_height="wrap_content"
-                                android:text="@string/str_reservation"
-                                android:textStyle="bold"
-                                android:layout_marginLeft="35dp"
-                                android:textSize="16sp"
-                                android:textColor="@color/black"/>
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginRight="15dp"
-                                android:src="@drawable/ic_vector_green"/>
-                        </LinearLayout>
-                        <ImageView
-                            android:background="@drawable/ic_background_light_green_settings"
-                            android:layout_width="56dp"
-                            android:layout_height="56dp"
-                            android:padding="9dp"
-                            android:src="@drawable/ic_reservations"/>
-
-                    </FrameLayout>
 
 
 

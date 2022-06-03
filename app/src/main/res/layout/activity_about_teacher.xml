@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:id="@+id/ac_about_teacher"
     tools:context=".activity.AboutTeacherActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -59,30 +60,36 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <RelativeLayout
-                    android:id="@+id/video_relative"
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="220dp">
 
-                    <VideoView
-                        android:id="@+id/vv_ab_teacher"
+                    <RelativeLayout
+                        android:id="@+id/video_relative"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_centerInParent="true"
-                        android:keepScreenOn="false" />
+                        android:layout_height="match_parent">
 
+                        <VideoView
+                            android:id="@+id/vv_ab_teacher"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:keepScreenOn="false" />
 
-                    <ImageView
-                        android:id="@+id/play_button"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
-                        android:background="@drawable/circle_white_backround"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/ic_play_button3_foreground" />
+                        <ImageView
+                            android:id="@+id/play_button"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/circle_white_backround"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_play_button3_foreground" />
 
-                </RelativeLayout>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
 
                 <LinearLayout
                     android:layout_width="match_parent"

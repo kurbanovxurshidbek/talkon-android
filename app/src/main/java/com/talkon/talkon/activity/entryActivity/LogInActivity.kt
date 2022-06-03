@@ -16,8 +16,7 @@ import com.talkon.talkon.activity.BaseActivity
 import com.talkon.talkon.model.Country
 import com.talkon.talkon.utils.CountryBottomSheetDialog
 import com.talkon.talkon.utils.Logger
-import kotlinx.android.synthetic.main.activity_sign_in.*
-import kotlinx.android.synthetic.main.country_bottom_sheet_layout.*
+import kotlinx.android.synthetic.main.activity_log_in.*
 import org.json.JSONException
 import org.json.JSONObject
 import java.io.IOException
@@ -34,7 +33,7 @@ class LogInActivity : BaseActivity() {
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sign_in)
+        setContentView(R.layout.activity_log_in)
         initViews()
     }
 
