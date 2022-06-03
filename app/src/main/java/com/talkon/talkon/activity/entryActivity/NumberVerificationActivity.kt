@@ -38,6 +38,7 @@ class NumberVerificationActivity : BaseActivity() {
         }
         timer.start()
 
+        bt_verify_light.isEnabled  = true
         bt_verify_light.setOnClickListener {
             callStatusChooseActivity(this)
         }

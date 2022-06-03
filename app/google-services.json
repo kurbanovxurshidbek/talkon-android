@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "917757991726",
+    "project_id": "talkon-android",
+    "storage_bucket": "talkon-android.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:917757991726:android:dd3108cf0c86916127b8bf",
+        "android_client_info": {
+          "package_name": "com.talkon.talkon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "917757991726-5ijiem1hvq2spdr8jvp93lt8vcjptcbv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAf6ioUcQ5_C0TQcatGz2jEVjnpl4ZD20"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "917757991726-5ijiem1hvq2spdr8jvp93lt8vcjptcbv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

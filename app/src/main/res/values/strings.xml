@@ -23,6 +23,7 @@
     <string name="str_profile">Profile</string>
     <string name="str_settings">Settings</string>
     <string name="str_balance">Balance</string>
+    <string name="str_take_money">Taking money</string>
     <string name="str_your_balance">Your Balance</string>
     <string name="str_support_center">Support Center</string>
     <string name="str_log_out">Log out</string>
@@ -76,9 +77,10 @@
     <string name="str_buy_coins">Buy coins</string>
     <string name="str_plus_coins">Plus coins</string>
     <string name="str_minus_coins">Minus coins</string>
+    <string name="str_teacher_balance">My balance:</string>
     <string name="str_get_coins_speak_more">Get more coins, speak more!</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
+    <string name="str_about_yourself">About yourself</string>
 
 </resources>
