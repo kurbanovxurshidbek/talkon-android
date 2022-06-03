@@ -84,7 +84,6 @@ class LessonHistoryAdapter(
         var ic_arrow: ImageView = view.findViewById(R.id.ic_arrow)
         var video_view: ShapeableImageView = view.findViewById(R.id.video_view)
         var liner: LinearLayout = view.findViewById(R.id.liner)
-
     }
 
     private fun slideUpAnimation(view: View) {
