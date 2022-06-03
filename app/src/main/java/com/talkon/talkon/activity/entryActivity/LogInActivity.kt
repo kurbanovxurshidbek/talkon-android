@@ -41,13 +41,13 @@ class LogInActivity : BaseActivity() {
     private fun initViews() {
         setDefaultCountry()
 
-        var textWatcher = object : TextWatcher {
+        val textWatcher = object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
             }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                var str = et_phone_number.text.toString()
+                val str = et_phone_number.text.toString()
                 bt_sign_in_light.isEnabled = str.isNotEmpty()
             }
 

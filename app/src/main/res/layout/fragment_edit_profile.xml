@@ -124,12 +124,108 @@
                 android:paddingEnd="10dp"
                 android:background="@drawable/edittext_background_rounded"
                 />
-            <Button
-                android:id="@+id/edit_button"
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/str_edit_profile"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:id="@+id/ll_country_code_edit_profile"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="0.5"
+                    android:allowClickWhenDisabled="true"
+                    android:background="@drawable/border_rounded_grey_green"
+                    android:gravity="center_vertical"
+                    android:padding="7dp">
+
+
+                    <FrameLayout
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_weight="0.6">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/iv_country_flag_edit_profile"
+                            android:layout_width="30dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:scaleType="centerCrop"
+                            app:shapeAppearanceOverlay="@style/circle" />
+
+
+                        <ProgressBar
+                            android:id="@+id/pb_country_code_edit_profile"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:visibility="gone" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/tv_country_code_edit_profile"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:id="@+id/iv_country_menu_edit_profile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="2dp"
+                        android:src="@drawable/ic_drop_down_menu"
+                        app:tint="@color/grey" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_number_edit_profile"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:background="@drawable/border_rounded_grey_green"
+                    android:gravity="center_vertical"
+                    android:padding="5dp">
+
+                    <com.santalu.maskara.widget.MaskEditText
+                        android:id="@+id/et_phone_number_edit_profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        app:maskStyle="normal"
+                        android:gravity="center_vertical"
+                        android:outlineSpotShadowColor="@color/white"
+                        android:inputType="number"
+                        android:textColor="@color/black"
+                        android:textCursorDrawable="@color/light_green"
+                        android:textColorHint="@color/grey"
+                        android:cursorVisible="true"
+                        android:background="@android:color/transparent"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/save_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/str_save"
                 android:backgroundTint="@color/main_green"
+                android:background="@drawable/button_round_full_green"
                 android:layout_marginTop="20dp"
                 />
 
