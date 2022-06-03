@@ -40,7 +40,7 @@ class TeacherLessonsFragment : Fragment() {
 
     private fun viewPagerSetUp() {
 
-        tabLayout!!.addTab(tabLayout!!.newTab().setText("Students"));
+        tabLayout!!.addTab(tabLayout!!.newTab().setText("My Lessons"));
         tabLayout!!.addTab(tabLayout!!.newTab().setText("Cash"));
 
         // Set the adapter

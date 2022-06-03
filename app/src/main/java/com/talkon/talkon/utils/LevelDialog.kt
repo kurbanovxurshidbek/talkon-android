@@ -10,8 +10,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.talkon.talkon.R
-import com.talkon.talkon.activity.entryActivity.StatusChooseActivity
-import com.talkon.talkon.activity.entryActivity.StatusChooseActivity.Companion.sometext
 import com.talkon.talkon.adapter.LevelDialogAdapter
 import com.talkon.talkon.viewModel.StatusSharedViewModel
 
