@@ -104,8 +104,6 @@ class LogInActivity : BaseActivity() {
             val obj = JSONObject(getJSONFromAssets()!!)
             val countryArray = obj.getJSONArray("countries")
 
-
-
             for (i in 0 until countryArray.length()) {
                 val country = countryArray.getJSONObject(i)
                 val name = country.getString("name")

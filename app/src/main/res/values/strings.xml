@@ -82,6 +82,11 @@
 
 
     <string name="str_about_yourself">About yourself</string>
+    <string name="str_nationality">Nationality</string>
+    <string name="str_tap_here_to_upload_video">Tap here to upload video</string>
+    <string name="str_brief_information_about_yourself">Brief information about yourself</string>
+    <string name="str_finish">Finish</string>
+    <string name="str_tap_to_upload">Tap to upload</string>
     <string name="str_partner_found">Partner Found!</string>
     <string name="str_mamnuna">Mamnuna</string>
     <string name="str_advanced">Advanced</string>

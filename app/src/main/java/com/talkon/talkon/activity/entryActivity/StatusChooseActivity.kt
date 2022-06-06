@@ -2,6 +2,7 @@ package com.talkon.talkon.activity.entryActivity
 
 import android.app.AlertDialog
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -45,7 +46,6 @@ class StatusChooseActivity : BaseActivity(), DatePickerDialog.OnDateSetListener 
             ll_info.visibility = View.VISIBLE
             ll_level.visibility = View.VISIBLE
             ll_experience.visibility = View.INVISIBLE
-            ll_about_yourself.visibility = View.INVISIBLE
             ll_student.setBackgroundResource(R.drawable.background_onpressed_green)
             ll_teacher.setBackgroundResource(R.drawable.border_rounded_grey_green)
         }
@@ -54,11 +54,13 @@ class StatusChooseActivity : BaseActivity(), DatePickerDialog.OnDateSetListener 
             ll_info.visibility = View.VISIBLE
             ll_level.visibility = View.INVISIBLE
             ll_experience.visibility = View.VISIBLE
-            ll_about_yourself.visibility = View.VISIBLE
             ll_teacher.setBackgroundResource(R.drawable.background_onpressed_green)
             ll_student.setBackgroundResource(R.drawable.border_rounded_grey_green)
         }
 
+        ll_nationality.setOnClickListener{
+
+        }
         ll_level.setOnClickListener {
             LevelDialog(object : LevelDialog.LevelListener{
                 override fun onSelected(level: String) {
@@ -79,13 +81,24 @@ class StatusChooseActivity : BaseActivity(), DatePickerDialog.OnDateSetListener 
             }).show(supportFragmentManager, "MyCustomFragment")
         }
         bt_next_light.setOnClickListener {
-            SharedPref(context).isSaved = true
-            callMainActivity(this)
+
+            if (isSelected){
+                callUploadVideoActivity()
+            }else{
+                callMainActivity(this)
+//            SharedPref(context).isSaved = true
+            }
         }
         pickDate()
 
     }
+    
+    
 
+    private fun callUploadVideoActivity() {
+        val intent = Intent(this, UploadVideoActivity::class.java)
+        startActivity(intent)
+    }
     private fun pickDate() {
         ll_age_date.setOnClickListener {
             getDateTimeCalendar()
