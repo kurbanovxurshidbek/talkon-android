@@ -93,6 +93,8 @@ dependencies {
     //circle image
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
+    //ripple
+    implementation 'com.skyfishjy.ripplebackground:library:1.0.1'
 
-    
+
 }
