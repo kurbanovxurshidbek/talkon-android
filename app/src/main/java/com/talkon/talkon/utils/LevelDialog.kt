@@ -16,8 +16,6 @@ import com.talkon.talkon.viewModel.StatusSharedViewModel
 
 class LevelDialog(val listener: LevelListener): DialogFragment() {
     lateinit var recyclerView: RecyclerView
-    private lateinit var statusSharedViewModel:StatusSharedViewModel
-
     public lateinit var selectedLevel: String
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         getDialog()!!.getWindow()?.setBackgroundDrawableResource(R.drawable.white_border_rounded);
@@ -35,7 +33,6 @@ class LevelDialog(val listener: LevelListener): DialogFragment() {
     }
 
     private fun initViews(view: View) {
-        statusSharedViewModel = ViewModelProvider(this).get(StatusSharedViewModel::class.java)
         recyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.setLayoutManager(GridLayoutManager(context, 1))
         refreshAdapter(getLevel())

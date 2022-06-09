@@ -109,30 +109,46 @@
 
                     </LinearLayout>
 
-                    <RelativeLayout
-                        android:id="@+id/rl_about_video"
+                    <LinearLayout
+                        android:id="@+id/ll_video"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:visibility="invisible">
+                        android:visibility="gone">
 
-                        <VideoView
-                            android:id="@+id/vv_about_teacher"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_centerInParent="true"
-                            android:keepScreenOn="false" />
+                       <FrameLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent">
 
-                        <ImageView
-                            android:id="@+id/iv_play_button"
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:layout_centerHorizontal="true"
-                            android:layout_centerVertical="true"
-                            android:background="@drawable/circle_white_backround"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/ic_play_button3_foreground" />
+                           <VideoView
+                               android:id="@+id/videoView"
+                               android:layout_width="match_parent"
+                               android:layout_height="match_parent"
+                               android:layout_centerInParent="true"
+                               android:keepScreenOn="false" />
 
-                    </RelativeLayout>
+                           <ImageView
+                               android:id="@+id/iv_play_button"
+                               android:layout_width="70dp"
+                               android:layout_height="70dp"
+                               android:layout_gravity="center"
+                               android:background="@drawable/circle_white_backround"
+                               android:scaleType="centerCrop"
+                               android:src="@drawable/ic_play_button3_foreground" />
+
+                           <ImageView
+                               android:id="@+id/iv_delete"
+                               android:layout_width="25dp"
+                               android:layout_height="25dp"
+                               android:src="@mipmap/ic_delete"
+                               android:padding="4dp"
+                               android:layout_marginTop="10dp"
+                               android:layout_marginRight="10dp"
+                               android:visibility="visible"
+                               android:background="@drawable/view_border_corner"
+                               android:layout_gravity="right" />
+                       </FrameLayout>
+
+                    </LinearLayout>
 
                 </FrameLayout>
 
@@ -161,7 +177,8 @@
                             <ImageView
                                 android:layout_width="25dp"
                                 android:layout_height="25dp"
-                                android:src="@drawable/iv_pick_profile_photo"/>
+                                android:src="@drawable/iv_pick_profile_photo"
+                                app:tint="@color/dark_grey" />
 
                         </LinearLayout>
                         <com.google.android.material.imageview.ShapeableImageView
@@ -306,6 +323,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/ll_experience"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -313,33 +331,19 @@
                         android:orientation="vertical">
 
                         <LinearLayout
-                            android:id="@+id/ll_experience"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal">
+                            android:layout_gravity="center_horizontal"
+                            android:gravity="center">
 
                             <TextView
-                                android:id="@+id/tv_experience_about_teacher"
+                                android:id="@+id/tv_experience"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="7dp"
-                                android:maxWidth="40dp"
-                                android:singleLine="true"
-                                android:text="3"
+                                android:text="1 year"
                                 android:textColor="@color/black"
-                                android:textSize="18sp"
+                                android:textSize="17sp"
                                 android:textStyle="bold" />
-
-                            <TextView
-                                android:id="@+id/tv_experience_about_teacher_years"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="7dp"
-                                android:maxWidth="40dp"
-                                android:singleLine="true"
-                                android:text="years"
-                                android:textColor="@color/black"
-                                android:textSize="16sp" />
 
                         </LinearLayout>
 
@@ -349,10 +353,9 @@
                             android:layout_gravity="center_horizontal">
 
                             <TextView
-                                android:id="@+id/tv_experience"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Experience"
+                                android:text="@string/str_experience"
                                 android:textColor="@color/grey"
                                 android:textSize="14sp" />
 

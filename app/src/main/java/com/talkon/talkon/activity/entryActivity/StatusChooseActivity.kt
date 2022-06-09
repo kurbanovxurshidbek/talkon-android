@@ -13,8 +13,10 @@ import androidx.lifecycle.ViewModelStore
 import com.talkon.talkon.R
 import com.talkon.talkon.activity.BaseActivity
 import com.talkon.talkon.manager.SharedPref
+import com.talkon.talkon.model.Country
 import com.talkon.talkon.utils.ExperienceDialog
 import com.talkon.talkon.utils.LevelDialog
+import com.talkon.talkon.utils.NationalityDialog
 import com.talkon.talkon.viewModel.StatusSharedViewModel
 import kotlinx.android.synthetic.main.activity_status_choose.*
 import java.util.*
@@ -32,7 +34,8 @@ class StatusChooseActivity : BaseActivity(), DatePickerDialog.OnDateSetListener 
     var savedMonth : Int = 0
     var savedYear : Int = 0
     var isSelected : Boolean = false
-
+    var onPressedTrue: Int = R.drawable.background_onpressed_green
+    var onPressedFalse: Int = R.drawable.border_rounded_grey_green
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_status_choose)
@@ -46,21 +49,19 @@ class StatusChooseActivity : BaseActivity(), DatePickerDialog.OnDateSetListener 
             ll_info.visibility = View.VISIBLE
             ll_level.visibility = View.VISIBLE
             ll_experience.visibility = View.INVISIBLE
-            ll_student.setBackgroundResource(R.drawable.background_onpressed_green)
-            ll_teacher.setBackgroundResource(R.drawable.border_rounded_grey_green)
+            ll_student.setBackgroundResource(onPressedTrue)
+            ll_teacher.setBackgroundResource(onPressedFalse)
+            isSelected = false
         }
         ll_teacher.setOnClickListener {
-            isSelected = true
             ll_info.visibility = View.VISIBLE
             ll_level.visibility = View.INVISIBLE
             ll_experience.visibility = View.VISIBLE
-            ll_teacher.setBackgroundResource(R.drawable.background_onpressed_green)
-            ll_student.setBackgroundResource(R.drawable.border_rounded_grey_green)
+            ll_teacher.setBackgroundResource(onPressedTrue)
+            ll_student.setBackgroundResource(onPressedFalse)
+            isSelected = true
         }
 
-        ll_nationality.setOnClickListener{
-
-        }
         ll_level.setOnClickListener {
             LevelDialog(object : LevelDialog.LevelListener{
                 override fun onSelected(level: String) {
@@ -71,6 +72,7 @@ class StatusChooseActivity : BaseActivity(), DatePickerDialog.OnDateSetListener 
             }).show(supportFragmentManager, "MyCustomFragment")
 
         }
+
         ll_experience.setOnClickListener {
             ExperienceDialog(object : ExperienceDialog.ExperienceListener{
                 override fun onSelected(experience: String) {
@@ -80,13 +82,24 @@ class StatusChooseActivity : BaseActivity(), DatePickerDialog.OnDateSetListener 
                 }
             }).show(supportFragmentManager, "MyCustomFragment")
         }
+
+        ll_nationality.setOnClickListener{
+            NationalityDialog(object : NationalityDialog.NationalityListener{
+                override fun onSelected(country: Country) {
+                    tv_nationality.visibility = View.VISIBLE
+                    tv_nationality_hint.visibility = View.GONE
+                    tv_nationality.text = country.name
+                }
+
+            }).show(supportFragmentManager, "MyCustomFragment")
+        }
         bt_next_light.setOnClickListener {
 
             if (isSelected){
                 callUploadVideoActivity()
             }else{
                 callMainActivity(this)
-//            SharedPref(context).isSaved = true
+            SharedPref(context).isSaved = true
             }
         }
         pickDate()

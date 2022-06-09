@@ -90,5 +90,6 @@
     <string name="str_partner_found">Partner Found!</string>
     <string name="str_mamnuna">Mamnuna</string>
     <string name="str_advanced">Advanced</string>
+    <string name="str_search_a_country">Search a country</string>
 
 </resources>

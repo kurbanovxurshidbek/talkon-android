@@ -7,6 +7,7 @@ import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import com.talkon.talkon.R
 import com.talkon.talkon.adapter.SearchHistoryAdapter
+import com.talkon.talkon.model.Country
 import kotlinx.android.synthetic.main.activity_search_result.*
 
 /**
@@ -14,6 +15,9 @@ import kotlinx.android.synthetic.main.activity_search_result.*
  */
 
 class SearchResultActivity : BaseActivity() {
+    private var names: ArrayList<String> = ArrayList()
+    private var items: ArrayList<String> = ArrayList()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search_result)
@@ -28,7 +32,7 @@ class SearchResultActivity : BaseActivity() {
         iv_cancel.setOnClickListener {
             finish()
         }
-        
+
         et_search.addTextChangedListener(object : TextWatcher{
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
@@ -48,6 +52,21 @@ class SearchResultActivity : BaseActivity() {
         var adapter = SearchHistoryAdapter(history)
         recyclerView.adapter = adapter
     }
+
+    fun usersByKeyword(keyword: String) {
+        if (keyword.isEmpty())
+            refreshAdapter(items)
+
+        items.clear()
+        for (name in names){
+            if (name!!.toLowerCase().contains(keyword.toLowerCase())) {
+                items.add(name)
+            }
+        }
+        refreshAdapter(items)
+    }
+
+
 
     private fun getHistory(): ArrayList<String> {
         var history = ArrayList<String>()

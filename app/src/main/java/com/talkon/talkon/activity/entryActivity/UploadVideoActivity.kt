@@ -1,20 +1,31 @@
 package com.talkon.talkon.activity.entryActivity
 
 import android.app.Activity
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.os.Environment
 import android.provider.MediaStore
+import android.util.Log
 import android.view.View
+import android.widget.MediaController
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.appcompat.app.AppCompatActivity
 import com.sangcomz.fishbun.BaseActivity
 import com.sangcomz.fishbun.FishBun
 import com.sangcomz.fishbun.adapter.image.impl.GlideAdapter
 import com.talkon.talkon.R
 import com.talkon.talkon.activity.TeacherActivity
+import com.talkon.talkon.utils.ExperienceDialog
+import kotlinx.android.synthetic.main.activity_about_teacher.*
 import kotlinx.android.synthetic.main.activity_upload_video.*
-import kotlinx.android.synthetic.main.fragment_edit_profile.*
+import kotlinx.android.synthetic.main.activity_upload_video.iv_back
+import kotlinx.android.synthetic.main.activity_upload_video.iv_profile_picture
+import kotlinx.android.synthetic.main.activity_upload_video.tv_experience
+import java.io.*
+import java.util.*
+
 
 /**
  * In UploadVideoActivity, teacher can upload his/her video, photo, about teacher information and certificates
@@ -22,9 +33,9 @@ import kotlinx.android.synthetic.main.fragment_edit_profile.*
 class UploadVideoActivity : BaseActivity() {
     var pickedPhoto: Uri? = null
     var allPhotos = ArrayList<Uri>()
-
-    val REQUEST_VIDEO_CODE = 100
-    lateinit var videoPath: String
+    private val VIDEO_DIRECTORY = "/demonuts"
+    private val GALLERY = 1
+    private var CAMERA = 2
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_upload_video)
@@ -34,52 +45,111 @@ class UploadVideoActivity : BaseActivity() {
 
     private fun initViews() {
         ll_upload_video.setOnClickListener{
-            val intent = Intent(Intent.ACTION_PICK, MediaStore.Video.Media.EXTERNAL_CONTENT_URI)
-            intent.type = "video/*"
-            startActivityForResult(intent, REQUEST_VIDEO_CODE)
+           chooseVideoFromGallery()
         }
 
         ll_pick_photo.setOnClickListener {
-            pickFishBunPhoto()
             uploadUserPhoto()
+            pickFishBunPhoto()
         }
 
         iv_back.setOnClickListener{
             finish()
         }
 
+        ll_experience.setOnClickListener {
+            ExperienceDialog(object : ExperienceDialog.ExperienceListener{
+                override fun onSelected(experience: String) {
+                    tv_experience.visibility = View.VISIBLE
+                    tv_experience.text = experience
+                }
+            }).show(supportFragmentManager, "MyCustomFragment")
+        }
+
         bt_finish.setOnClickListener {
+//            SharedPref(this).isSaved = true
             callTeacherActivity()
         }
     }
 
-    private fun callTeacherActivity() {
-        val intent = Intent(this, TeacherActivity::class.java)
-        startActivity(intent)
+    fun chooseVideoFromGallery() {
+        val galleryIntent = Intent(Intent.ACTION_PICK, MediaStore.Video.Media.EXTERNAL_CONTENT_URI)
+        startActivityForResult(galleryIntent, GALLERY)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        Log.d("result", "" + resultCode)
+        val mediaController = MediaController( this)
+        mediaController.setAnchorView(videoView)
         super.onActivityResult(requestCode, resultCode, data)
-        if (resultCode == RESULT_OK) {
-            if (requestCode == 1) {
-                val selectedVideoUri = data?.data
+        if (resultCode == RESULT_CANCELED) {
+            Log.d("what", "cancel")
+            return
+        }
+        if (requestCode == GALLERY) {
+            Log.d("what", "gale")
+            if (data != null) {
+                val contentURI = data.data
+                val selectedVideoPath = getPath(contentURI)
+                Log.d("path", selectedVideoPath!!)
+                saveVideoToInternalStorage(selectedVideoPath)
+                videoView.requestFocus()
+                ll_upload_video.visibility = View.GONE
+                ll_video.visibility= View.VISIBLE
+                iv_play_button.setOnClickListener {
+                    if (videoView.isPlaying) {
+                        videoView.pause()
+                        iv_play_button.visibility = View.VISIBLE
 
-                // OI FILE Manager
-                val filemanagerstring = selectedVideoUri.toString()
-                videoPath = filemanagerstring
-
-                // MEDIA GALLERY
-                val selectedVideoPath = getPath(selectedVideoUri)
-                if (selectedVideoPath != null) {
-                    videoPath = selectedVideoPath
-                    ll_upload_video.visibility = View.GONE
-                    rl_about_video.visibility = View.VISIBLE
-                    playVideoInDevicePlayer(videoPath)
-                } else{
-                    ll_upload_video.visibility = View.VISIBLE
-                    rl_about_video.visibility = View.GONE
+                    } else {
+                        videoView.setMediaController(mediaController)
+                        videoView.setVideoURI(contentURI)
+                        videoView.requestFocus()
+                        videoView.start()
+                        iv_play_button.visibility = View.GONE
+                    }
                 }
             }
+        }
+
+        iv_delete.setOnClickListener {
+            ll_upload_video.visibility = View.VISIBLE
+            ll_video.visibility= View.GONE
+
+        }
+    }
+
+    private fun saveVideoToInternalStorage(filePath: String) {
+        val newfile: File
+        try {
+            val currentFile = File(filePath)
+            val wallpaperDirectory =
+                File(Environment.getExternalStorageDirectory().toString() + VIDEO_DIRECTORY)
+            newfile = File(
+                wallpaperDirectory,
+                Calendar.getInstance().getTimeInMillis().toString() + ".mp4"
+            )
+            if (!wallpaperDirectory.exists()) {
+                wallpaperDirectory.mkdirs()
+            }
+            if (currentFile.exists()) {
+                val `in`: InputStream = FileInputStream(currentFile)
+                val out: OutputStream = FileOutputStream(newfile)
+
+                // Copy the bits from instream to outstream
+                val buf = ByteArray(1024)
+                var len: Int
+                while (`in`.read(buf).also { len = it } > 0) {
+                    out.write(buf, 0, len)
+                }
+                `in`.close()
+                out.close()
+                Log.v("vii", "Video file saved successfully.")
+            } else {
+                Log.v("vii", "Video saving failed. Source file missing.")
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
         }
     }
 
@@ -94,28 +164,15 @@ class UploadVideoActivity : BaseActivity() {
             cursor.getString(column_index)
         } else null
     }
-
-    fun playVideoInDevicePlayer(videoPath: String) {
-        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(videoPath))
-        intent.setDataAndType(Uri.parse(videoPath), "video/mp4")
-        startActivity(intent)
-    }
-
     private fun uploadUserPhoto() {
-//        if (pickedPhoto == null) return
-//        StorageManager.uploadUserPhoto(pickedPhoto!!, object : StorageHandler {
-//            override fun onSuccess(imgUrl: String) {
-//                DatabaseManager.updateUserImage(imgUrl)
         iv_profile_picture.setImageURI(pickedPhoto)
         iv_profile_picture.visibility = View.VISIBLE
         tv_tap_to_upload.text = "Change"
     }
 
-    private val photoLauncher =
-        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+    private val photoLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             if (it.resultCode == Activity.RESULT_OK) {
-                allPhotos =
-                    it.data?.getParcelableArrayListExtra(FishBun.INTENT_PATH) ?: arrayListOf()
+                allPhotos = it.data?.getParcelableArrayListExtra(FishBun.INTENT_PATH) ?: arrayListOf()
                 pickedPhoto = allPhotos.get(0)
             }
         }
@@ -127,5 +184,11 @@ class UploadVideoActivity : BaseActivity() {
             .setMinCount(1)
             .setSelectedImages(allPhotos)
             .startAlbumWithActivityResultCallback(photoLauncher)
+    }
+
+    private fun callTeacherActivity() {
+        val intent = Intent(this, TeacherActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }
