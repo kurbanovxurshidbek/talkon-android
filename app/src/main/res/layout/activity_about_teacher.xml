@@ -409,6 +409,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
                     android:text="@string/str_more"
+                    android:visibility="invisible"
                     android:textColor="@color/main_green"
                     android:textSize="16sp"
                     android:textStyle="bold" />
@@ -423,7 +424,7 @@
                     android:textColor="@color/main_green"
                     android:textSize="16sp"
                     android:textStyle="bold"
-                    android:visibility="gone" />
+                    android:visibility="invisible" />
 
                 <Button
                     android:id="@+id/btn_buy"

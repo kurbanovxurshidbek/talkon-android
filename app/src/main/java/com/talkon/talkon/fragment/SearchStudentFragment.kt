@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.airbnb.lottie.LottieAnimationView
 import com.skyfishjy.library.RippleBackground
@@ -11,6 +12,7 @@ import com.talkon.talkon.R
 import com.talkon.talkon.fragment.BaseFragment
 import kotlinx.android.synthetic.main.fragment_search_student.*
 import kotlinx.android.synthetic.main.partner_found_dialog.*
+import kotlinx.android.synthetic.main.partner_found_dialog.view.*
 
 /**
  * In StudentFragment, student can talk with student, by random match
@@ -19,7 +21,7 @@ class SearchStudentFragment : BaseFragment() {
 
     private var isClicked : Boolean = false
     lateinit var lottie_students: LottieAnimationView
-    lateinit var dialog: AlertDialog
+//    lateinit var dialog: AlertDialog
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -47,27 +49,27 @@ class SearchStudentFragment : BaseFragment() {
         }
 
         bt_skip.setOnClickListener {
-//            openPartnerDialog()
-
-            val view = View.inflate(requireContext(), R.layout.partner_found_dialog, null)
-
-            val builder = AlertDialog.Builder(requireContext())
-            builder.setView(view)
-
-            val dialog = builder.create()
-            dialog.show()
-            dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
-
+            openPartnerFoundDialog()
         }
 
     }
 
-    private fun openPartnerDialog() {
-        dialog.setContentView(R.layout.partner_found_dialog)
+    private fun openPartnerFoundDialog() {
+        val view = View.inflate(requireContext(), R.layout.partner_found_dialog, null)
 
-        btn_yes.setOnClickListener {
-            dialog.dismiss()
-        }
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setView(view)
+//        builder.setCancelable(false)
+        val dialog = builder.create()
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
         dialog.show()
+
+        view.btn_cancel.setOnClickListener {
+            dialog.dismiss()
+            Toast.makeText(requireContext(), "Dialog close", Toast.LENGTH_SHORT).show()
+        }
+
+
+
     }
 }
