@@ -22,4 +22,5 @@
     <color name="light_gold">#F6EEA5</color>
     <color name="light_blue">#A9D4FA</color>
     <color name="light_orange">#FABDAA</color>
+    <color name="red">#F44336</color>
 </resources>

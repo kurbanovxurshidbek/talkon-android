@@ -2,18 +2,17 @@ package com.talkon.talkon.activity
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.MediaController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.exoplayer2.ExoPlayer
+import com.google.android.exoplayer2.MediaItem
+import com.google.android.exoplayer2.Player
 import com.talkon.talkon.R
 import com.talkon.talkon.adapter.*
-import com.talkon.talkon.fragment.SearchFragment
-import com.talkon.talkon.fragment.SearchTeacherFragment
 import com.talkon.talkon.model.Course
 import com.talkon.talkon.model.Reviews
 import com.talkon.talkon.model.WeekDay
@@ -23,13 +22,31 @@ import kotlinx.android.synthetic.main.activity_about_teacher.*
  * In AboutTeacherActivity, user can read about teacher and book a trial
  */
 
-class AboutTeacherActivity : BaseActivity() {
+class AboutTeacherActivity : BaseActivity(), Player.Listener{
+
+//    lateinit var playerView: PlayerView
+    lateinit var player: ExoPlayer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_about_teacher)
         initViews()
 
+        videoView()
+        addMp4Files()
+        if (savedInstanceState != null) {
+            savedInstanceState.getInt("mediaItem").let { restoredMedia ->
+                val seekTime = savedInstanceState.getLong("SeekTime")
+                player.seekTo(restoredMedia, seekTime)
+                player.play()
+            }
+        }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putLong("SeekTime", player.currentPosition)
+        outState.putInt("mediaItem", player.currentMediaItemIndex)
     }
 
     @SuppressLint("SetTextI18n")
@@ -40,6 +57,11 @@ class AboutTeacherActivity : BaseActivity() {
 
         rv_about_teacher_course.layoutManager = GridLayoutManager(this, 3)
         courseAdapter(getCourse())
+
+        if (getCourse().count() > 6) {
+            tv_more_btn.visibility = View.VISIBLE
+        }
+
         tv_more_btn.setOnClickListener {
             (rv_about_teacher_course.adapter as TeacherCourseAdapter).updateList(getCourseAll())
             Log.d("@@@", "nimadur")
@@ -55,7 +77,7 @@ class AboutTeacherActivity : BaseActivity() {
         rv_about_teacher_reviews.layoutManager = LinearLayoutManager(this)
         reviewsAdapter(getReviews())
 
-        videoView()
+//        videoView()
 
         iv_back.setOnClickListener {
             callSearchTeacherFragment()
@@ -102,25 +124,58 @@ class AboutTeacherActivity : BaseActivity() {
 
     private fun videoView() {
 
-        val mediaController = MediaController( this)
-        mediaController.setAnchorView(vv_ab_teacher)
-        val onlineUri =
-            Uri.parse("https://assets.mixkit.co/videos/preview/mixkit-people-pouring-a-warm-drink-around-a-campfire-513-large.mp4")
+        player = ExoPlayer.Builder(this).build()
+//        playerView = exoPlayer
+        exoPlayer.player = player
+        player.addListener(this)
 
-        play_button.setOnClickListener {
-            if (vv_ab_teacher.isPlaying) {
-                vv_ab_teacher.pause()
-                play_button.visibility = View.VISIBLE
 
-            } else {
-                vv_ab_teacher.setMediaController(mediaController)
-                vv_ab_teacher.setVideoURI(onlineUri)
-                vv_ab_teacher.requestFocus()
-                vv_ab_teacher.start()
 
-                play_button.visibility = View.GONE
+//
+//        val mediaController = MediaController( this)
+//        mediaController.setAnchorView(vv_ab_teacher)
+//        val onlineUri =
+//            Uri.parse("https://assets.mixkit.co/videos/preview/mixkit-people-pouring-a-warm-drink-around-a-campfire-513-large.mp4")
+//
+//        play_button.setOnClickListener {
+//            if (vv_ab_teacher.isPlaying) {
+//                vv_ab_teacher.pause()
+//                play_button.visibility = View.VISIBLE
+//
+//            } else {
+//                vv_ab_teacher.setMediaController(mediaController)
+//                vv_ab_teacher.setVideoURI(onlineUri)
+//                vv_ab_teacher.requestFocus()
+//                vv_ab_teacher.start()
+//
+//                play_button.visibility = View.GONE
+//            }
+//        }
+    }
+
+    private fun addMp4Files() {
+//        val mediaItem = MediaItem.fromUri("https://assets.mixkit.co/videos/preview/mixkit-people-pouring-a-warm-drink-around-a-campfire-513-large.mp4")
+        val mediaItem = MediaItem.fromUri("https://cdn.videvo.net/videvo_files/video/free/2018-05/large_watermarked/180419_Boxing_01_03_preview.mp4")
+        player.addMediaItem(mediaItem)
+        player.prepare()
+    }
+
+    override fun onPlaybackStateChanged(playbackState: Int) {
+        super.onPlaybackStateChanged(playbackState)
+
+        when (playbackState) {
+            Player.STATE_BUFFERING -> {
+                progressBar.visibility = View.VISIBLE
+            }
+            Player.STATE_READY -> {
+                progressBar.visibility = View.INVISIBLE
             }
         }
+    }
+
+    override fun onStop() {
+        super.onStop()
+        player.release()
     }
 
     @SuppressLint("ResourceAsColor")
@@ -171,6 +226,7 @@ class AboutTeacherActivity : BaseActivity() {
         course.add(Course("03 : 00 am"))
         course.add(Course("04 : 00 pm"))
         course.add(Course("05 : 00 pm"))
+        course.add(Course("06 : 00 am"))
         course.add(Course("06 : 00 am"))
 
         return course

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:background="@color/white">
+    android:background="@color/white"
+    android:orientation="vertical">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -14,21 +14,22 @@
             android:id="@+id/ll_search_partner"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
             android:gravity="center"
-            android:padding="20dp">
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="22sp"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:padding="15dp"
-                android:lineSpacingExtra="4dp"
                 android:layout_marginBottom="10dp"
-                android:text="@string/str_practice_speaking_with_students" />
+                android:gravity="center"
+                android:lineSpacingExtra="4dp"
+                android:padding="15dp"
+                android:text="@string/str_practice_speaking_with_students"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                android:textStyle="bold" />
 
 
             <LinearLayout
@@ -40,9 +41,9 @@
                     android:id="@+id/animationView"
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
-                    app:lottie_rawRes="@raw/lottie_students"
                     app:lottie_autoPlay="true"
-                    app:lottie_loop="true"/>
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/lottie_students" />
 
             </LinearLayout>
 
@@ -51,21 +52,21 @@
                 android:layout_width="200dp"
                 android:layout_height="44dp"
                 android:layout_marginTop="20dp"
-                android:text="@string/str_search_partner"
-                android:textSize="14sp"
-                android:textAllCaps="false"
+                android:background="@drawable/button_rounded_full_green"
                 android:backgroundTint="@null"
-                android:background="@drawable/button_rounded_full_green"/>
+                android:text="@string/str_search_partner"
+                android:textAllCaps="false"
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:textSize="15sp"
+                android:layout_marginTop="30dp"
                 android:layout_marginBottom="50dp"
                 android:text="@string/str_you_will_not_be_charged_any_coins"
-                android:layout_marginTop="30dp"/>
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -73,10 +74,10 @@
             android:id="@+id/ll_call"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center_horizontal|bottom"
             android:orientation="vertical"
             android:padding="10dp"
-            android:visibility="invisible"
-            android:gravity="center_horizontal|bottom">
+            android:visibility="invisible">
 
             <TextView
                 android:id="@+id/tv_partner_found"
@@ -84,47 +85,20 @@
                 android:layout_height="0dp"
                 android:layout_weight="0.6"
                 android:gravity="center_horizontal|bottom"
-                android:text="Partner Found"
-                android:textStyle="bold"
+                android:text="@string/str_partner_found"
                 android:textColor="@color/main_green"
-                android:textSize="25dp"/>
+                android:textSize="25sp"
+                android:textStyle="bold" />
 
-            <FrameLayout
-                android:layout_width="160dp"
-                android:layout_height="0dp"
-                android:layout_marginTop="30dp"
-                android:layout_weight="1">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_profile_picture_partner_found"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/img"
+                app:civ_border_color="@color/main_green"
+                app:civ_border_width="4dp" />
 
-
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/iv_profile_picture"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    app:shapeAppearance="@style/circle"
-                    android:layout_gravity="center"
-                    android:scaleType="centerCrop"
-                    android:padding="5dp"
-                    app:strokeWidth="5dp"
-                    android:adjustViewBounds="true"
-                    app:strokeColor="@color/light_green"
-                    android:src="@drawable/img"/>
-
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/iv_online"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@color/main_green"
-                    app:shapeAppearance="@style/circle"
-                    android:scaleType="centerCrop"
-                    android:padding="3dp"
-                    app:strokeWidth="3dp"
-                    android:adjustViewBounds="true"
-                    app:strokeColor="@color/white"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginLeft="50dp"/>
-
-            </FrameLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -136,100 +110,69 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginTop="10dp"
+                    android:gravity="center">
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.4"
                         android:gravity="right">
+
                         <com.google.android.material.imageview.ShapeableImageView
                             android:id="@+id/iv_country_flag"
                             android:layout_width="25dp"
                             android:layout_height="25dp"
-                            android:scaleType="centerCrop"
-                            android:adjustViewBounds="true"
                             android:layout_marginLeft="6dp"
-                            android:src="@drawable/img"
-                            app:shapeAppearanceOverlay="@style/circle"/>
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/iv_uz_flag"
+                            app:shapeAppearanceOverlay="@style/circle" />
                     </LinearLayout>
 
                     <TextView
                         android:id="@+id/tv_fullname"
                         android:layout_width="0dp"
-                        android:layout_weight="0.6"
                         android:layout_height="wrap_content"
-                        android:textSize="16sp"
                         android:layout_marginLeft="15dp"
+                        android:layout_weight="0.6"
+                        android:text="Jeniffer Aniston"
                         android:textColor="@color/black"
-                        android:text="Jeniffer Aniston"/>
+                        android:textSize="16sp" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginTop="10dp"
+                    android:gravity="center">
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.4"
                         android:gravity="right">
+
                         <com.google.android.material.imageview.ShapeableImageView
                             android:id="@+id/iv_level"
                             android:layout_width="25dp"
                             android:layout_height="25dp"
-                            android:scaleType="centerCrop"
-                            android:adjustViewBounds="true"
                             android:layout_marginLeft="6dp"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerCrop"
                             android:src="@color/gold"
-                            app:shapeAppearanceOverlay="@style/circle"/>
+                            app:shapeAppearanceOverlay="@style/circle" />
                     </LinearLayout>
 
                     <TextView
                         android:id="@+id/tv_level"
                         android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
                         android:layout_weight="0.6"
-                        android:layout_height="wrap_content"
-                        android:textSize="16sp"
-                        android:layout_marginLeft="15dp"
+                        android:text="Advanced"
                         android:textColor="@color/black"
-                        android:text="Advanced"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_marginTop="10dp">
-
-                    <ImageView
-                        android:id="@+id/iv_star"
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_gravity="left"
-                        android:layout_marginLeft="6dp"
-                        android:src="@drawable/ic_gold_star_empty" />
-
-                    <TextView
-                        android:id="@+id/tv_rating"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="16sp"
-                        android:layout_marginLeft="15dp"
-                        android:textColor="@color/gold"
-                        android:text="4.7"/>
-
-                    <TextView
-                        android:id="@+id/tv_rating_count"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="16sp"
-                        android:layout_marginLeft="15dp"
-                        android:textColor="@color/grey"
-                        android:text="(88)"/>
+                        android:textSize="16sp" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -238,32 +181,49 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:gravity="center_horizontal">
+                android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/bt_accept"
-                    android:layout_width="110dp"
-                    android:layout_height="37dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
+
+                    <Button
+                        android:id="@+id/btn_accept"
+                        android:layout_width="110dp"
+                        android:layout_height="37dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/button_round_full_green"
+                        android:backgroundTint="@null"
+                        android:text="@string/str_accept" />
+
+                    <Button
+                        android:id="@+id/bt_skip"
+                        android:layout_width="110dp"
+                        android:layout_height="37dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/border_round_grey"
+                        android:backgroundTint="@null"
+                        android:text="@string/str_skip"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_exit_search_student"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:layout_marginTop="20dp"
-                    android:text="@string/str_accept"
                     android:backgroundTint="@null"
-                    android:background="@drawable/button_round_full_green"
-                    />
-                <Button
-                    android:id="@+id/bt_skip"
-                    android:layout_width="110dp"
-                    android:layout_height="37dp"
-                    android:layout_marginTop="20dp"
-                    android:text="@string/str_skip"
-                    android:textColor="@color/black"
-                    android:layout_marginLeft="20dp"
-                    android:backgroundTint="@null"
-                    android:background="@drawable/border_round_grey" />
+                    android:text="@string/str_exit"
+                    android:textColor="@color/grey"
+                    android:textSize="18sp" />
 
             </LinearLayout>
-
 
         </LinearLayout>
 

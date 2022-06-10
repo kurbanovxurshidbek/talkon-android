@@ -16,8 +16,7 @@ import com.talkon.talkon.model.Country
 class CountryDialogAdapter(
     var activity: LogInActivity,
     var fragment: CountryBottomSheetDialog,
-    var items: ArrayList<Country>
-) :
+    var items: ArrayList<Country>) :
     BaseAdapter() {
     override fun getItemCount(): Int {
         return items.size

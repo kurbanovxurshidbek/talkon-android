@@ -60,35 +60,57 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <androidx.cardview.widget.CardView
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="220dp">-->
+
+<!--                    <RelativeLayout-->
+<!--                        android:id="@+id/video_relative"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent">-->
+
+<!--                        <VideoView-->
+<!--                            android:id="@+id/vv_ab_teacher"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:layout_centerInParent="true"-->
+<!--                            android:keepScreenOn="false" />-->
+
+<!--                        <ImageView-->
+<!--                            android:id="@+id/play_button"-->
+<!--                            android:layout_width="70dp"-->
+<!--                            android:layout_height="70dp"-->
+<!--                            android:layout_centerHorizontal="true"-->
+<!--                            android:layout_centerVertical="true"-->
+<!--                            android:background="@drawable/circle_white_backround"-->
+<!--                            android:scaleType="centerCrop"-->
+<!--                            android:src="@drawable/ic_play_button3_foreground" />-->
+                <!--                    </RelativeLayout>-->
+                <!--                </androidx.cardview.widget.CardView>-->
+
+                <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="220dp">
 
-                    <RelativeLayout
-                        android:id="@+id/video_relative"
+                    <com.google.android.exoplayer2.ui.PlayerView
+                        android:id="@+id/exoPlayer"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <VideoView
-                            android:id="@+id/vv_ab_teacher"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_centerInParent="true"
-                            android:keepScreenOn="false" />
+                        <ProgressBar
+                            android:id="@+id/progressBar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:visibility="invisible"
+                            style="?android:attr/progressBarStyle"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            />
 
-                        <ImageView
-                            android:id="@+id/play_button"
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:layout_centerHorizontal="true"
-                            android:layout_centerVertical="true"
-                            android:background="@drawable/circle_white_backround"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/ic_play_button3_foreground" />
+                    </com.google.android.exoplayer2.ui.PlayerView>
 
-                    </RelativeLayout>
+                </FrameLayout>
 
-                </androidx.cardview.widget.CardView>
 
 
                 <LinearLayout
@@ -148,13 +170,14 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
-                    android:layout_marginBottom="1dp"
+                    android:layout_marginBottom="3dp"
                     android:background="@color/light_grey" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:padding="2dp">
+                    android:padding="2dp"
+                    android:baselineAligned="false">
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -318,7 +341,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
-                    android:layout_marginBottom="5dp"
+                    android:layout_marginBottom="2dp"
                     android:background="@color/light_grey" />
 
                 <LinearLayout
@@ -340,7 +363,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="5dp">
+                    android:padding="10dp">
 
                     <TextView
                         android:id="@+id/tv_about_teacher_experience"
@@ -351,7 +374,6 @@
                         android:textSize="14sp" />
 
                 </LinearLayout>
-
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -409,6 +431,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
                     android:text="@string/str_more"
+                    android:visibility="invisible"
                     android:textColor="@color/main_green"
                     android:textSize="16sp"
                     android:textStyle="bold" />
@@ -423,7 +446,7 @@
                     android:textColor="@color/main_green"
                     android:textSize="16sp"
                     android:textStyle="bold"
-                    android:visibility="gone" />
+                    android:visibility="invisible" />
 
                 <Button
                     android:id="@+id/btn_buy"

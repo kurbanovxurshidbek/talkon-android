@@ -9,6 +9,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
@@ -21,6 +22,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.NoActionBar.Bridge">
         <activity
+            android:name=".activity.entryActivity.UploadVideoActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.SearchResultActivity"
             android:exported="false" />
         <activity
@@ -29,7 +33,7 @@
         <activity
             android:name=".activity.AboutTeacherActivity"
             android:exported="false"
-            android:theme="@style/Theme.MaterialComponents.NoActionBar.Bridge"></activity>
+            android:theme="@style/Theme.MaterialComponents.NoActionBar.Bridge" />
         <activity
             android:name=".activity.BalanceActivity"
             android:exported="false" />
@@ -42,11 +46,11 @@
         <activity
             android:name=".activity.entryActivity.LogInActivity"
             android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".activity.entryActivity.NumberVerificationActivity"
             android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
+            android:launchMode="singleTop" />
         <activity
             android:name=".activity.entryActivity.StatusChooseActivity"
             android:exported="false" />
@@ -54,10 +58,10 @@
             android:name=".activity.MainActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustPan" />
-
         <activity
             android:name=".activity.TeacherActivity"
             android:exported="false"
+            android:windowSoftInputMode="adjustPan"/>
             android:windowSoftInputMode="adjustPan">
 
         </activity>

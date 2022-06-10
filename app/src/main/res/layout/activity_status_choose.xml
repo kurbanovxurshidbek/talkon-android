@@ -113,7 +113,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:visibility="invisible">
+                        android:visibility="gone">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -170,6 +170,44 @@
                             </FrameLayout>
 
                         </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_nationality"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/border_rounded_grey_green"
+                            android:padding="5dp">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/tv_nationality"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:visibility="gone"
+                                    android:singleLine="true"
+                                    android:layout_marginRight="10dp"
+                                    android:textColor="@color/black"
+                                    android:textSize="15sp"/>
+
+                                <TextView
+                                    android:id="@+id/tv_nationality_hint"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/str_nationality"
+                                    android:textSize="17sp"
+                                    android:textColor="@color/grey"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginLeft="20dp"/>
+                            </FrameLayout>
+
+                        </LinearLayout>
+
                         <FrameLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
@@ -243,44 +281,6 @@
 
                             </LinearLayout>
                         </FrameLayout>
-
-                        <LinearLayout
-                            android:id="@+id/ll_about_yourself"
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="10dp"
-                            android:background="@drawable/border_rounded_grey_green"
-                            android:padding="5dp">
-
-                            <FrameLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-
-                                <TextView
-                                    android:id="@+id/tv_about"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="20dp"
-                                    android:layout_gravity="center_vertical"
-                                    android:visibility="gone"
-                                    android:singleLine="true"
-                                    android:layout_marginRight="10dp"
-                                    android:textColor="@color/black"
-                                    android:textSize="15sp"/>
-
-                                <TextView
-                                    android:id="@+id/tv_about_hint"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/str_about_yourself"
-                                    android:textSize="17sp"
-                                    android:textColor="@color/grey"
-                                    android:layout_gravity="center_vertical"
-                                    android:layout_marginLeft="20dp"/>
-                            </FrameLayout>
-
-                        </LinearLayout>
-
 
                     </LinearLayout>
                 </FrameLayout>

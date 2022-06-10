@@ -34,12 +34,12 @@ class EditProfileFragment : BaseFragment() {
 
         iv_edit_profile_plus.setOnClickListener {
             pickFishBunPhoto()
+            uploadUserPhoto()
         }
 
 
-        edit_button.setOnClickListener {
+        save_button.setOnClickListener {
             changeUserName()
-            uploadUserPhoto()
         }
     }
 
@@ -79,6 +79,10 @@ class EditProfileFragment : BaseFragment() {
 
     private fun changeUserName(){
         tv_fullname_edit_profile.text = editext_edit_profile.text
+    }
+
+    private fun updatePhoneNumber(){
+        tv_number_edit_profile.text = et_phone_number_edit_profile.text
     }
 
 }
