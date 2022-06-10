@@ -40,6 +40,11 @@ class AboutTeacherActivity : BaseActivity() {
 
         rv_about_teacher_course.layoutManager = GridLayoutManager(this, 3)
         courseAdapter(getCourse())
+
+        if (getCourse().count() > 6) {
+            tv_more_btn.visibility = View.VISIBLE
+        }
+
         tv_more_btn.setOnClickListener {
             (rv_about_teacher_course.adapter as TeacherCourseAdapter).updateList(getCourseAll())
             Log.d("@@@", "nimadur")
@@ -171,6 +176,7 @@ class AboutTeacherActivity : BaseActivity() {
         course.add(Course("03 : 00 am"))
         course.add(Course("04 : 00 pm"))
         course.add(Course("05 : 00 pm"))
+        course.add(Course("06 : 00 am"))
         course.add(Course("06 : 00 am"))
 
         return course
