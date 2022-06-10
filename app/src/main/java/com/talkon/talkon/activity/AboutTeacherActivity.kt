@@ -2,23 +2,17 @@ package com.talkon.talkon.activity
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.MediaController
-import android.widget.ProgressBar
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.exoplayer2.ExoPlayer
 import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.Player
-import com.google.android.exoplayer2.ui.PlayerView
 import com.talkon.talkon.R
 import com.talkon.talkon.adapter.*
-import com.talkon.talkon.fragment.SearchFragment
-import com.talkon.talkon.fragment.SearchTeacherFragment
 import com.talkon.talkon.model.Course
 import com.talkon.talkon.model.Reviews
 import com.talkon.talkon.model.WeekDay
@@ -161,7 +155,7 @@ class AboutTeacherActivity : BaseActivity(), Player.Listener{
 
     private fun addMp4Files() {
 //        val mediaItem = MediaItem.fromUri("https://assets.mixkit.co/videos/preview/mixkit-people-pouring-a-warm-drink-around-a-campfire-513-large.mp4")
-        val mediaItem = MediaItem.fromUri("https://www.pexels.com/video/a-fully-automated-production-line-of-beers-5532773/")
+        val mediaItem = MediaItem.fromUri("https://cdn.videvo.net/videvo_files/video/free/2018-05/large_watermarked/180419_Boxing_01_03_preview.mp4")
         player.addMediaItem(mediaItem)
         player.prepare()
     }

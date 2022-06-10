@@ -60,14 +60,14 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="220dp">
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="220dp">-->
 
-                    <RelativeLayout
-                        android:id="@+id/video_relative"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+<!--                    <RelativeLayout-->
+<!--                        android:id="@+id/video_relative"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent">-->
 
 <!--                        <VideoView-->
 <!--                            android:id="@+id/vv_ab_teacher"-->
@@ -85,30 +85,32 @@
 <!--                            android:background="@drawable/circle_white_backround"-->
 <!--                            android:scaleType="centerCrop"-->
 <!--                            android:src="@drawable/ic_play_button3_foreground" />-->
+                <!--                    </RelativeLayout>-->
+                <!--                </androidx.cardview.widget.CardView>-->
 
-                        <com.google.android.exoplayer2.ui.PlayerView
-                            android:id="@+id/exoPlayer"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_centerInParent="true"
-                            android:layout_centerHorizontal="true"
-                            android:layout_centerVertical="true">
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp">
 
-                            <ProgressBar
-                                android:id="@+id/progressBar"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:visibility="invisible"
-                                style="?android:attr/progressBarStyle"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                />
+                    <com.google.android.exoplayer2.ui.PlayerView
+                        android:id="@+id/exoPlayer"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-                        </com.google.android.exoplayer2.ui.PlayerView>
+                        <ProgressBar
+                            android:id="@+id/progressBar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:visibility="invisible"
+                            style="?android:attr/progressBarStyle"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            />
 
-                    </RelativeLayout>
+                    </com.google.android.exoplayer2.ui.PlayerView>
 
-                </androidx.cardview.widget.CardView>
+                </FrameLayout>
+
 
 
                 <LinearLayout
