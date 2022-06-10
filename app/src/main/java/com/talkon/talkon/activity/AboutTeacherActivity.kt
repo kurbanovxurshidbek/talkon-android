@@ -160,7 +160,8 @@ class AboutTeacherActivity : BaseActivity(), Player.Listener{
     }
 
     private fun addMp4Files() {
-        val mediaItem = MediaItem.fromUri("https://assets.mixkit.co/videos/preview/mixkit-people-pouring-a-warm-drink-around-a-campfire-513-large.mp4")
+//        val mediaItem = MediaItem.fromUri("https://assets.mixkit.co/videos/preview/mixkit-people-pouring-a-warm-drink-around-a-campfire-513-large.mp4")
+        val mediaItem = MediaItem.fromUri("https://www.pexels.com/video/a-fully-automated-production-line-of-beers-5532773/")
         player.addMediaItem(mediaItem)
         player.prepare()
     }
