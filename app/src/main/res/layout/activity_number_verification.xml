@@ -44,24 +44,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:gravity="center_horizontal|center_vertical"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal"
             android:padding="20dp">
-
 
             <com.fraggjkee.smsconfirmationview.SmsConfirmationView
                 android:id="@+id/sms_code_view"
+                app:scv_symbolWidth="55dp"
+                app:scv_symbolHeight="55dp"
+                app:scv_symbolTextSize="26sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAlignment="viewStart"
-                app:scv_showCursor="true"
-                app:scv_smsDetectionMode="auto"
                 app:scv_symbolBackgroundColor="@color/white"
-                app:scv_symbolBorderColor="@color/light_green"
+                app:scv_symbolBorderColor="@color/main_green"
                 app:scv_symbolBorderCornerRadius="10dp"
-                app:scv_symbolHeight="60dp"
-                app:scv_symbolTextColor="@color/black"
-                app:scv_symbolTextSize="25dp"
-                app:scv_symbolWidth="50dp" />
+                app:scv_symbolTextColor="@color/black" />
 
         </LinearLayout>
 
@@ -136,17 +133,18 @@
         android:padding="20dp">
 
         <Button
-            android:id="@+id/bt_verify_light"
+            android:id="@+id/bn_verify"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/button_rounded_full_green_light"
             android:backgroundTint="@null"
-            android:text="@string/str_verify"
-            android:textColor="@color/white"
             android:enabled="false"
-            android:textAllCaps="false" />
+            android:textStyle="normal"
+            android:text="@string/str_verify"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
 
 
     </LinearLayout>
