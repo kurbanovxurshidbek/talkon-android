@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitHttp {
     private var IS_TESTER = true
-    private val SERVER_DEVELOPMENT = "https://www.universal-tutorial.com/api/"
+    private val SERVER_DEVELOPMENT = "https://tolkon-2022.herokuapp.com/api/"
     private val SERVER_PRODUCTION = "https://www.universal-tutorial.com/api/"
 
     val retrofit =

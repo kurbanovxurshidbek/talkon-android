@@ -3,6 +3,7 @@
     package="com.talkon.talkon">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />
@@ -61,6 +62,10 @@
             android:name=".activity.TeacherActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustPan"/>
+            android:windowSoftInputMode="adjustPan">
+
+        </activity>
+
         <activity
             android:name=".activity.entryActivity.SplashActivity"
             android:exported="true"

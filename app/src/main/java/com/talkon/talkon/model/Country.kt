@@ -1,5 +1,6 @@
 package com.talkon.talkon.model
 
+import android.os.Parcelable
 
 data class Country(
     val name: String? = null,
@@ -8,5 +9,5 @@ data class Country(
     val currencySymbol: String? = null,
     val flag: String? = null,
     val prefix: String? = null
-) {
+)  {
 }
