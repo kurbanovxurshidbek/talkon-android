@@ -6,16 +6,13 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import com.fraggjkee.smsconfirmationview.SmsConfirmationView
-import com.fraggjkee.smsconfirmationview.codeLength
 import com.talkon.talkon.R
 import com.talkon.talkon.activity.BaseActivity
 import com.talkon.talkon.model.Response
 import com.talkon.talkon.network.RetrofitHttp
 import com.talkon.talkon.utils.Extensions.vibrate
 import com.talkon.talkon.utils.Logger
-import com.talkon.talkon.utils.PinView
 import com.talkon.talkon.utils.Utils
-import kotlinx.android.synthetic.main.activity_log_in.*
 import kotlinx.android.synthetic.main.activity_number_verification.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -123,12 +120,13 @@ class NumberVerificationActivity : BaseActivity() {
 
         RetrofitHttp.talkOnService.sendForToken(map).enqueue(object : Callback<Response> {
             override fun onResponse(call: Call<Response>, response: retrofit2.Response<Response>) {
-                Logger.d("@@@", response.body()!!.data!!.accessToken.toString())
+                Logger.d("@@@", response.body().toString())
             }
 
             override fun onFailure(call: Call<Response>, t: Throwable) {
-                Logger.d("@@@ -", t.message.toString())
+                Logger.d("@@@", t.localizedMessage)
             }
+
         })
 
     }
