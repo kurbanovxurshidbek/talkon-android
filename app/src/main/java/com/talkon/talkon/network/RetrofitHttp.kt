@@ -1,13 +1,13 @@
 package com.talkon.talkon.network
 
-import com.talkon.talkon.network.service.CountryService
+import com.talkon.talkon.network.service.TalkOnService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitHttp {
     private var IS_TESTER = true
-    private val SERVER_DEVELOPMENT = "https://tolkon-2022.herokuapp.com/api/"
-    private val SERVER_PRODUCTION = "https://www.universal-tutorial.com/api/"
+    private val SERVER_DEVELOPMENT = "https://tolkon-2022.herokuapp.com"
+    private val SERVER_PRODUCTION = "https://tolkon-2022.herokuapp.com"
 
     val retrofit =
         Retrofit.Builder().baseUrl(server()).addConverterFactory(GsonConverterFactory.create())
@@ -18,5 +18,5 @@ object RetrofitHttp {
         return SERVER_PRODUCTION
     }
 
-    val countryService: CountryService = retrofit.create(CountryService::class.java)
+    val talkOnService: TalkOnService = retrofit.create(TalkOnService::class.java)
 }

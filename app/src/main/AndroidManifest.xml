@@ -62,9 +62,6 @@
             android:name=".activity.TeacherActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustPan"/>
-            android:windowSoftInputMode="adjustPan">
-
-        </activity>
 
         <activity
             android:name=".activity.entryActivity.SplashActivity"
