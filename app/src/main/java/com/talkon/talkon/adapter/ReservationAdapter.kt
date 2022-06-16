@@ -18,7 +18,8 @@ import com.talkon.talkon.fragment.ReservationFragment
 import com.talkon.talkon.model.LessonHistory
 import com.talkon.talkon.model.Reservation
 
-class ReservationAdapter(var fragment : ReservationFragment, var items: ArrayList<Reservation> ) : BaseAdapter() {
+class ReservationAdapter(var fragment: ReservationFragment, var items: ArrayList<Reservation>) :
+    BaseAdapter() {
 
 
     override fun getItemCount(): Int {

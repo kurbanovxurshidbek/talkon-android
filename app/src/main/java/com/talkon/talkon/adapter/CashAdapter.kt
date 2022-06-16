@@ -1,26 +1,14 @@
 package com.talkon.talkon.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AnimationUtils
-import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.android.material.imageview.ShapeableImageView
-import com.skydoves.powerspinner.createPowerSpinnerView
 import com.talkon.talkon.R
-import com.talkon.talkon.fragment.LessonHistoryFragment
-import com.talkon.talkon.fragment.ReservationFragment
-import com.talkon.talkon.fragment.TeacherLessonsFragment
 import com.talkon.talkon.model.Cash
-import com.talkon.talkon.model.LessonHistory
-import com.talkon.talkon.model.Reservation
-import com.talkon.talkon.model.TeacherLessons
-import kotlinx.android.synthetic.main.item_cash.view.*
 
 class CashAdapter(var items: ArrayList<Cash> ) : BaseAdapter() {
 
