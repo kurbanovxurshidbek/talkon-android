@@ -38,9 +38,6 @@
             android:name=".activity.BalanceActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.SettingsActivity"
-            android:exported="false" />
-        <activity
             android:name=".activity.entryActivity.IntroActivity"
             android:exported="false" />
         <activity
