@@ -1,7 +1,5 @@
-package com.talkon.talkon.viewModel
+package com.talkon.talkon.viewmodel
 
-import android.util.Log
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 

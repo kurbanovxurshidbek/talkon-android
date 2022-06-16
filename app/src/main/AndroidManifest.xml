@@ -25,7 +25,7 @@
             android:name=".activity.entryActivity.UploadVideoActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.SearchResultActivity"
+            android:name=".activity.KeywordActivity"
             android:exported="false" />
         <activity
             android:name=".activity.ChatActivity"

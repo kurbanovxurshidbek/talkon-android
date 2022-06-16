@@ -21,14 +21,14 @@
             android:src="@drawable/ic_search_history"/>
 
         <TextView
-            android:id="@+id/tv_searched_name"
+            android:id="@+id/tv_keyword"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="Cute"
             android:singleLine="true"
             android:layout_marginLeft="20dp"
-            android:textStyle="bold"
+            android:textStyle="normal"
             android:textColor="@color/black"
             android:textSize="17sp"/>
         <LinearLayout
@@ -38,9 +38,10 @@
             android:layout_marginLeft="15dp"
             android:gravity="center">
             <ImageView
-                android:id="@+id/iv_cancel"
-                android:layout_width="10dp"
-                android:layout_height="10dp"
+                android:id="@+id/iv_remove"
+                android:padding="10dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:src="@drawable/ic_close"
                 app:tint="@color/dark_grey" />
         </LinearLayout>

@@ -1,15 +1,10 @@
 package com.talkon.talkon.activity.entryActivity
 
-import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.AdapterView
 import android.widget.DatePicker
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelStore
 import com.talkon.talkon.R
 import com.talkon.talkon.activity.BaseActivity
 import com.talkon.talkon.manager.SharedPref
@@ -17,7 +12,6 @@ import com.talkon.talkon.model.Country
 import com.talkon.talkon.utils.ExperienceDialog
 import com.talkon.talkon.utils.LevelDialog
 import com.talkon.talkon.utils.NationalityDialog
-import com.talkon.talkon.viewModel.StatusSharedViewModel
 import kotlinx.android.synthetic.main.activity_status_choose.*
 import java.util.*
 
