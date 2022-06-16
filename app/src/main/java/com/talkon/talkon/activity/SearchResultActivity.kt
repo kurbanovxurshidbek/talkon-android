@@ -4,20 +4,26 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
-import androidx.recyclerview.widget.GridLayoutManager
+import android.view.inputmethod.EditorInfo
+import android.widget.TextView.OnEditorActionListener
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.talkon.talkon.R
-import com.talkon.talkon.adapter.SearchHistoryAdapter
-import com.talkon.talkon.model.Country
+import com.talkon.talkon.adapter.WordListAdapter
+import com.talkon.talkon.model.Word
+import com.talkon.talkon.viewModel.SearchResultActivityViewModel
 import kotlinx.android.synthetic.main.activity_search_result.*
+
 
 /**
  * In SearchResultActivity, user can search for tutors
  */
 
 class SearchResultActivity : BaseActivity() {
-    private var names: ArrayList<String> = ArrayList()
-    private var items: ArrayList<String> = ArrayList()
-
+    var mWordViewModel: SearchResultActivityViewModel? = null
+    private lateinit var adapter: WordListAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search_result)
@@ -26,55 +32,74 @@ class SearchResultActivity : BaseActivity() {
     }
 
     private fun initViews() {
-        recyclerView.setLayoutManager(GridLayoutManager(this, 1))
-        refreshAdapter(getHistory())
-
+        buildRecyclerView()
+        searchAction()
         iv_cancel.setOnClickListener {
             finish()
         }
 
+        // Get a new or existing ViewModel from the ViewModelProvider.
+        mWordViewModel = ViewModelProvider(this)[SearchResultActivityViewModel::class.java]
+
+        // Add an observer on the LiveData returned by getAlphabetizedWords.
+        // The onChanged() method fires when the observed data changes and the activity is
+        // in the foreground.
+        mWordViewModel!!.delete(1)
+        mWordViewModel!!.allWords.observe(this) { words ->
+            // Update the cached copy of the words in the adapter.
+            adapter.submitList(words)
+
+        }
+
+    }
+
+    private fun searchAction() {
         et_search.addTextChangedListener(object : TextWatcher{
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-
             override fun afterTextChanged(s: Editable?) {}
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if(s!!.length >=1){
                     recyclerView.visibility = View.GONE
-                }
-                else
+                    var keyword = et_search.text.toString().trim()
+                    mWordViewModel?.performSearch(keyword)
+                } else{
                     recyclerView.visibility = View.VISIBLE
+                }
             }
+        })
+
+        et_search.setOnEditorActionListener(OnEditorActionListener { v, actionId, event ->
+            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                var name = et_search.text.toString().trim()
+                var word = Word(name)
+                mWordViewModel?.insert(word)
+                return@OnEditorActionListener true
+            }
+            false
         })
     }
 
-    private fun refreshAdapter(history: ArrayList<String>) {
-        var adapter = SearchHistoryAdapter(history)
+//    fun performSearch(keyword: String) {
+//        if (keyword.isEmpty())
+//            adapter.items
+//        items.clear()
+//        for (name in names){
+//            if (name!!.toLowerCase().contains(keyword.toLowerCase())) {
+//                items.add(name)
+//            }
+//        }
+//        adapter.items
+//    }
+
+    private fun buildRecyclerView() {
+        adapter = WordListAdapter(this, WordListAdapter.WordDiff())
+        val manager = LinearLayoutManager(this)
+        recyclerView.setHasFixedSize(true)
+        recyclerView.layoutManager = manager
         recyclerView.adapter = adapter
+        recyclerView.itemAnimator = DefaultItemAnimator()
+        recyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
     }
 
-    fun usersByKeyword(keyword: String) {
-        if (keyword.isEmpty())
-            refreshAdapter(items)
-
-        items.clear()
-        for (name in names){
-            if (name!!.toLowerCase().contains(keyword.toLowerCase())) {
-                items.add(name)
-            }
-        }
-        refreshAdapter(items)
-    }
-
-
-
-    private fun getHistory(): ArrayList<String> {
-        var history = ArrayList<String>()
-
-        history.add("Cute")
-        history.add("Kurbanov Khurshidbek ")
-        history.add("Khurshidbek Kurbanov")
-
-        return history
-    }
 }
