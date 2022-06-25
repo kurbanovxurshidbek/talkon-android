@@ -14,45 +14,23 @@ import com.talkon.talkon.model.Keyword
  */
 class KeywordViewModel : ViewModel() {
     val allKeywords = MutableLiveData<List<Keyword>>()
-    var searchedKeywords = MutableLiveData<List<Keyword>>()
-
-    fun searchKeyword(keyword: String) {
-        if (keyword.isNotEmpty()){
-            var list = searchedKeywords.value!!.toMutableList()
-            with(list){
-                clear()
-            }
-
-            Log.d("@@", searchedKeywords.value.toString())
-            for (item in allKeywords.value!!) {
-                if (item.keyword.startsWith(keyword)){
-                    var list = searchedKeywords.value!!.toMutableList()
-                    with(list) {
-                        add(item)
-                    }
-                }
-            }
-        } else{
-            searchedKeywords = allKeywords
-        }
-    }
 
     fun saveKeyword(repository: KeywordRepository, keyword: Keyword) {
         repository.saveKeyword(keyword)
     }
 
-    fun getKeywords(repository: KeywordRepository) : LiveData<List<Keyword>>{
+    fun getKeywords(repository: KeywordRepository): LiveData<List<Keyword>> {
         allKeywords.value = repository.getKeywords()
         return allKeywords
-}
+    }
 
-    fun deleteKeyword(repository: KeywordRepository, id: Int){
+    fun deleteKeyword(repository: KeywordRepository, id: Int) {
         repository.deleteKeyword(id)
     }
 
-    fun searchDatabase(repository: KeywordRepository, keyword: String): LiveData<List<Keyword>> {
-        allKeywords.value = repository.searchDatabase(keyword)
+    fun searchKeywords(repository: KeywordRepository, keyword: String): LiveData<List<Keyword>> {
+        allKeywords.value = repository.searchKeywords(keyword)
+        Log.d("TAG", allKeywords.value!!.size.toString())
         return allKeywords
     }
-
 }

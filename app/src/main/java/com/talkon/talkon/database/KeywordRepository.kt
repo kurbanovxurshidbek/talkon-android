@@ -25,7 +25,7 @@ class KeywordRepository {
         keywordDao.deleteKeyword(id)
     }
 
-    fun searchDatabase(word: String): List<Keyword> {
-        return keywordDao.searchDatabase(word)
+    fun searchKeywords(keyword: String): List<Keyword> {
+        return keywordDao.searchKeywords(keyword)
     }
 }

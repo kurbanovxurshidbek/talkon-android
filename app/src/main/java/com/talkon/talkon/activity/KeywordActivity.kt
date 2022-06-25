@@ -49,15 +49,16 @@ class KeywordActivity : BaseActivity() {
             override fun afterTextChanged(s: Editable?) {}
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                    var keyword = et_search.text.toString().trim()
-                    if (keyword.isEmpty()) {
-                        refreshAdapter(viewModel.allKeywords.value!!)
-                    } else{
-                    viewModel.searchKeyword(keyword)
-                        refreshAdapter(viewModel.searchedKeywords.value!!)
-                        Log.d("@@@", keyword)
-
-                    }
+                val keyword = et_search.text.toString().trim()
+                if (keyword.isEmpty()) {
+                    //refreshAdapter(viewModel.allKeywords.value!!)
+                    viewModel.getKeywords(repository)
+                } else {
+                    //viewModel.searchKeyword(keyword)
+                    //refreshAdapter(viewModel.searchedKeywords.value!!)
+                    Log.d("TAG", keyword)
+                    viewModel.searchKeywords(repository,keyword)
+                }
             }
         })
 
