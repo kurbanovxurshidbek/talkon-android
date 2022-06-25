@@ -17,4 +17,7 @@ interface KeywordDao {
 
     @Query("DELETE FROM keyword_table WHERE id = :id")
     fun deleteKeyword(id: Int)
+
+    @Query("SELECT * FROM keyword_table WHERE keyword LIKE :word")
+    fun searchDatabase(word: String): List<Keyword>
 }

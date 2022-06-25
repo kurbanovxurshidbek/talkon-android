@@ -23,8 +23,6 @@ import kotlinx.android.synthetic.main.activity_about_teacher.*
  */
 
 class AboutTeacherActivity : BaseActivity(), Player.Listener{
-
-//    lateinit var playerView: PlayerView
     lateinit var player: ExoPlayer
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,8 +49,7 @@ class AboutTeacherActivity : BaseActivity(), Player.Listener{
 
     @SuppressLint("SetTextI18n")
     private fun initViews() {
-        rv_about_teacher_week_day.layoutManager =
-            LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)
+        rv_about_teacher_week_day.layoutManager = LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)
         weekDayAdapter(getWeekDay())
 
         rv_about_teacher_course.layoutManager = GridLayoutManager(this, 3)
@@ -77,17 +74,9 @@ class AboutTeacherActivity : BaseActivity(), Player.Listener{
         rv_about_teacher_reviews.layoutManager = LinearLayoutManager(this)
         reviewsAdapter(getReviews())
 
-//        videoView()
-
         iv_back.setOnClickListener {
-            callSearchTeacherFragment()
+            finish()
         }
-
-    }
-
-    private fun callSearchTeacherFragment() {
-        val intent = Intent(context, MainActivity::class.java)
-        startActivity(intent)
 
     }
 
@@ -128,33 +117,9 @@ class AboutTeacherActivity : BaseActivity(), Player.Listener{
 //        playerView = exoPlayer
         exoPlayer.player = player
         player.addListener(this)
-
-
-
-//
-//        val mediaController = MediaController( this)
-//        mediaController.setAnchorView(vv_ab_teacher)
-//        val onlineUri =
-//            Uri.parse("https://assets.mixkit.co/videos/preview/mixkit-people-pouring-a-warm-drink-around-a-campfire-513-large.mp4")
-//
-//        play_button.setOnClickListener {
-//            if (vv_ab_teacher.isPlaying) {
-//                vv_ab_teacher.pause()
-//                play_button.visibility = View.VISIBLE
-//
-//            } else {
-//                vv_ab_teacher.setMediaController(mediaController)
-//                vv_ab_teacher.setVideoURI(onlineUri)
-//                vv_ab_teacher.requestFocus()
-//                vv_ab_teacher.start()
-//
-//                play_button.visibility = View.GONE
-//            }
-//        }
     }
 
     private fun addMp4Files() {
-//        val mediaItem = MediaItem.fromUri("https://assets.mixkit.co/videos/preview/mixkit-people-pouring-a-warm-drink-around-a-campfire-513-large.mp4")
         val mediaItem = MediaItem.fromUri("https://cdn.videvo.net/videvo_files/video/free/2018-05/large_watermarked/180419_Boxing_01_03_preview.mp4")
         player.addMediaItem(mediaItem)
         player.prepare()

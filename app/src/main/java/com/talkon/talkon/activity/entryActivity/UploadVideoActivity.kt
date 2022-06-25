@@ -1,5 +1,6 @@
 package com.talkon.talkon.activity.entryActivity
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.AlertDialog
 import android.content.DialogInterface
@@ -72,7 +73,7 @@ class UploadVideoActivity : BaseActivity() {
         }
     }
 
-    fun chooseVideoFromGallery() {
+    private fun chooseVideoFromGallery() {
         val galleryIntent = Intent(Intent.ACTION_PICK, MediaStore.Video.Media.EXTERNAL_CONTENT_URI)
         startActivityForResult(galleryIntent, GALLERY)
     }
@@ -154,7 +155,8 @@ class UploadVideoActivity : BaseActivity() {
     }
 
     //this function returns null when using IO file manager
-    fun getPath(uri: Uri?): String? {
+    @SuppressLint("Recycle")
+    private fun getPath(uri: Uri?): String? {
         val projection = arrayOf(MediaStore.Video.Media.DATA)
         contentResolver
         val cursor = applicationContext.contentResolver.query(uri!!, projection, null, null, null)

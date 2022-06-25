@@ -1,6 +1,10 @@
 package com.talkon.talkon.activity
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
+import android.util.Log
+import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.TextView.OnEditorActionListener
 import androidx.lifecycle.Observer
@@ -22,6 +26,8 @@ class KeywordActivity : BaseActivity() {
 
     lateinit var viewModel: KeywordViewModel
     lateinit var repository: KeywordRepository
+    var items: List<Keyword> = ArrayList<Keyword>()
+    var keywords: List<Keyword> = ArrayList<Keyword>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,19 +44,22 @@ class KeywordActivity : BaseActivity() {
             finish()
         }
 
-//        et_search.addTextChangedListener(object : TextWatcher {
-//            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-//            override fun afterTextChanged(s: Editable?) {}
-//
-//            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-//                if (s!!.isNotEmpty()) {
-//                    recyclerView.visibility = View.GONE
-//                    var keyword = et_search.text.toString().trim()
-//                } else {
-//                    recyclerView.visibility = View.VISIBLE
-//                }
-//            }
-//        })
+        et_search.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun afterTextChanged(s: Editable?) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                    var keyword = et_search.text.toString().trim()
+                    if (keyword.isEmpty()) {
+                        refreshAdapter(viewModel.allKeywords.value!!)
+                    } else{
+                    viewModel.searchKeyword(keyword)
+                        refreshAdapter(viewModel.searchedKeywords.value!!)
+                        Log.d("@@@", keyword)
+
+                    }
+            }
+        })
 
         et_search.setOnEditorActionListener(OnEditorActionListener { v, actionId, event ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
@@ -67,7 +76,8 @@ class KeywordActivity : BaseActivity() {
 
         viewModel.getKeywords(repository)
         viewModel.allKeywords.observe(this, Observer {
-            refreshAdapter(it)
+            items = it
+            refreshAdapter(items)
         })
     }
 
