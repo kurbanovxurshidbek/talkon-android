@@ -27,7 +27,6 @@ class KeywordActivity : BaseActivity() {
     lateinit var viewModel: KeywordViewModel
     lateinit var repository: KeywordRepository
     var items: List<Keyword> = ArrayList<Keyword>()
-    var keywords: List<Keyword> = ArrayList<Keyword>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,12 +50,8 @@ class KeywordActivity : BaseActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 val keyword = et_search.text.toString().trim()
                 if (keyword.isEmpty()) {
-                    //refreshAdapter(viewModel.allKeywords.value!!)
                     viewModel.getKeywords(repository)
                 } else {
-                    //viewModel.searchKeyword(keyword)
-                    //refreshAdapter(viewModel.searchedKeywords.value!!)
-                    Log.d("TAG", keyword)
                     viewModel.searchKeywords(repository,keyword)
                 }
             }
