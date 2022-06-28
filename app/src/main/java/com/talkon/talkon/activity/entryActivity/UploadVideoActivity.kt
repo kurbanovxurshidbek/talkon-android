@@ -34,9 +34,11 @@ import java.util.*
 class UploadVideoActivity : BaseActivity() {
     var pickedPhoto: Uri? = null
     var allPhotos = ArrayList<Uri>()
+    lateinit var selectedVideoPath:String
     private val VIDEO_DIRECTORY = "/demonuts"
     private val GALLERY = 1
     private var CAMERA = 2
+    private lateinit var newfile: File
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_upload_video)
@@ -57,6 +59,8 @@ class UploadVideoActivity : BaseActivity() {
         iv_back.setOnClickListener{
             finish()
         }
+
+        tv_experience.text = ""
 
         ll_experience.setOnClickListener {
             ExperienceDialog(object : ExperienceDialog.ExperienceListener{
@@ -79,19 +83,21 @@ class UploadVideoActivity : BaseActivity() {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
         Log.d("result", "" + resultCode)
+
         val mediaController = MediaController( this)
         mediaController.setAnchorView(videoView)
-        super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == RESULT_CANCELED) {
             Log.d("what", "cancel")
             return
         }
+
         if (requestCode == GALLERY) {
             Log.d("what", "gale")
             if (data != null) {
                 val contentURI = data.data
-                val selectedVideoPath = getPath(contentURI)
+                selectedVideoPath = getPath(contentURI)!!
                 Log.d("path", selectedVideoPath!!)
                 saveVideoToInternalStorage(selectedVideoPath)
                 videoView.requestFocus()
@@ -111,17 +117,18 @@ class UploadVideoActivity : BaseActivity() {
                     }
                 }
             }
+
+            iv_delete.setOnClickListener {
+                newfile = File("")
+                ll_upload_video.visibility = View.VISIBLE
+                ll_video.visibility= View.GONE
+
+            }
         }
 
-        iv_delete.setOnClickListener {
-            ll_upload_video.visibility = View.VISIBLE
-            ll_video.visibility= View.GONE
-
-        }
     }
 
     private fun saveVideoToInternalStorage(filePath: String) {
-        val newfile: File
         try {
             val currentFile = File(filePath)
             val wallpaperDirectory =
@@ -154,7 +161,6 @@ class UploadVideoActivity : BaseActivity() {
         }
     }
 
-    //this function returns null when using IO file manager
     @SuppressLint("Recycle")
     private fun getPath(uri: Uri?): String? {
         val projection = arrayOf(MediaStore.Video.Media.DATA)

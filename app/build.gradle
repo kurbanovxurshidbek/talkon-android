@@ -66,7 +66,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
     // LottieAnimation
-    def lottieVersion = "3.4.0"
+    def lottieVersion = "4.2.2"
     implementation "com.airbnb.android:lottie:$lottieVersion"
 
     // FishBun ImagePicker
@@ -100,7 +100,7 @@ dependencies {
     implementation 'com.skyfishjy.ripplebackground:library:1.0.1'
 
     //Room
-    def roomVersion = "2.4.0"
+    def roomVersion = "2.4.2"
     implementation "androidx.room:room-runtime:$roomVersion"
     implementation "androidx.room:room-ktx:$roomVersion"
     kapt "androidx.room:room-compiler:$roomVersion"
