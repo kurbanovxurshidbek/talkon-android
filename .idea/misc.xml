@@ -7,6 +7,8 @@
         <entry key="app/src/main/res/layout/activity_keyword.xml" value="0.17844202898550723" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_search_result.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_partner_found.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_search_student.xml" value="0.10104166666666667" />
         <entry key="app/src/main/res/layout/item_keyword.xml" value="0.25" />
       </map>
     </option>

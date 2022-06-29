@@ -126,7 +126,6 @@
                             android:layout_marginLeft="6dp"
                             android:adjustViewBounds="true"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/iv_uz_flag"
                             app:shapeAppearanceOverlay="@style/circle" />
                     </LinearLayout>
 
