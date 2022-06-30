@@ -1,5 +1,6 @@
 package com.talkon.talkon
 
+import com.talkon.uz.network.RetrofitHttp
 import org.junit.Test
 
 import org.junit.Assert.*
