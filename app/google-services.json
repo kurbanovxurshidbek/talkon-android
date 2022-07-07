@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:917757991726:android:dd3108cf0c86916127b8bf",
+        "mobilesdk_app_id": "1:917757991726:android:b8257728cfa1e99427b8bf",
         "android_client_info": {
-          "package_name": "com.talkon.talkon"
+          "package_name": "com.talkon.uz"
         }
       },
       "oauth_client": [
