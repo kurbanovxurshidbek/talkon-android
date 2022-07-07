@@ -2,8 +2,6 @@ package com.talkon.talkon.database
 
 import android.app.Application
 import com.talkon.talkon.model.Keyword
-import kotlinx.coroutines.flow.Flow
-import javax.inject.Inject
 
 class KeywordRepository {
     var keywordDao:  KeywordDao
